@@ -89,6 +89,10 @@ p{margin:0 0 1em}
 .btn--naranja:hover{background:var(--amarillo);transform:translateY(-3px)}
 .btn--ghost{border:1px solid rgba(255,240,218,.32);color:var(--crema)}
 .btn--ghost:hover{border-color:var(--crema);transform:translateY(-3px)}
+.btn--carbon{background:var(--carbon);color:var(--crema);padding:1.15rem 2.1rem;font-size:1rem}
+.btn--carbon:hover{transform:translateY(-3px)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
 
 /* =========================================================
    NAV
@@ -459,8 +463,7 @@ p{margin:0 0 1em}
 }
 .card{
   border:1px solid rgba(255,240,218,.18);border-radius:20px;
-  padding:clamp(1.6rem,3vw,2.4rem);
-  min-height:clamp(230px,28vh,300px);
+  padding:clamp(1.6rem,2.6vw,2.2rem);
   display:flex;flex-direction:column;
   transition:background .5s var(--ease),border-color .5s var(--ease),transform .5s var(--ease);
 }
@@ -471,10 +474,24 @@ p{margin:0 0 1em}
 .card:hover *{color:var(--carbon)}
 .card__tag{
   font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gris);
-  margin-bottom:auto;transition:color .5s var(--ease);
+  margin-bottom:1.6rem;transition:color .5s var(--ease);
 }
-.card h3{font-size:clamp(1.3rem,2vw,1.7rem);margin:2.5rem 0 .8rem;transition:color .5s var(--ease)}
-.card p{margin:0;font-size:.95rem;color:var(--arena);transition:color .5s var(--ease)}
+.card h3{font-size:clamp(1.2rem,1.7vw,1.45rem);margin:0 0 .9rem;line-height:1.1;
+  transition:color .5s var(--ease)}
+.card p{margin:0;font-size:.93rem;line-height:1.55;color:var(--arena);
+  transition:color .5s var(--ease)}
+
+.charlas__cierre{
+  max-width:1500px;margin:clamp(2.5rem,6vh,4rem) auto 0;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2rem;
+  flex-wrap:wrap;
+  border-top:1px solid rgba(255,240,218,.16);padding-top:clamp(1.8rem,4vh,2.6rem);
+}
+.charlas__cierre p{
+  margin:0;max-width:34ch;
+  font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.15;
+  font-size:clamp(1.3rem,2.4vw,1.9rem);color:var(--crema);
+}
 
 /* =========================================================
    CTA — ritmo MAR ABIERTO
@@ -497,16 +514,21 @@ p{margin:0 0 1em}
   font-size:clamp(3.4rem,12vw,7rem);text-transform:uppercase;  /* 80–112 px */
   margin-bottom:1rem;
 }
-.cta .script{color:var(--carbon);font-size:clamp(1.2rem,3vw,1.9rem);margin-bottom:2.5rem}
+.cta .script{color:var(--carbon);font-size:clamp(1.2rem,3vw,1.9rem);margin-bottom:clamp(2rem,5vh,3rem)}
+.cta__o{
+  margin:clamp(1.6rem,4vh,2.4rem) 0 .5rem;
+  font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(18,16,15,.62);
+}
 .cta__mail{
   display:inline-block;
   font-family:var(--display);font-weight:600;letter-spacing:-.02em;
-  font-size:clamp(1.4rem,3.6vw,2.4rem);
-  border-bottom:2px solid var(--carbon);padding-bottom:.15em;
+  font-size:clamp(1.1rem,2.6vw,1.7rem);
+  border-bottom:2px solid var(--carbon);padding-bottom:.12em;
   transition:opacity .35s var(--ease),transform .35s var(--ease);
 }
 .cta__mail:hover{opacity:.7;transform:translateY(-3px)}
-.cta__note{margin:2rem auto 0;max-width:40ch;font-size:.95rem;color:rgba(18,16,15,.72)}
+.cta__note{margin:clamp(1.8rem,4vh,2.4rem) auto 0;max-width:40ch;font-size:.95rem;color:rgba(18,16,15,.72)}
 
 /* =========================================================
    FOOTER
@@ -528,7 +550,7 @@ p{margin:0 0 1em}
   to{background-size:118% auto;background-position:52% 50%}
 }
 .footer__cols{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem var(--g-puerto);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem var(--g-puerto);
   max-width:1500px;margin-inline:auto;
   border-top:1px solid rgba(255,240,218,.16);padding-top:2.5rem;
 }
@@ -539,8 +561,24 @@ p{margin:0 0 1em}
 .footer__cols a:hover{border-color:var(--naranja)}
 .footer__legal{
   max-width:1500px;margin:3rem auto 0;
+  display:flex;justify-content:space-between;gap:.6rem 2rem;flex-wrap:wrap;
   font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);
 }
+.footer__legal p{margin:0}
+.footer__legal a{
+  color:var(--crema);
+  border-bottom:1px solid rgba(255,240,218,.3);
+  transition:border-color .3s var(--ease);
+}
+.footer__legal a:hover{border-color:var(--naranja)}
+
+/* el aliado con sitio propio es clicable */
+a.aliado__surface{display:grid;place-items:center}
+.aliado__enlace{
+  border-bottom:2px solid transparent;
+  transition:border-color .3s var(--ease);
+}
+.aliado__enlace:hover{border-color:var(--naranja)}
 
 /* =========================================================
    REVEAL

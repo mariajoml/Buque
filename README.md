@@ -48,7 +48,6 @@ python3 -m http.server 4173 --directory web
 
 ## Pendientes
 
-- Reemplazar los logos de aliados en `web/assets/img/aliados/` por los oficiales
-  (los actuales son aproximaciones provisionales).
-- Enlaces reales de LinkedIn e Instagram.
+- Reemplazar `web/assets/img/aliados/byp.svg` por el logo oficial de B&P
+  (el actual es una aproximación provisional).
 - Confirmar las cifras del manifiesto.
