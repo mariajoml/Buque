@@ -50,5 +50,5 @@ python3 -m http.server 4173 --directory web
 
 - Reemplazar los logos de aliados en `web/assets/img/aliados/` por los oficiales
   (los actuales son aproximaciones provisionales).
-- Datos de contacto reales: correo, LinkedIn e Instagram.
+- Enlaces reales de LinkedIn e Instagram.
 - Confirmar las cifras del manifiesto.

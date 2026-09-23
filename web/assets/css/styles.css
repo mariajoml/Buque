@@ -251,9 +251,7 @@ p{margin:0 0 1em}
   --copias:4;
   display:flex;width:max-content;
   animation:rodar 34s linear infinite;
-  /* el arrastre del scroll viaja en transform, sobre la animación */
-  transition:transform .45s cubic-bezier(.22,.7,.24,1);
-  will-change:transform;
+  will-change:translate;
 }
 .ticker__track span{
   font-family:var(--display);font-weight:700;

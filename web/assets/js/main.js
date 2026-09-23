@@ -155,24 +155,21 @@
     requestAnimationFrame(pintar);
   };
 
-  /* ---------- ticker: arrastre cinético ----------
-     El bucle lo lleva la animación CSS (no se congela ni salta al volver
-     de otra pestaña). El scroll solo añade un arrastre en transform,
-     acotado muy por debajo de la copia de reserva que deja la animación,
-     así la costura entre copias nunca entra en cuadro. */
+  /* ---------- ticker ----------
+     La marquesina la lleva entera la animación CSS: velocidad constante,
+     sin nada que el scroll pueda empujar. Aquí solo garantizamos que haya
+     copias suficientes para cubrir cualquier ancho de pantalla. */
   var cinta = document.querySelector('.ticker__track');
-  var ultimoScroll = window.scrollY;
-  var reposo = null;
 
-  if (cinta && !reduce) {
+  if (cinta) {
     var patron = cinta.children[0];
 
     var ajustarCopias = function () {
       var copia = patron.getBoundingClientRect().width;
       if (!copia) return;
-      /* dos copias quedan de reserva; el resto tiene que cubrir la pantalla */
+      /* dos copias quedan de reserva para el bucle; el resto cubre la pantalla */
       var guarda = 0;
-      while ((cinta.children.length - 2) * copia < window.innerWidth + 400 && guarda++ < 24) {
+      while ((cinta.children.length - 2) * copia < window.innerWidth + 200 && guarda++ < 24) {
         cinta.appendChild(patron.cloneNode(true));
       }
       cinta.style.setProperty('--copias', cinta.children.length);
@@ -185,21 +182,7 @@
     window.addEventListener('resize', ajustarCopias, { passive: true });
   }
 
-  window.addEventListener('scroll', function () {
-    var delta = window.scrollY - ultimoScroll;
-    ultimoScroll = window.scrollY;
-
-    if (!reduce && cinta) {
-      var arrastre = Math.max(-240, Math.min(240, -delta * 7));
-      cinta.style.transform = 'translate3d(' + arrastre.toFixed(1) + 'px,0,0)';
-      clearTimeout(reposo);
-      reposo = setTimeout(function () {
-        cinta.style.transform = 'translate3d(0,0,0)';
-      }, 130);
-    }
-
-    pedirPintado();
-  }, { passive: true });
+  window.addEventListener('scroll', pedirPintado, { passive: true });
 
   window.addEventListener('resize', pedirPintado, { passive: true });
   pintar();
