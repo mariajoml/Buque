@@ -1,6 +1,2 @@
 .DS_Store
 node_modules/
-
-# El deck de la Fase 03 pesa 40 MB: queda fuera del repo hasta decidir
-# si entra por Git LFS. Para incluirlo: git add -f buque-fase-03-sistema-visual.pptx
-buque-fase-03-sistema-visual.pptx
