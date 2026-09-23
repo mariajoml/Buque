@@ -432,7 +432,7 @@ p{margin:0 0 1em}
 }
 .aliado__surface--claro{background:#FFFFFF;border:1px solid rgba(18,16,15,.12)}
 .aliado__surface img{width:auto;height:auto;max-width:62%;max-height:62%;object-fit:contain}
-.aliado__surface--claro img{max-width:56%;max-height:88%}
+.aliado__surface--claro img{max-width:74%;max-height:86%}
 .aliado:hover .aliado__surface{transform:translateY(-8px)}
 
 .aliado__info h3{font-size:clamp(1.4rem,2.2vw,1.9rem);margin-bottom:.35rem}
