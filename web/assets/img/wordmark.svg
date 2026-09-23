@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 15 1260 475" role="img" aria-labelledby="title desc">
+  <title id="title">Buque wordmark 09 — clean redraw</title>
+  <desc id="desc">Redibujo vectorial monolineal del wordmark Buque, con curvas suaves y terminales redondeados.</desc>
+  <g fill="none" stroke="#16120F" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
+    <!-- b -->
+    <path d="M60 50V238C60 302 103 340 165 340C236 340 285 293 285 225C285 159 237 117 177 117C149 117 125 124 107 139"/>
+    <!-- u -->
+    <path d="M340 125V245C340 306 376 340 429 340C482 340 520 306 520 245V125"/>
+    <!-- q -->
+    <path d="M675 118C610 118 565 164 565 229C565 294 610 340 675 340C740 340 785 294 785 229C785 164 740 118 675 118Z"/>
+    <path d="M735 320C711 338 699 369 699 407C699 437 709 453 727 453C751 453 763 426 763 382V330"/>
+    <!-- u -->
+    <path d="M830 125V245C830 306 866 340 919 340C972 340 1010 306 1010 245V125"/>
+    <!-- e -->
+    <path d="M1245 302C1223 327 1194 340 1160 340C1094 340 1050 294 1050 229C1050 164 1094 118 1157 118C1217 118 1252 160 1252 221H1065"/>
+  </g>
+</svg>
