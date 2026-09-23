@@ -271,31 +271,55 @@ p{margin:0 0 1em}
 }
 
 /* =========================================================
-   MANIFIESTO — ritmo CORRIENTE
+   NOSOTROS — ritmo CORRIENTE
    ========================================================= */
-.manifiesto{
+.nosotros{
   background:var(--crema);color:var(--carbon);
   padding:clamp(5rem,14vh,9rem) var(--m-corriente);
 }
-.manifiesto__grid{
-  display:grid;grid-template-columns:1.15fr .85fr;gap:var(--g-corriente);
-  column-gap:clamp(2rem,6vw,6rem);
+.nosotros .label{color:var(--gris);max-width:1500px;margin-inline:auto}
+
+.nosotros__grid{
+  display:grid;grid-template-columns:.85fr 1.15fr;
+  gap:clamp(2rem,5vw,5rem);
+  align-items:start;
   max-width:1500px;margin-inline:auto;
 }
-.manifiesto .label{color:var(--gris);max-width:1500px;margin-inline:auto}
-.manifiesto__title{
-  font-size:clamp(2rem,4.4vw,3.4rem);   /* 64–80 px */
-  letter-spacing:-.03em;line-height:1.02;
-}
-.manifiesto__body{font-size:clamp(1rem,1.25vw,1.15rem);color:#3B332C;max-width:52ch}
 
-.stats{display:grid;gap:1.2rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(18,16,15,.14)}
-.stats li{display:flex;align-items:baseline;gap:1rem}
-.stats b{
-  font-family:var(--display);font-weight:800;font-size:2.4rem;line-height:1;
-  color:var(--naranja);min-width:2.6ch;letter-spacing:-.04em;
+/* --- retrato --- */
+.retrato{margin:0;position:sticky;top:clamp(6rem,14vh,8rem)}
+.retrato img{
+  width:100%;height:auto;display:block;
+  border-radius:22px;
+  background:var(--arena-claro);
 }
-.stats span{font-size:.92rem;color:var(--gris)}
+.retrato figcaption{
+  display:flex;flex-direction:column;gap:.25rem;
+  margin-top:1.2rem;padding-left:1rem;
+  border-left:3px solid var(--naranja);
+}
+.retrato b{
+  font-family:var(--display);font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(1.1rem,1.6vw,1.35rem);
+}
+.retrato span{
+  font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#6A5B4C;
+}
+
+/* --- texto --- */
+.nosotros__texto{font-size:clamp(1rem,1.2vw,1.12rem);color:#3B332C;max-width:60ch}
+.nosotros__titulo{
+  font-size:clamp(1.7rem,3.2vw,2.7rem);
+  letter-spacing:-.03em;line-height:1.05;color:var(--carbon);
+  margin-bottom:1.6rem;
+}
+.nosotros__cierre{
+  margin:2rem 0 1.8rem;padding-left:1.2rem;
+  border-left:3px solid var(--naranja);
+  font-style:italic;font-size:clamp(1.05rem,1.5vw,1.25rem);
+  color:var(--carbon);
+}
+.nosotros .btn--carbon{margin-top:.2rem}
 
 /* =========================================================
    BANDA DE TEXTURA
@@ -591,7 +615,8 @@ a.aliado__surface{display:grid;place-items:center}
    RESPONSIVE
    ========================================================= */
 @media (max-width:1024px){
-  .manifiesto__grid,.metodo{grid-template-columns:1fr}
+  .nosotros__grid,.metodo{grid-template-columns:1fr}
+  .retrato{position:static;max-width:460px}
   .metodo__aside{position:static}
   .cards{grid-template-columns:1fr}
   .aliados__grid{grid-template-columns:1fr}
