@@ -247,14 +247,26 @@ p{margin:0 0 1em}
   background:var(--naranja);color:var(--carbon);
   padding:.9rem 0;overflow:hidden;border-block:1px solid var(--carbon);
 }
-.ticker__track{display:flex;width:max-content;animation:rodar 34s linear infinite;will-change:transform}
+.ticker__track{
+  --copias:4;
+  display:flex;width:max-content;
+  animation:rodar 34s linear infinite;
+  /* el arrastre del scroll viaja en transform, sobre la animación */
+  transition:transform .45s cubic-bezier(.22,.7,.24,1);
+  will-change:transform;
+}
 .ticker__track span{
   font-family:var(--display);font-weight:700;
   font-size:clamp(1.3rem,3vw,2.1rem);letter-spacing:-.01em;
   padding-right:1.5rem;white-space:nowrap;
 }
 .ticker i{font-style:normal;padding-inline:1.5rem;opacity:.55}
-@keyframes rodar{to{translate:-50% 0}}
+/* Arranca con una copia de reserva a la izquierda y termina con otra a la
+   derecha, así el empujón del scroll nunca deja ver el corte entre copias. */
+@keyframes rodar{
+  from{translate:calc(-100% / var(--copias)) 0}
+  to{translate:calc(-200% / var(--copias)) 0}
+}
 
 /* =========================================================
    MANIFIESTO — ritmo CORRIENTE

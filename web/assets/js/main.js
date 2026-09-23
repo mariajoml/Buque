@@ -123,14 +123,10 @@
   /* ---------- barra de progreso de lectura ---------- */
   var progreso = document.getElementById('progreso');
 
-  /* ---------- parallax y ticker cinético ----------
+  /* ---------- parallax ----------
      Las capas de textura animan con translate/scale (CSS);
      el parallax viaja en transform para no pisar la animación. */
   var capas = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
-  var track = document.querySelector('.ticker__track');
-
-  var ultimoScroll = window.scrollY;
-  var desvio = 0;      /* empuje del ticker acumulado por el scroll */
   var pendiente = false;
 
   var pintar = function () {
@@ -159,27 +155,54 @@
     requestAnimationFrame(pintar);
   };
 
-  window.addEventListener('scroll', function () {
-    if (!reduce && track) {
-      desvio += (window.scrollY - ultimoScroll) * 1.6;
-      desvio = Math.max(-260, Math.min(260, desvio));
+  /* ---------- ticker: arrastre cinético ----------
+     El bucle lo lleva la animación CSS (no se congela ni salta al volver
+     de otra pestaña). El scroll solo añade un arrastre en transform,
+     acotado muy por debajo de la copia de reserva que deja la animación,
+     así la costura entre copias nunca entra en cuadro. */
+  var cinta = document.querySelector('.ticker__track');
+  var ultimoScroll = window.scrollY;
+  var reposo = null;
+
+  if (cinta && !reduce) {
+    var patron = cinta.children[0];
+
+    var ajustarCopias = function () {
+      var copia = patron.getBoundingClientRect().width;
+      if (!copia) return;
+      /* dos copias quedan de reserva; el resto tiene que cubrir la pantalla */
+      var guarda = 0;
+      while ((cinta.children.length - 2) * copia < window.innerWidth + 400 && guarda++ < 24) {
+        cinta.appendChild(patron.cloneNode(true));
+      }
+      cinta.style.setProperty('--copias', cinta.children.length);
+    };
+
+    ajustarCopias();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(ajustarCopias);  /* el ancho cambia con la tipografía */
     }
+    window.addEventListener('resize', ajustarCopias, { passive: true });
+  }
+
+  window.addEventListener('scroll', function () {
+    var delta = window.scrollY - ultimoScroll;
     ultimoScroll = window.scrollY;
+
+    if (!reduce && cinta) {
+      var arrastre = Math.max(-240, Math.min(240, -delta * 7));
+      cinta.style.transform = 'translate3d(' + arrastre.toFixed(1) + 'px,0,0)';
+      clearTimeout(reposo);
+      reposo = setTimeout(function () {
+        cinta.style.transform = 'translate3d(0,0,0)';
+      }, 130);
+    }
+
     pedirPintado();
   }, { passive: true });
 
   window.addEventListener('resize', pedirPintado, { passive: true });
   pintar();
-
-  if (!reduce && track) {
-    var relajar = function () {
-      desvio *= 0.92;
-      if (Math.abs(desvio) < 0.4) desvio = 0;
-      track.style.transform = 'translate3d(' + desvio.toFixed(1) + 'px,0,0)';
-      requestAnimationFrame(relajar);
-    };
-    requestAnimationFrame(relajar);
-  }
 
   /* ---------- textura-mar: olas en flujo ----------
      Recorrido contenido y ritmo lento, según las reglas
