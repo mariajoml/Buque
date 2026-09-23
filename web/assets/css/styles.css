@@ -290,6 +290,8 @@ p{margin:0 0 1em}
 .retrato{margin:0;position:sticky;top:clamp(6rem,14vh,8rem)}
 .retrato img{
   width:100%;height:auto;display:block;
+  /* proporción fija: el original es 2:3 y estiraría la columna */
+  aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;
   border-radius:22px;
   background:var(--arena-claro);
 }
