@@ -120,6 +120,24 @@
     counters.forEach(runCounter);
   }
 
+  /* ---------- video: YouTube solo al dar play ----------
+     Hasta el clic se muestra la miniatura local; sin JS el enlace
+     lleva directo a YouTube. */
+  document.querySelectorAll('.video[data-yt]').forEach(function (v) {
+    v.addEventListener('click', function (e) {
+      if (v.classList.contains('is-playing')) return;
+      e.preventDefault();
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + v.dataset.yt + '?autoplay=1&rel=0';
+      iframe.title = v.querySelector('img').alt;
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      iframe.allowFullscreen = true;
+      v.classList.add('is-playing');
+      v.removeAttribute('href');
+      v.replaceChildren(iframe);
+    });
+  });
+
   /* ---------- barra de progreso de lectura ---------- */
   var progreso = document.getElementById('progreso');
 

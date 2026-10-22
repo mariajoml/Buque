@@ -520,6 +520,111 @@ p{margin:0 0 1em}
 }
 
 /* =========================================================
+   EN MEDIOS
+   ========================================================= */
+.medios{
+  background:var(--crema);color:var(--carbon);
+  padding:clamp(5rem,14vh,9rem) var(--m-corriente);
+}
+.medios__head{max-width:1500px;margin:0 auto clamp(2.5rem,6vh,4rem)}
+.medios__head h2{font-size:clamp(2.2rem,4.6vw,3.6rem);margin-bottom:1.2rem}
+.medios__head p{max-width:52ch;color:#4A4139}
+.medios .label{color:var(--gris)}
+
+.medios__grid{
+  max-width:1500px;margin-inline:auto;
+  display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(1.5rem,3vw,3rem);
+  align-items:start;
+}
+.medio{display:flex;flex-direction:column;gap:1.5rem;min-width:0}
+
+/* --- video: carga YouTube solo al dar play --- */
+.video{
+  position:relative;display:block;
+  aspect-ratio:16/9;border-radius:20px;overflow:hidden;
+  background:var(--carbon);
+  transition:transform .5s var(--ease);
+}
+.video img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.video::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(18,16,15,0) 55%,rgba(18,16,15,.45));
+  pointer-events:none;
+}
+.video__play{
+  position:absolute;left:50%;top:50%;z-index:1;
+  width:clamp(64px,7vw,88px);aspect-ratio:1;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--naranja);color:var(--carbon);
+  translate:-50% -50%;
+  box-shadow:0 0 0 0 rgba(255,90,0,.45);
+  animation:latido 2.6s var(--ease) infinite;
+  transition:background .35s var(--ease),scale .35s var(--ease);
+}
+.video__play svg{width:42%;height:42%;fill:currentColor;margin-left:8%}
+@keyframes latido{
+  0%{box-shadow:0 0 0 0 rgba(255,90,0,.45)}
+  70%,100%{box-shadow:0 0 0 22px rgba(255,90,0,0)}
+}
+.video__badge,.nota__badge{
+  position:absolute;left:1.1rem;top:1.1rem;z-index:1;
+  font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  padding:.45rem .8rem;border-radius:999px;
+  background:var(--crema);color:var(--carbon);
+}
+.video:hover img{transform:scale(1.04)}
+.video:hover .video__play{background:var(--amarillo);scale:1.08}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video.is-playing::after{display:none}
+
+/* --- nota: la cita como portada --- */
+.nota{
+  position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:clamp(260px,21vw,340px);border-radius:20px;overflow:hidden;
+  padding:clamp(1.4rem,2.6vw,2.2rem);
+  padding-top:4.4rem;  /* deja libre la etiqueta */
+  background:var(--carbon);color:var(--crema);
+  transition:transform .5s var(--ease),background .5s var(--ease);
+}
+.nota__comilla{
+  position:absolute;right:clamp(1rem,2vw,1.6rem);top:-.18em;
+  font-family:var(--display);font-weight:800;line-height:1;
+  font-size:clamp(8rem,14vw,12rem);color:var(--naranja);
+  transition:color .5s var(--ease);
+}
+.nota__cita{
+  margin:0 0 .6rem;max-width:20ch;
+  font-family:var(--display);font-weight:700;letter-spacing:-.025em;line-height:1.05;
+  font-size:clamp(1.4rem,2.4vw,2rem);
+}
+.nota__trad{font-family:var(--mano);color:var(--naranja);font-size:clamp(.8rem,1vw,.95rem);
+  line-height:1.6;margin-bottom:1rem;transition:color .5s var(--ease)}
+.nota__medio{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gris);
+  transition:color .5s var(--ease)}
+.nota:hover{background:var(--naranja);color:var(--carbon)}
+.nota:hover .nota__comilla{color:var(--carbon)}
+.nota:hover .nota__trad,.nota:hover .nota__medio{color:var(--carbon)}
+
+.medio:hover .video,.medio:hover .nota{transform:translateY(-8px)}
+
+/* --- texto de cada medio --- */
+.medio__fuente{
+  font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--naranja);margin-bottom:.7rem;
+}
+.medio__info h3{font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.05;margin-bottom:.8rem}
+.medio__info p:not(.medio__fuente){color:#4A4139;font-size:.98rem;max-width:48ch;margin-bottom:1.1rem}
+.medio__enlace{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-weight:500;font-size:.95rem;
+  border-bottom:2px solid var(--carbon);padding-bottom:.15em;
+  transition:border-color .3s var(--ease),color .3s var(--ease);
+}
+.medio__enlace svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.medio__enlace:hover{border-color:var(--naranja)}
+.medio__enlace:hover svg{transform:translate(3px,-3px)}
+
+/* =========================================================
    CTA — ritmo MAR ABIERTO
    ========================================================= */
 .cta{
@@ -621,7 +726,7 @@ a.aliado__surface{display:grid;place-items:center}
   .retrato{position:static;max-width:460px}
   .metodo__aside{position:static}
   .cards{grid-template-columns:1fr}
-  .aliados__grid{grid-template-columns:1fr}
+  .aliados__grid,.medios__grid{grid-template-columns:1fr}
   .row>a{grid-template-columns:auto 1fr 44px}
   .row__desc{display:none}
 }
@@ -646,4 +751,5 @@ a.aliado__surface{display:grid;place-items:center}
   .hero__title .line>span{transform:none}
   .reveal{opacity:1;transform:none}
   .grain{animation:none}
+  .video__play{animation:none}
 }
