@@ -1,10 +1,11 @@
-name: Deploy landing to GitHub Pages
+name: Deploy landing and talks to GitHub Pages
 
 on:
   push:
     branches: [main]
     paths:
       - 'web/**'
+      - 'ignite-build/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -28,10 +29,18 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
+      - name: Armar el sitio (landing + charla Architect Your Mind)
+        run: |
+          mkdir _site
+          cp -R web/. _site/
+          mkdir _site/charlamajo1rosario
+          cp -R ignite-build/. _site/charlamajo1rosario/
+          rm -f _site/charlamajo1rosario/README.md
+
       - name: Subir el sitio estático
         uses: actions/upload-pages-artifact@v3
         with:
-          path: web
+          path: _site
 
       - id: deployment
         uses: actions/deploy-pages@v4
