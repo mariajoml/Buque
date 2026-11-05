@@ -159,6 +159,7 @@ button{font:inherit;color:inherit}
 .cover-h{font-family:var(--display);font-weight:800;font-size:156px;line-height:.9;letter-spacing:-.04em;color:var(--carbon)}
 .cover-lede{font-size:34px;font-weight:400;line-height:1.3;color:var(--ink);margin-top:44px;max-width:760px}
 .cover-name{font-size:22px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--naranja);margin-top:34px}
+.logo-ur{position:absolute;left:65px;top:38px;width:640px;height:auto}
 .wave-brand{position:absolute;right:130px;bottom:78px;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .wave-brand img{width:240px;height:auto}
 .wave-brand span{font-family:var(--mano);font-size:30px;color:var(--crema);margin-right:-40px}
@@ -470,10 +471,60 @@ button{font:inherit;color:inherit}
 /* =========================================================
    22 — CIERRE
    ========================================================= */
-.end-txt{position:absolute;left:var(--m);top:200px;width:1080px}
+.end-txt{position:absolute;left:var(--m);top:270px;width:1080px}
 .end-a{font-family:var(--display);font-weight:700;font-size:56px;letter-spacing:-.025em;color:var(--ink)}
 .end-b{font-family:var(--display);font-weight:800;font-size:160px;letter-spacing:-.05em;line-height:.9;margin-top:18px;color:var(--carbon)}
 .end-q{font-size:34px;font-weight:500;color:var(--naranja);margin-top:44px;letter-spacing:.01em}
+
+/* =========================================================
+   07B — MUROS HEREDADOS
+   ========================================================= */
+.hr-lbl{position:absolute;left:var(--m);top:110px}
+.hr-h{position:absolute;left:var(--m);top:160px;font-size:96px;letter-spacing:-.035em}
+.hr-cols{position:absolute;left:var(--m);right:var(--m);top:380px;height:380px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;align-items:end}
+.hr-col{display:flex;flex-direction:column;gap:14px;transition:opacity .8s var(--ease)}
+.hr-col .brick{
+  display:flex;align-items:center;min-height:190px;padding:28px 30px;margin-bottom:0;
+  font-family:var(--display);font-weight:700;font-size:40px;line-height:1.08;letter-spacing:-.02em;
+  background:var(--f1);border:2px solid var(--carbon);box-shadow:10px 10px 0 var(--f3);
+  opacity:0;transform:translateY(-70px);transition:opacity .5s var(--ease),transform .8s cubic-bezier(.3,1.4,.5,1)
+}
+.hr-col .lbl{opacity:0;transition:opacity .6s var(--ease) .3s;color:var(--naranja);border-top:3px solid var(--carbon);padding-top:22px;margin-top:-14px}
+.hr-who{font-size:24px;color:var(--mute);opacity:0;transition:opacity .6s var(--ease) .4s}
+.hr-col.on .brick{opacity:1;transform:none}
+.hr-col.on .lbl,.hr-col.on .hr-who{opacity:1}
+.hr-col.dim{opacity:.35}
+.hr-end{position:absolute;left:var(--m);right:var(--m);bottom:110px;font-family:var(--display);font-weight:800;font-size:56px;letter-spacing:-.025em;line-height:1.1}
+
+/* =========================================================
+   09B — CAN DO / WILL DO
+   ========================================================= */
+.cw-left{position:absolute;left:var(--m);top:130px;width:760px}
+.cw-h{font-size:150px;letter-spacing:-.045em;line-height:.9;margin:24px 0 70px}
+.cw-h span{display:inline-block;margin:0 .12em;color:var(--mute);font-weight:300}
+.cw-h em{font-style:normal;color:var(--naranja);display:block}
+.cw-def{margin-bottom:46px}
+.cw-def .lbl{margin-bottom:12px;color:var(--carbon)}
+.cw-def .lbl.or{color:var(--naranja)}
+.cw-t{font-size:34px;line-height:1.3;color:var(--ink)}
+.cw-t b{font-weight:600;color:var(--carbon)}
+.cw-t b.or{color:var(--naranja)}
+.cw-matrix{position:absolute;left:1000px;top:150px;width:800px;height:760px}
+.cw-matrix:not(.on){visibility:hidden}
+.cw-grid{position:absolute;inset:0 0 0 60px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border-left:2px solid var(--carbon);border-bottom:2px solid var(--carbon)}
+.q{padding:34px 32px;border:1px dashed var(--ink2);display:flex;flex-direction:column;gap:10px;transition:background .8s var(--ease),color .8s var(--ease),opacity .8s var(--ease)}
+.q-n{font-family:var(--display);font-weight:800;font-size:46px;letter-spacing:-.03em;line-height:1}
+.q-s{font-size:24px;color:var(--mute);transition:color .8s var(--ease)}
+.q-k{margin-top:auto;font-family:var(--display);font-weight:700;font-size:32px;opacity:0;transition:opacity .8s var(--ease) .3s}
+.q-tr{background:var(--f1)}
+.cw-matrix.at .q:not(.q-tl){opacity:.45}
+.cw-matrix.at .q-tl{background:var(--naranja);color:var(--crema);border-color:var(--naranja)}
+.cw-matrix.at .q-tl .q-s{color:rgba(255,240,218,.85)}
+.cw-matrix.at .q-tl .q-k{opacity:1}
+.ax{position:absolute;margin:0}
+.ax-x{left:60px;bottom:-50px}
+.ax-y{left:-8px;bottom:0;transform:rotate(-90deg);transform-origin:0 0;white-space:nowrap;top:auto}
+.cw-arrow{position:absolute;left:290px;top:150px;width:220px;height:40px;fill:none;stroke:var(--carbon);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
 
 /* =========================================================
    CHROME
