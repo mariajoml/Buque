@@ -24,6 +24,18 @@
         "ignite-build"
       ],
       "port": 4174
+    },
+    {
+      "name": "think-like-a-system",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4175",
+        "--directory",
+        "think-like-a-system"
+      ],
+      "port": 4175
     }
   ]
 }

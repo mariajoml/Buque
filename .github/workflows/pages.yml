@@ -6,6 +6,7 @@ on:
     paths:
       - 'web/**'
       - 'ignite-build/**'
+      - 'think-like-a-system/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -29,13 +30,16 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
-      - name: Armar el sitio (landing + charla Architect Your Mind)
+      - name: Armar el sitio (landing + charlas)
         run: |
           mkdir _site
           cp -R web/. _site/
           mkdir _site/charlamajo1rosario
           cp -R ignite-build/. _site/charlamajo1rosario/
           rm -f _site/charlamajo1rosario/README.md
+          mkdir _site/charlamajo2rosario
+          cp -R think-like-a-system/. _site/charlamajo2rosario/
+          rm -f _site/charlamajo2rosario/README.md
 
       - name: Subir el sitio estático
         uses: actions/upload-pages-artifact@v3

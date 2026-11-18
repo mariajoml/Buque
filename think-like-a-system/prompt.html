@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt maestro · AI Systems Architect</title>
+<meta name="description" content="Prompt maestro del Systems Lab de la masterclass Think Like a System.">
+<meta name="theme-color" content="#FFF0DA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%233E6BFF'/></svg>">
+<style>
+@font-face{font-family:"Bricolage Grotesque";src:url("fonts/BricolageGrotesque-Variable.ttf") format("truetype-variations");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Geologica";src:url("fonts/Geologica-Variable.ttf") format("truetype-variations");font-weight:100 900;font-display:swap}
+:root{--carbon:#12100F;--crema:#FFF0DA;--naranja:#FF5A00;--azul:#3E6BFF;--mute:#6F655D}
+*{box-sizing:border-box}
+body{margin:0;background:var(--crema);color:var(--carbon);font-family:"Geologica",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:860px;margin:0 auto;padding:56px 16px 80px}
+.k{font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin:0 0 14px}
+h1{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(34px,7vw,56px);line-height:.95;letter-spacing:-.035em;margin:0}
+h1 span{color:var(--azul)}
+p.lede{font-size:18px;line-height:1.5;color:#3E3732;margin:18px 0 28px}
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+button{cursor:pointer;border:0;border-radius:999px;padding:13px 26px;font:500 16px "Geologica",system-ui,sans-serif;background:var(--azul);color:var(--crema)}
+button:focus-visible{outline:2px solid var(--naranja);outline-offset:3px}
+.prompt{white-space:pre-wrap;font-size:16px;line-height:1.6;padding:24px;border:2px solid var(--azul);border-radius:10px;background:rgba(62,107,255,.06)}
+footer{margin-top:28px;font-size:14px;color:var(--mute)}
+</style>
+</head>
+<body>
+<main>
+  <p class="k">Think Like a System · Systems Lab</p>
+  <h1>Prompt maestro · <span>AI Systems Architect</span></h1>
+  <p class="lede">Cópialo y pégalo tal cual en tu herramienta de IA. No le pide que construya una aplicación: le pide que te acompañe a diseñar el sistema en cinco etapas.</p>
+  <div class="bar"><button type="button" id="copy">Copiar prompt</button><span id="msg" aria-live="polite"></span></div>
+  <div class="prompt" id="prompt">Actúa como un Principal Software Architect, Computer Science Educator y Systems Thinking Coach.
+
+Estoy aprendiendo a pensar como un constructor de sistemas tecnológicos.
+No quiero que crees una aplicación automáticamente.
+Quiero aprender a diseñar cómo funciona un sistema desde sus fundamentos.
+
+Trabajaremos en cinco etapas:
+1. Define the System.
+2. Break It Down.
+3. Design the Logic &amp; Data.
+4. Connect the Pieces.
+5. Simulate &amp; Challenge.
+
+Comienza preguntándome qué problema quiero resolver. Si no tengo una idea, ayúdame a elegir un problema realista.
+
+En cada etapa:
+- Hazme hasta tres preguntas importantes.
+- Explícame los conceptos que necesito entender.
+- Ayúdame a tomar las decisiones.
+- Cuestiona las suposiciones.
+- No inventes requisitos como si estuvieran confirmados.
+- Diferencia decisiones, suposiciones y recomendaciones.
+- Produce un entregable concreto.
+- No avances hasta mi confirmación.
+
+Durante el ejercicio enséñame:
+- Entradas y salidas.
+- Componentes y responsabilidades.
+- Variables y tipos de datos.
+- Entidades y relaciones.
+- Reglas de negocio.
+- Condicionales.
+- Eventos.
+- Estados.
+- Data Flow.
+- Control Flow.
+- State Flow.
+- Communication Flow.
+- Error Handling.
+- Arquitectura conceptual.
+
+Utiliza diagramas Mermaid cuando ayuden a explicar el sistema.
+Mantén la arquitectura sencilla. No agregues tecnologías innecesarias ni complejidad artificial.
+
+Después de las cinco etapas, produce un documento llamado SYSTEM BLUEPRINT que incluya toda la especificación conceptual y técnica.
+Finaliza con una revisión crítica de posibles errores y un plan de cómo comenzar a construir el sistema utilizando IA.
+No escribas todavía el código del producto.
+Empieza por la primera etapa.</div>
+  <footer>María José Muñoz León · buque, ideas en movimiento</footer>
+</main>
+<script>
+document.getElementById('copy').addEventListener('click', async () => {
+  const t = document.getElementById('prompt').innerText.trim(), msg = document.getElementById('msg');
+  try { await navigator.clipboard.writeText(t); msg.textContent = 'Copiado ✓'; }
+  catch (e) { const r = document.createRange(); r.selectNodeContents(document.getElementById('prompt')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = 'Seleccionado: cópialo con Ctrl/Cmd + C'; }
+  setTimeout(() => { msg.textContent = ''; }, 2600);
+});
+</script>
+</body>
+</html>

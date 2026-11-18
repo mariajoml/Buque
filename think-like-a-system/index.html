@@ -1,0 +1,1659 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Think Like a System</title>
+<meta name="description" content="Masterclass de María José Muñoz León: cómo funcionan, se descomponen y se diseñan los sistemas digitales.">
+<meta name="theme-color" content="#12100F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%23FF5A00'/></svg>">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<div id="stage" aria-live="polite">
+
+<!-- ======================================================
+     PORTADA
+     ====================================================== -->
+<section class="slide light tpl-wave" id="cover" data-title="Portada">
+  <img class="wave-bg fade" src="img/portada-ondas.jpg" alt="" style="--d:0">
+  <img class="logo-ur rv" style="--d:.2" src="img/logo-urosario.png" alt="Universidad del Rosario — Escuela de Economía y Negocios">
+  <div class="cover-title">
+    <h1 class="cover-h rv" style="--d:.5">Think like<br>a system</h1>
+    <p class="cover-lede rv" style="--d:1">Masterclass: cómo funcionan, se descomponen y se diseñan los sistemas digitales.</p>
+    <p class="cover-name rv" style="--d:1.4">María José Muñoz León</p>
+  </div>
+  <div class="wave-brand rv" style="--d:1.8"><img src="img/buque-crema.svg" alt="buque"><span>ideas en movimiento</span></div>
+  <aside class="notes" data-time="0:00">
+    <p><b>Antes de empezar.</b> Esta portada queda en pantalla mientras entra la gente. El reloj de la masterclass arranca con el primer clic en el modo presentadora (P).</p>
+    <p><b>Mapa de las 2 horas.</b> Parte 1, charla conceptual: 70 min en seis capítulos. Parte 2, Systems Lab: 40 min en cinco etapas con temporizador. Parte 3, presentaciones y cierre: 10 min.</p>
+    <p><b>Caso conductor.</b> Toda la charla usa el mismo sistema: gestión de capacitaciones y certificaciones. Laura Gómez (estudiante 101) cursa Analítica de datos (curso 7, 40 horas). Lleva 38 horas verificadas. Su inscripción es la 5501. Cuando complete los requisitos recibirá el certificado CERT-7Q4M-2K9X.</p>
+    <p><b>Regla de la sesión:</b> aquí no se programa. Vamos a aprender a pensar como quien diseña sistemas; el código vendrá después, y la IA puede ayudar a escribirlo.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     CAPÍTULO 1
+     ====================================================== -->
+<section class="slide dark tpl-band band-or" id="ch1" data-title="Capítulo 1: What is a system?">
+  <div class="band fade" style="--d:0"><span class="band-word rv" style="--d:.2">System</span></div>
+  <div class="band-body">
+    <p class="lbl rv" style="--d:.6">Capítulo 01 · 10 min</p>
+    <p class="band-line rv" style="--d:.9">What is a system?</p>
+    <p class="band-sub rv" style="--d:1.2">Aprender a ver lo que hay detrás de la pantalla.</p>
+    <i class="band-rule" style="--d:1.4"></i>
+  </div>
+  <aside class="notes" data-time="0:00">
+    <p>Puerta del capítulo 1. Sin explicación: clic y entra la primera pregunta. El tiempo del capítulo (10 min) está repartido en sus cuatro diapositivas.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     01 — THINK LIKE A SYSTEM
+     ====================================================== -->
+<section class="slide dark" id="d01" data-title="01 · Think like a system">
+  <svg class="scene" data-scene="button" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+  <div class="sl">
+    <p class="k lbl rv"><b>01</b> Capítulo 1 · What is a system?</p>
+    <h2 class="t rv" style="--d:.15">Think like a <em>system</em></h2>
+    <div class="bd" style="grid-template-columns:760px 1fr">
+      <div class="col">
+        <p class="ph-sm rv" style="--d:.4">¿Qué pasa realmente después de que presionas un botón en una aplicación?</p>
+        <ul class="ul" data-step="2">
+          <li class="rv">La tecnología <b>no funciona como piezas aisladas</b>.</li>
+          <li class="rv" style="--d:.15">Detrás de cada producto hay <b>componentes, reglas, procesos e información</b>.</li>
+          <li class="rv" style="--d:.3"><b>Usar</b> tecnología y <b>entender cómo funciona</b> son habilidades distintas.</li>
+          <li class="rv" style="--d:.45">Construir exige <b>descomponer problemas</b> y <b>conectar soluciones</b>.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="ph rv mt" data-step="3" style="font-size:50px">What you see is the <em>interface</em>.<br>What makes it work is the <em>system</em>.</p>
+  </div>
+  <aside class="notes" data-time="2:30">
+    <p><b>Duración:</b> 2 min 30 s · Capítulo 1 (10 min).</p>
+    <p><b>Explicación pedagógica.</b> Partimos de algo que todos han hecho mil veces: tocar un botón. La meta es que la gente pase de ver una pantalla a sospechar que detrás hay una cadena de piezas trabajando juntas. Todavía no necesitamos nombres técnicos: solo la intuición de que hay un sistema.</p>
+    <p><b>Qué decir.</b> “Levanten la mano si hoy ya tocaron un botón en una app. Ahora, ¿quién podría explicar qué pasó después de tocarlo?” Deja que respondan; casi siempre dicen “se abrió la pantalla” o “se envió”.</p>
+    <p><b>[Clic]</b> — aparece la cadena. “Ese botón no hace el trabajo. Solo inicia una cadena: la interfaz le avisa al frontend, el frontend le habla a una API, la API llega al backend, el backend consulta los datos y la respuesta hace el camino de vuelta. Todo en menos de un segundo.”</p>
+    <p><b>[Clic]</b> — las cuatro ideas. Detente en la tercera: “Usar tecnología y entender cómo funciona son habilidades distintas. Casi todos somos expertos usuarios. Hoy vamos a entrenar la otra.”</p>
+    <p><b>Analogía.</b> Un restaurante: tú ves la carta y el mesero (la interfaz). Detrás están la cocina, la despensa, las recetas y la caja. El mesero no cocina: lleva pedidos y trae resultados.</p>
+    <p><b>[Clic]</b> — lee la frase en voz alta y deja que se quede en pantalla.</p>
+    <p><b>Pregunta al público.</b> “Piensa en la última app que usaste para pagar algo. ¿Cuántas piezas crees que participaron en ese pago?”</p>
+    <p><b>Conexión.</b> Abre la charla con la pregunta que vamos a responder durante 70 minutos. En la diapositiva 14 volveremos a este mismo botón, paso por paso, con todo el vocabulario que habremos aprendido.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     02 — ¿QUÉ ES UN SISTEMA?
+     ====================================================== -->
+<section class="slide light" id="d02" data-title="02 · ¿Qué es un sistema?">
+  <div class="sl">
+    <p class="k lbl rv"><b>02</b> Capítulo 1 · What is a system?</p>
+    <h2 class="t rv" style="--d:.15">¿Qué es un sistema?</h2>
+    <p class="lede rv" style="--d:.3">Un conjunto de <b>componentes que interactúan</b> entre sí, <b>dentro de ciertos límites</b>, siguiendo <b>reglas y relaciones</b> para cumplir un <b>propósito</b>.</p>
+    <div class="bd" style="margin-top:40px">
+      <div class="sysframe rv" style="--d:.45">
+        <p class="sysframe-lbl">Límite del sistema · Certificaciones</p>
+        <div class="flow">
+          <div class="node rv" data-step="1"><span class="n">INPUT</span>Entradas<small>Información, recursos o señales que recibe.</small><p class="cs">Estudiante, curso y registros de asistencia.</p></div>
+          <i class="ar rv" data-step="2"></i>
+          <div class="node or rv" data-step="2"><span class="n">PROCESS</span>Proceso<small>Operaciones y transformaciones que realiza.</small><p class="cs">Validar asistencia y calcular horas completadas.</p></div>
+          <i class="ar rv" data-step="3"></i>
+          <div class="node rv" data-step="3"><span class="n">OUTPUT</span>Salidas<small>Resultados que produce.</small><p class="cs">Resultado de elegibilidad y, si corresponde, el certificado.</p></div>
+        </div>
+        <div class="c3 grid3">
+          <div class="term" data-step="4"><p class="dt rv">Rules <small>Reglas</small></p><p class="dd rv">Condiciones y restricciones que determinan el comportamiento.</p><p class="cs rv">Mínimo 40 horas verificadas, validaciones completas y curso cerrado.</p></div>
+          <div class="term" data-step="5"><p class="dt rv">State <small>Estado</small></p><p class="dd rv">La situación del sistema en un momento dado.</p><p class="cs rv">Inscrito · en progreso · elegible · certificado.</p></div>
+          <div class="term" data-step="6"><p class="dt rv">Feedback <small>Retroalimentación</small></p><p class="dd rv">Información para evaluar o ajustar su funcionamiento.</p><p class="cs rv">Indicadores de progreso, errores y registros de auditoría.</p></div>
+        </div>
+      </div>
+      <p class="sm rv" data-step="7">Todo sistema tiene <b>límites</b> (qué queda dentro y qué fuera), <b>dependencias</b> (lo que necesita de otros) y un <b>objetivo</b> (para qué existe).</p>
+    </div>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 1.</p>
+    <p><b>Explicación pedagógica.</b> Damos una definición formal y la volvemos tangible con seis piezas. Las tres primeras (entrada, proceso, salida) son el esqueleto de cualquier sistema. Las tres siguientes (reglas, estado, retroalimentación) son las que lo hacen inteligente y controlable. Cada pieza se aterriza de inmediato en el caso de certificaciones, para que el caso se vuelva familiar desde el minuto cinco.</p>
+    <p><b>Qué decir.</b> Lee la definición despacio y subraya cuatro palabras: componentes, interactúan, límites, propósito. “Si falta alguna, no hay sistema: hay un montón de cosas sueltas.”</p>
+    <p><b>[Clic × 3]</b> — entrada, proceso, salida. “Lo que entra son los datos de Laura, su curso y su asistencia. El proceso valida y suma horas. Lo que sale es una respuesta: ¿es elegible o no? Y si lo es, un certificado.”</p>
+    <p><b>[Clic] Reglas.</b> “Sin reglas, el proceso no sabe qué decidir. Aquí la regla es: 40 horas verificadas, validaciones completas y curso cerrado.”</p>
+    <p><b>[Clic] Estado.</b> “El estado es la foto del momento. Hoy Laura está en progreso. Mañana puede estar elegible.”</p>
+    <p><b>[Clic] Retroalimentación.</b> “Es como el sistema se mira a sí mismo: cuánto progreso hay, qué falló, quién hizo qué.”</p>
+    <p><b>[Clic]</b> — límites, dependencias y objetivo. “El sistema de certificaciones no cobra matrículas ni dicta clases: eso queda fuera de su límite. Sí depende de que alguien registre la asistencia.”</p>
+    <p><b>Analogía.</b> Una lavadora: entra ropa sucia, agua y jabón; el proceso es lavar; sale ropa limpia. Las reglas son el programa elegido. El estado es “lavando” o “centrifugando”. La luz que avisa que terminó es retroalimentación.</p>
+    <p><b>Pregunta al público.</b> “¿Qué quedaría fuera del límite de este sistema?” (Respuestas útiles: pagos, contenido de las clases, nómina de profesores.)</p>
+    <p><b>Conexión.</b> Viene de la intuición del botón y le pone nombre a lo que hay detrás. Los estados y las reglas reaparecen en los capítulos 2 y 5. La retroalimentación vuelve en el flujo de errores (diapositiva 22).</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     03 — SISTEMA VS. PROCESO VS. SOFTWARE VS. PRODUCTO
+     ====================================================== -->
+<section class="slide dark" id="d03" data-title="03 · Sistema, proceso, software y producto">
+  <div class="sl">
+    <p class="k lbl rv"><b>03</b> Capítulo 1 · What is a system?</p>
+    <h2 class="t rv" style="--d:.15">Sistema, proceso, software y producto <em>no son lo mismo</em></h2>
+    <div class="bd c46">
+      <dl class="terms">
+        <div class="term" data-step="1"><dt class="rv">Sistema</dt><dd class="rv">Conjunto organizado de elementos e interacciones. Puede incluir personas, procesos y tecnología.</dd></div>
+        <div class="term" data-step="2"><dt class="rv">Proceso</dt><dd class="rv">Secuencia de actividades que transforma entradas en resultados.</dd></div>
+        <div class="term" data-step="3"><dt class="rv">Software</dt><dd class="rv">Instrucciones y programas que una computadora puede ejecutar.</dd></div>
+        <div class="term" data-step="4"><dt class="rv">Producto digital</dt><dd class="rv">Solución tecnológica que entrega valor a usuarios y puede integrar varios sistemas.</dd></div>
+      </dl>
+      <div class="nest nest-sys" data-step="1">
+        <p class="nest-lbl rv">Sistema académico de una universidad</p>
+        <div class="nest-chips rv" style="--d:.15"><span class="chip">Profesores</span><span class="chip">Estudiantes</span><span class="chip">Evaluaciones</span><span class="chip">Certificaciones</span></div>
+        <div class="nest nest-prod" data-step="4">
+          <p class="nest-lbl rv">Producto digital · plataforma web</p>
+          <div class="nest nest-soft" data-step="3">
+            <p class="nest-lbl rv">Software</p>
+            <p class="sm rv" style="--d:.1">Módulos de inscripción, seguimiento y emisión de certificados.</p>
+          </div>
+        </div>
+        <div class="nest-proc" data-step="2">
+          <p class="nest-lbl rv">Proceso de inscripción</p>
+          <div class="flow rv" style="--d:.15"><span class="pill">Solicitud</span><i class="ar or"></i><span class="pill">Revisión</span><i class="ar or"></i><span class="pill">Matrícula</span><i class="ar or"></i><span class="pill or">Inscrito</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="sm rv mt" data-step="5" style="font-size:24px">Una aplicación puede implementar <b>solo una parte</b> del sistema. La plataforma web no es el sistema académico: es una de sus piezas.</p>
+  </div>
+  <aside class="notes" data-time="2:00">
+    <p><b>Duración:</b> 2 min · Capítulo 1.</p>
+    <p><b>Explicación pedagógica.</b> Muchas personas usan “sistema”, “app”, “software” y “plataforma” como sinónimos, y eso confunde a la hora de diseñar. Aquí los separamos con una imagen de cajas anidadas: el sistema es lo más grande e incluye personas; el producto digital es una parte; el software es lo que corre dentro del producto. El proceso es diferente: no es una caja, es un recorrido que atraviesa varias de ellas.</p>
+    <p><b>[Clic] Sistema.</b> “Una universidad tiene un sistema académico: profesores, estudiantes, evaluaciones, reglas de grado. Funcionaba antes de que existiera internet.”</p>
+    <p><b>[Clic] Proceso.</b> “La inscripción es un proceso: solicitud, revisión, matrícula. Una parte puede ocurrir en papel, otra en una oficina y otra en la web.”</p>
+    <p><b>[Clic] Software.</b> “El software son las instrucciones que ejecuta la computadora: el módulo que guarda la inscripción o calcula horas.”</p>
+    <p><b>[Clic] Producto.</b> “La plataforma web es el producto: lo que el estudiante usa y valora. Integra software y se conecta con otros sistemas, como pagos o correo.”</p>
+    <p><b>[Clic]</b> — “Por eso, cuando alguien dice ‘hagamos una app’, la pregunta de un builder es: ¿qué parte del sistema va a resolver esa app, y qué parte sigue siendo personas y procesos?”</p>
+    <p><b>Analogía.</b> Un hospital es un sistema. La cita médica es un proceso. La app para pedir citas es un producto. El código que asigna horarios es software.</p>
+    <p><b>Pregunta al público.</b> “En tu trabajo, ¿qué proceso pasa hoy por correo, Excel y personas, sin un producto que lo soporte?”</p>
+    <p><b>Conexión.</b> Prepara la diapositiva 04: vamos a mirar un producto desde fuera (caja negra) y desde dentro (caja blanca).</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     04 — BLACK BOX VS. WHITE BOX
+     ====================================================== -->
+<section class="slide light" id="d04" data-title="04 · Black box vs. white box">
+  <svg class="scene" data-scene="boxes" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+  <div class="sl">
+    <p class="k lbl rv"><b>04</b> Capítulo 1 · What is a system?</p>
+    <h2 class="t rv" style="--d:.15">Black box <em>vs.</em> white box</h2>
+  </div>
+  <div class="bx-cap bx-cap-l rv" style="--d:.8">
+    <p class="lbl">Black box thinking · el usuario</p>
+    <p class="tx">Sé <b>qué entra</b> (envío dinero) y <b>qué sale</b> (recibo una confirmación). No necesito saber qué pasa adentro.</p>
+  </div>
+  <div class="bx-cap bx-cap-r rv" data-step="1" style="--d:.4">
+    <p class="lbl or">White box thinking · el arquitecto</p>
+    <p class="tx">Estudio <b>componentes internos, reglas, datos e interacciones</b>.</p>
+  </div>
+  <ol class="ol bx-leg" data-step="1">
+    <li class="rv" style="--d:.5"><b>Autenticación</b>: ¿eres tú?</li>
+    <li class="rv" style="--d:.62"><b>Autorización</b>: ¿puedes hacerlo?</li>
+    <li class="rv" style="--d:.74"><b>Validaciones</b>: monto, destino</li>
+    <li class="rv" style="--d:.86"><b>Saldo</b>: ¿alcanza?</li>
+    <li class="rv" style="--d:.98"><b>Ejecución</b> de la transacción</li>
+    <li class="rv" style="--d:1.1"><b>Registro</b> de lo ocurrido</li>
+    <li class="rv" style="--d:1.22"><b>Manejo de errores</b></li>
+  </ol>
+  <p class="bx-foot ph-sm rv" data-step="2">Un builder aprende a <em>abrir conceptualmente</em> la caja negra.</p>
+  <aside class="notes" data-time="2:30">
+    <p><b>Duración:</b> 2 min 30 s · Capítulo 1 (cierra el capítulo en 10 min).</p>
+    <p><b>Explicación pedagógica.</b> Presentamos dos maneras de mirar el mismo sistema. La caja negra es la mirada natural del usuario, y es válida: nadie necesita entender un motor para manejar. La caja blanca es la mirada de quien construye. El ejemplo bancario funciona porque todos han hecho una transferencia y todos intuyen que ahí hay riesgo.</p>
+    <p><b>Qué decir.</b> “Como usuaria, mi experiencia es simple: escribo un monto, toco enviar y aparece ‘transferencia exitosa’. Eso es una caja negra: veo la entrada y la salida.”</p>
+    <p><b>[Clic]</b> — se abre la caja blanca. Recorre los siete módulos: “Primero el sistema comprueba que soy yo: autenticación. Luego, si tengo permiso para esa operación: autorización. Valida que el monto y la cuenta destino tengan sentido. Revisa el saldo. Ejecuta la transacción, y ese es el corazón, por eso está en naranja. Registra lo que pasó. Y si algo falla en cualquier punto, maneja el error sin dejar el dinero a medio camino.”</p>
+    <p><b>[Clic]</b> — la frase. “Abrir la caja no significa saber programar cada pieza. Significa poder nombrarlas, entender su orden y preguntar qué pasa si una falla.”</p>
+    <p><b>Analogía.</b> Un cajero automático: el usuario ve tarjeta, clave y billetes. El técnico ve lector, verificación con el banco, dispensador, registro y alarma.</p>
+    <p><b>Pregunta al público.</b> “¿Qué pasaría si el sistema descontara el dinero de tu cuenta pero fallara antes de acreditarlo en la otra?” Así anticipas consistencia (diapositiva 17) y errores (22).</p>
+    <p><b>Conexión.</b> Cierra el capítulo 1: ya sabemos qué es un sistema y cómo mirarlo por dentro. El capítulo 2 baja un nivel: cómo “piensa” la computadora que ejecuta cada una de esas piezas.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     CAPÍTULO 2
+     ====================================================== -->
+<section class="slide dark tpl-band band-pk" id="ch2" data-title="Capítulo 2: Think like a computer">
+  <div class="band fade" style="--d:0"><span class="band-word rv" style="--d:.2">Logic</span></div>
+  <div class="band-body">
+    <p class="lbl rv" style="--d:.6">Capítulo 02 · 15 min</p>
+    <p class="band-line rv" style="--d:.9">Think like a computer</p>
+    <p class="band-sub rv" style="--d:1.2">Instrucciones, datos, decisiones y estados, sin escribir una línea de código.</p>
+    <i class="band-rule" style="--d:1.4"></i>
+  </div>
+  <aside class="notes" data-time="0:00">
+    <p>Puerta del capítulo 2. Aclara en una frase: “Vamos a hablar de cómo razona una computadora, pero no vamos a escribir código. Vamos a aprender la lógica que hay debajo del código.”</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     05 — LAS COMPUTADORAS EJECUTAN INSTRUCCIONES
+     ====================================================== -->
+<section class="slide dark" id="d05" data-title="05 · Las computadoras ejecutan instrucciones">
+  <div class="sl">
+    <p class="k lbl rv"><b>05</b> Capítulo 2 · Think like a computer</p>
+    <h2 class="t rv" style="--d:.15">Las computadoras no entienden intenciones. <em>Ejecutan instrucciones.</em></h2>
+    <div class="bd c46" style="margin-top:40px">
+      <dl class="terms">
+        <div class="term"><dt class="rv" style="--d:.3">Algoritmo</dt><dd class="rv" style="--d:.35">Conjunto finito de pasos precisos que resuelve un problema.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.4">Secuencia lógica</dt><dd class="rv" style="--d:.45">Los pasos se ejecutan uno tras otro, en el <b>orden</b> escrito. Cambiar el orden cambia el resultado.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.5">Procedimiento</dt><dd class="rv" style="--d:.55">Un grupo de pasos con nombre que se puede reutilizar: “preparar sándwich”.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.6">Ambigua vs. ejecutable</dt><dd class="rv" style="--d:.65">“Prepara un sándwich” supone que el otro sabe. Una instrucción ejecutable no deja nada a la interpretación.</dd></div>
+      </dl>
+      <div class="col">
+        <p class="ph-sm rv" style="--d:.5"><s class="amb">“Prepara un sándwich.”</s></p>
+        <ol class="ol" data-step="1" data-at="2">
+          <li class="rv"><b>Saca</b> dos tajadas de pan de la bolsa.</li>
+          <li class="rv" style="--d:.08">Ponlas sobre el plato.</li>
+          <li class="rv sw-miss" style="--d:.16"><b>Abre</b> el frasco de mantequilla.</li>
+          <li class="rv" style="--d:.24">Con el cuchillo, <b>unta</b> mantequilla en una cara de una tajada.</li>
+          <li class="rv" style="--d:.32">Pon una tajada de queso sobre la mantequilla.</li>
+          <li class="rv sw-order" style="--d:.4"><b>Cubre</b> con la otra tajada.</li>
+          <li class="rv" style="--d:.48">Cierra el frasco y entrega el plato.</li>
+        </ol>
+        <div class="note rv" data-step="2"><p>Si <b>falta el paso 03</b>, el 04 no se puede ejecutar. Si el <b>06 va antes del 04</b>, untas mantequilla sobre un sándwich ya cerrado. La computadora no corrige: <b>obedece</b>.</p></div>
+      </div>
+    </div>
+    <div class="note bl rv mt" data-step="3"><p>Con la IA pasa lo mismo: <b>“créame una app”</b> es “prepara un sándwich”. Cuanto más precisas sean tus instrucciones, más útil será lo que construya.</p></div>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 2 (15 min).</p>
+    <p><b>Explicación pedagógica.</b> La idea más importante del capítulo: una computadora no adivina. Ejecuta exactamente lo que le dicen, en el orden en que se lo dicen. Un algoritmo es una receta sin ambigüedad. El ejercicio del sándwich es clásico porque todos “saben” hacer uno, pero nadie ha tenido que explicarlo paso a paso a alguien que lo toma todo al pie de la letra.</p>
+    <p><b>Qué decir.</b> “Imaginen que tienen un asistente que hace exactamente lo que dicen, ni más ni menos. Le digo ‘prepara un sándwich’. ¿Qué hace?” Respuesta: nada, o algo raro, porque no sabe qué es preparar, qué pan ni qué relleno.</p>
+    <p><b>[Clic]</b> — los siete pasos. Léelos con voz de robot. “Ahora sí es ejecutable: cada paso es una acción concreta sobre un objeto concreto.”</p>
+    <p><b>[Clic]</b> — los dos errores. “Si olvido abrir el frasco, el paso de untar falla. Si cambio el orden, el resultado es absurdo. Eso es exactamente lo que es un ‘bug’: una instrucción que falta o que está en el lugar equivocado.”</p>
+    <p><b>Opcional, si hay energía:</b> pide un voluntario que siga tus instrucciones literalmente con un objeto imaginario. Funciona muy bien para romper el hielo.</p>
+    <p><b>[Clic]</b> — la nota azul. “Fíjense en el color: azul es IA. Cuando le pedimos algo a una herramienta de IA, nosotros somos quien da las instrucciones. Si pedimos ‘una app de certificados’, la IA va a rellenar lo que no dijimos con suposiciones.”</p>
+    <p><b>Pregunta al público.</b> “¿Qué instrucción das en tu trabajo que te parece clara, pero que siempre termina mal ejecutada?”</p>
+    <p><b>Conexión.</b> Viene de la caja blanca: cada módulo del banco ejecuta pasos así. A continuación veremos con qué trabajan esos pasos: los datos y sus tipos.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     06 — VARIABLES Y TIPOS DE DATOS
+     ====================================================== -->
+<section class="slide light" id="d06" data-title="06 · Variables y tipos de datos">
+  <div class="sl">
+    <p class="k lbl rv"><b>06</b> Capítulo 2 · Think like a computer</p>
+    <h2 class="t rv" style="--d:.15">Variables y tipos de datos</h2>
+    <p class="lede rv" style="--d:.3">Una <b>variable</b> es un espacio con nombre que guarda un <b>valor</b>. El <b>tipo de dato</b> dice qué clase de valor es y qué operaciones admite.</p>
+    <div class="bd c64" style="margin-top:36px">
+      <div class="fich rv" style="--d:.45">
+        <header>Lo que el sistema sabe de Laura <span>Caso · certificaciones</span></header>
+        <div class="fr"><span class="a">Nombre del estudiante</span><span class="v">Laura Gómez</span><span class="ty">Texto</span></div>
+        <div class="fr hot"><span class="a">Horas completadas</span><span class="v">38</span><span class="ty">Número</span></div>
+        <div class="fr hot"><span class="a">Horas requeridas</span><span class="v">40</span><span class="ty">Número</span></div>
+        <div class="fr"><span class="a">Asistencia verificada</span><span class="v">Sí</span><span class="ty">Booleano</span></div>
+        <div class="fr"><span class="a">Curso cerrado</span><span class="v">No</span><span class="ty">Booleano</span></div>
+        <div class="fr"><span class="a">Cursos inscritos</span><span class="v">Analítica de datos · Excel avanzado</span><span class="ty">Lista</span></div>
+        <div class="fr"><span class="a">Estudiante</span><span class="v">Ficha: id 101, nombre, correo</span><span class="ty">Objeto</span></div>
+      </div>
+      <div class="col">
+        <dl class="terms" data-step="1">
+          <div class="term"><dt class="rv">Texto · Número</dt><dd class="rv">Palabras para mostrar; cantidades con las que se puede calcular.</dd></div>
+          <div class="term"><dt class="rv" style="--d:.1">Booleano</dt><dd class="rv" style="--d:.1">Solo dos valores: sí o no, verdadero o falso.</dd></div>
+          <div class="term"><dt class="rv" style="--d:.2">Lista · Objeto</dt><dd class="rv" style="--d:.2">Una colección ordenada de valores; una ficha con varios atributos que describen una cosa.</dd></div>
+        </dl>
+        <div class="rule-top" data-step="2">
+          <p class="lbl rv">Datos vs. operaciones sobre datos</p>
+          <p class="tx rv" style="--d:.1"><b>Dato:</b> 38 horas. <b>Operación:</b> comparar 38 con 40 → no alcanza. Calcular 40 − 38 → faltan <b class="or">2 horas</b>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 2.</p>
+    <p><b>Explicación pedagógica.</b> Para que una computadora tome decisiones, la información tiene que estar estructurada: cada dato con un nombre, un valor y un tipo. No usamos código: usamos una ficha que cualquiera entiende, con tres columnas (qué es, cuánto vale, de qué tipo es). El tipo importa porque define qué se puede hacer: con un número se suma, con un texto no; un booleano solo responde sí o no.</p>
+    <p><b>Qué decir.</b> “Una variable es como una caja con etiqueta. La etiqueta dice ‘Horas completadas’. Adentro hay un 38. Mañana puede haber un 40: por eso se llama variable, porque su valor puede cambiar.”</p>
+    <p>Recorre la ficha y explica qué representa cada fila y cómo participa en una regla. “Nombre” es texto: sirve para mostrar y para el certificado, pero no se calcula con él. “Horas completadas” y “Horas requeridas” son números: se comparan. “Asistencia verificada” y “Curso cerrado” son booleanos: son interruptores que se cumplen o no. “Cursos inscritos” es una lista: Laura puede tener varios. Y “Estudiante” es un objeto: una ficha que agrupa id, nombre y correo.</p>
+    <p><b>[Clic]</b> — los tipos. “Si el sistema guardara las horas como texto, ‘38’ y ‘40’ serían palabras, y comparar palabras no dice cuál es mayor de la forma que esperamos. Elegir bien el tipo evita errores.”</p>
+    <p><b>[Clic]</b> — datos vs. operaciones. “El dato es la materia prima. La operación es lo que hacemos con él. El sistema guarda 38; calcula que faltan 2.”</p>
+    <p><b>Analogía.</b> Un formulario en papel: cada casilla tiene un nombre impreso (la variable), lo que escribes (el valor) y reglas de formato, como “solo números” o “marque sí o no” (el tipo).</p>
+    <p><b>Pregunta al público.</b> “El correo de Laura, ¿qué tipo de dato es? ¿Y su fecha de inscripción?” (Texto; fecha. Los sistemas también tienen tipos de fecha.)</p>
+    <p><b>Conexión.</b> Viene del algoritmo: los pasos operan sobre datos. A continuación usamos estos datos para tomar decisiones.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     07 — CONDICIONES, BUCLES Y DECISIONES
+     ====================================================== -->
+<section class="slide dark" id="d07" data-title="07 · Condiciones, bucles y decisiones">
+  <div class="sl">
+    <p class="k lbl rv"><b>07</b> Capítulo 2 · Think like a computer</p>
+    <h2 class="t rv" style="--d:.15">Condiciones, bucles y decisiones</h2>
+    <div class="bd" style="grid-template-columns:420px 1fr 520px;margin-top:40px">
+      <div class="col" data-step="1">
+        <p class="lbl rv">Comparar</p>
+        <table class="tbl cmp rv" style="--d:.1">
+          <tr><td><b>=</b></td><td>igual a</td></tr>
+          <tr><td><b>≠</b></td><td>distinto de</td></tr>
+          <tr><td><b>&gt; · ≥</b></td><td>mayor · mayor o igual</td></tr>
+          <tr><td><b>&lt; · ≤</b></td><td>menor · menor o igual</td></tr>
+        </table>
+        <p class="lbl rv" style="--d:.2;margin-top:10px">Combinar</p>
+        <p class="tx rv" style="--d:.25"><b class="or">Y</b>: deben cumplirse <b>todas</b>.<br><b class="or">O</b>: basta con <b>una</b>.</p>
+      </div>
+      <div class="col" data-step="2">
+        <p class="lbl rv">Decidir · si… entonces… si no…</p>
+        <div class="node dec rv" style="--d:.1"><span class="n">CONDICIÓN</span>¿Horas ≥ 40 <b class="or">Y</b> asistencia verificada <b class="or">Y</b> curso cerrado?</div>
+        <div class="branch rv" style="--d:.3">
+          <div><span class="chip fill">Sí</span><div class="pill or">Elegible</div></div>
+          <div><span class="chip">No</span><div class="pill">Sigue en progreso</div></div>
+        </div>
+        <p class="sm rv" style="--d:.45">“Curso cerrado” llega ya calculado como sí o no: otra parte del sistema lo decidió antes.</p>
+      </div>
+      <div class="col" data-step="3">
+        <p class="lbl rv">Repetir · para cada uno…</p>
+        <div class="loop rv" style="--d:.1">
+          <span class="pill">Laura</span><span class="pill">Andrés</span><span class="pill">Camila</span><span class="pill ghost">…</span>
+        </div>
+        <p class="tx rv" style="--d:.25">Para <b>cada estudiante</b> de la lista: evaluar elegibilidad y pasar al siguiente.</p>
+        <p class="tx rv" style="--d:.35"><b>Termina</b> cuando no quedan estudiantes por revisar.</p>
+      </div>
+    </div>
+    <p class="sm rv mt" data-step="3" style="font-size:24px">Una <b>decisión</b> se toma una vez sobre un caso. Un <b>bucle</b> repite la misma decisión sobre muchos casos. Las reglas deben ser <b>explícitas</b>: la computadora no completa lo que no se dijo.</p>
+  </div>
+  <aside class="notes" data-time="3:30">
+    <p><b>Duración:</b> 3 min 30 s · Capítulo 2.</p>
+    <p><b>Explicación pedagógica.</b> Tres piezas de lógica que existen en todos los sistemas. Comparar produce un sí o un no. Decidir elige un camino según ese sí o no. Repetir aplica la misma lógica a muchos elementos. Lo enseñamos con lenguaje natural y un diagrama, sin sintaxis. La regla de certificación usa tres condiciones unidas con Y, lo que muestra por qué las reglas tienen que ser explícitas.</p>
+    <p><b>[Clic] Comparar.</b> “Comparar es preguntar: ¿38 es mayor o igual que 40? La respuesta no es un número, es un sí o un no.” Explica Y frente a O: “Para certificarse no basta con tener las horas: Laura necesita las horas Y la asistencia verificada Y el curso cerrado. Si fuera O, bastaría con una de las tres y certificaríamos a alguien que no terminó.”</p>
+    <p><b>[Clic] Decidir.</b> “Si se cumplen las tres, el sistema marca elegible. Si no, sigue en progreso. Siempre hay que definir qué pasa en el ‘si no’: muchos errores nacen de olvidarlo.” Aclara la nota: “curso cerrado” es un booleano calculado antes, quizás cuando el coordinador cerró el curso.</p>
+    <p><b>[Clic] Repetir.</b> “Al cerrar el curso queremos revisar a los 30 estudiantes. No escribimos 30 decisiones: escribimos una y la repetimos para cada uno. Y todo bucle necesita una condición de terminación. Si no la tiene, nunca para.”</p>
+    <p><b>Analogía.</b> Un profesor calificando: para cada examen de la pila (bucle), si la nota es 3 o más, aprueba; si no, reprueba (decisión). Termina cuando la pila queda vacía.</p>
+    <p><b>Pregunta al público.</b> “¿Qué pasaría si escribimos la regla con O en lugar de Y?” Y otra: “¿Qué hace el sistema con alguien que tiene exactamente 40 horas?” Por eso importa ≥ y no &gt;.</p>
+    <p><b>Conexión.</b> Viene de los datos: ahora los usamos para decidir. Esta misma decisión será el corazón del control flow (diapositiva 19).</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     08 — FUNCIONES, EVENTOS Y ESTADOS
+     ====================================================== -->
+<section class="slide light" id="d08" data-title="08 · Funciones, eventos y estados">
+  <div class="sl">
+    <p class="k lbl rv"><b>08</b> Capítulo 2 · Think like a computer</p>
+    <h2 class="t rv" style="--d:.15">Funciones, eventos y estados</h2>
+    <div class="bd c3" style="margin-top:44px">
+      <div class="col" data-step="1">
+        <p class="lbl or rv">Función</p>
+        <p class="tx rv" style="--d:.1">Un bloque de lógica que <b>recibe entradas</b>, <b>ejecuta operaciones</b> y puede <b>devolver un resultado</b>.</p>
+        <div class="vflow rv" style="--d:.25">
+          <div class="node ghost">Entrada: el estudiante</div>
+          <i class="ar dn"></i>
+          <div class="node or">Evaluar elegibilidad</div>
+          <i class="ar dn"></i>
+          <div class="node">Resultado: elegible / no elegible</div>
+        </div>
+      </div>
+      <div class="col" data-step="2">
+        <p class="lbl or rv">Evento</p>
+        <p class="tx rv" style="--d:.1">Algo que <b>sucede</b> y puede <b>iniciar un comportamiento</b>.</p>
+        <div class="evt rv" style="--d:.25"><span class="evt-dot"></span>Asistencia registrada</div>
+        <p class="sm rv" style="--d:.35">Otros: curso cerrado · certificado emitido · inscripción creada.</p>
+      </div>
+      <div class="col" data-step="3">
+        <p class="lbl or rv">Estado</p>
+        <p class="tx rv" style="--d:.1">La <b>condición</b> en la que se encuentra una entidad o un proceso.</p>
+        <div class="states rv" style="--d:.25">
+          <span class="pill">Inscrito</span><span class="pill">En progreso</span><span class="pill or">Elegible</span><span class="pill">Certificado</span>
+        </div>
+      </div>
+    </div>
+    <div class="flow chain4 rv mt" data-step="4">
+      <div class="node soft"><span class="n">EVENTO</span>Asistencia registrada</div><i class="ar"></i>
+      <div class="node soft"><span class="n">REGLA</span>¿Ya suma 40 h y todo está validado?</div><i class="ar"></i>
+      <div class="node or"><span class="n">TRANSICIÓN</span>En progreso → Elegible</div>
+    </div>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 2.</p>
+    <p><b>Explicación pedagógica.</b> Tres conceptos que conectan la lógica con el comportamiento real de un sistema. La función empaqueta lógica reutilizable. El evento es el disparador: algo que pasa en el mundo o en el sistema. El estado es la memoria de dónde está cada cosa. La última línea los une: un evento solo provoca un cambio de estado si se cumple una regla.</p>
+    <p><b>[Clic] Función.</b> “Evaluar elegibilidad es una función: le entregas un estudiante y te devuelve una respuesta. No importa si la llamas una vez o mil, siempre hace lo mismo. Así no repetimos la regla en diez lugares distintos.”</p>
+    <p><b>[Clic] Evento.</b> “Un instructor registra asistencia. Eso es un evento: un hecho con fecha y hora. Por sí solo no decide nada, pero puede despertar a otras partes del sistema.”</p>
+    <p><b>[Clic] Estado.</b> “Cada inscripción está siempre en un estado. Laura hoy está en progreso.”</p>
+    <p><b>[Clic]</b> — la cadena. “Llega el evento. El sistema aplica la regla. Si se cumple, ocurre la transición: de en progreso a elegible. Si no se cumple, el estado no cambia. Los eventos no cambian estados por arte de magia: siempre pasan por una regla.”</p>
+    <p><b>Analogía.</b> Un semáforo. El temporizador que se cumple es el evento; la regla dice “de verde solo se pasa a amarillo”; los colores son los estados; la lógica que cambia la luz es la función.</p>
+    <p><b>Pregunta al público.</b> “¿Qué evento debería pasar a una inscripción de elegible a certificado?” (Que se emita el certificado correctamente.)</p>
+    <p><b>Conexión.</b> Prepara el state flow de la diapositiva 20. Antes, en la 09, vemos cómo organizar todas estas piezas para que el sistema no sea un enredo.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     09 — DECOMPOSITION & ABSTRACTION
+     ====================================================== -->
+<section class="slide dark" id="d09" data-title="09 · Decomposition & abstraction">
+  <div class="sl">
+    <p class="k lbl rv"><b>09</b> Capítulo 2 · Think like a computer</p>
+    <h2 class="t rv" style="--d:.15">Decomposition &amp; abstraction</h2>
+    <div class="bd" style="grid-template-columns:640px 1fr;margin-top:40px">
+      <dl class="terms">
+        <div class="term"><dt class="rv" style="--d:.3">Decomposition</dt><dd class="rv" style="--d:.32">Dividir un problema complejo en problemas más pequeños.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.4">Abstraction</dt><dd class="rv" style="--d:.42">Concentrarse en lo relevante y ocultar los detalles que no se necesitan en ese nivel.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.5">Modularity</dt><dd class="rv" style="--d:.52">Organizar funciones en componentes con responsabilidades definidas.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.6">Separation of concerns</dt><dd class="rv" style="--d:.62">No mezclar responsabilidades distintas sin necesidad.</dd></div>
+      </dl>
+      <div class="col">
+        <div class="mono rv" data-dim-after="0" style="--d:.5"><span>Una sola pieza que lo hace <b>todo</b></span></div>
+        <div class="mods" data-step="1">
+          <div class="node rv">Estudiantes</div>
+          <div class="node rv" style="--d:.06">Cursos</div>
+          <div class="node rv" style="--d:.12">Inscripciones</div>
+          <div class="node rv" style="--d:.18">Progreso</div>
+          <div class="node or rv" style="--d:.24">Elegibilidad</div>
+          <div class="node rv" style="--d:.3">Certificados</div>
+          <div class="node rv" style="--d:.36">Validación pública</div>
+        </div>
+        <div class="c2 cc" data-step="2" style="display:grid;gap:28px">
+          <p class="tx rv"><b>Cohesión alta:</b> cada módulo hace una cosa y la hace completa.</p>
+          <p class="tx rv" style="--d:.1"><b>Acoplamiento bajo:</b> un módulo depende lo mínimo de los demás.</p>
+        </div>
+      </div>
+    </div>
+    <p class="ph rv mt" data-step="3" style="font-size:46px">Complex systems become understandable when we break them into <em>meaningful parts</em>.</p>
+  </div>
+  <aside class="notes" data-time="2:30">
+    <p><b>Duración:</b> 2 min 30 s · Capítulo 2 (cierra el capítulo en 15 min).</p>
+    <p><b>Explicación pedagógica.</b> Este es el núcleo del pensamiento computacional y el puente hacia la arquitectura. Descomponer es dividir. Abstraer es decidir qué detalles ignorar en cada nivel. Modularidad y separación de responsabilidades son la forma de organizar lo que descompusimos. Cohesión y acoplamiento son las dos medidas para saber si lo organizamos bien.</p>
+    <p><b>Qué decir.</b> “Imaginen que todo el sistema de certificaciones fuera una sola pieza gigante. Cada vez que cambiamos cómo se calcula el progreso, nos arriesgamos a romper la emisión de certificados. Nadie entiende el conjunto y nadie se atreve a tocarlo.”</p>
+    <p><b>[Clic]</b> — la pieza se divide en siete módulos. Nómbralos y di qué hace cada uno en una frase. “Elegibilidad está en naranja porque es donde vive la regla de las 40 horas.”</p>
+    <p><b>Aclaración importante:</b> “Siete módulos no son siete servidores ni siete apps. Pueden vivir dentro de una misma aplicación. Separar responsabilidades es una decisión de organización, no de infraestructura.”</p>
+    <p><b>[Clic]</b> — cohesión y acoplamiento. “Cohesión alta: el módulo de certificados se ocupa de certificados, no de inscribir estudiantes. Acoplamiento bajo: si cambio cómo se guardan los cursos, el módulo de validación pública no debería enterarse.”</p>
+    <p><b>Abstracción con ejemplo:</b> “Cuando diseño la validación pública, no necesito saber cómo se registró cada hora. Solo necesito saber si el certificado existe y está vigente. Eso es abstraer.”</p>
+    <p><b>Analogía.</b> Una cocina profesional: hay estaciones de fríos, parrilla y postres. Cada una tiene su responsabilidad (cohesión) y se comunican con comandas, sin meterse en la estación del otro (bajo acoplamiento).</p>
+    <p><b>[Clic]</b> — lee la frase.</p>
+    <p><b>Conexión.</b> Cierra el capítulo 2: ya sabemos cómo razona y cómo se organiza la lógica. El capítulo 3 muestra dónde vive cada pieza dentro de un sistema digital real.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     CAPÍTULO 3
+     ====================================================== -->
+<section class="slide dark tpl-band band-or" id="ch3" data-title="Capítulo 3: Anatomy of a digital system">
+  <div class="band fade" style="--d:0"><span class="band-word rv" style="--d:.2;font-size:200px">Anatomy</span></div>
+  <div class="band-body">
+    <p class="lbl rv" style="--d:.6">Capítulo 03 · 15 min</p>
+    <p class="band-line rv" style="--d:.9">Anatomy of a digital system</p>
+    <p class="band-sub rv" style="--d:1.2">Dónde vive cada pieza y cómo se hablan entre ellas.</p>
+    <i class="band-rule" style="--d:1.4"></i>
+  </div>
+  <aside class="notes" data-time="0:00">
+    <p>Puerta del capítulo 3. “Ya sabemos cómo piensa la lógica. Ahora vamos a ver el cuerpo: las capas de un sistema digital.”</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     10 — LAS CAPAS DE UN SISTEMA DIGITAL
+     ====================================================== -->
+<section class="slide light" id="d10" data-title="10 · Las capas de un sistema digital">
+  <svg class="scene" data-scene="layers" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+  <div class="sl">
+    <p class="k lbl rv"><b>10</b> Capítulo 3 · Anatomy of a digital system</p>
+    <h2 class="t rv" style="--d:.15">Las capas de un<br>sistema digital</h2>
+    <dl class="terms layer-list" style="width:700px;margin-top:40px;gap:14px">
+      <div class="term" data-step="5"><dt class="rv">Interfaz · Frontend</dt><dd class="rv">Lo que la persona ve y toca.</dd></div>
+      <div class="term" data-step="4"><dt class="rv">Comunicación · APIs</dt><dd class="rv">Los contratos por los que las capas se piden cosas.</dd></div>
+      <div class="term" data-step="3"><dt class="rv">Lógica · Backend</dt><dd class="rv">Reglas de negocio, validaciones y permisos.</dd></div>
+      <div class="term" data-step="2"><dt class="rv">Datos · Base de datos</dt><dd class="rv">Donde la información se guarda y se consulta.</dd></div>
+      <div class="term" data-step="1"><dt class="rv">Infraestructura</dt><dd class="rv">Servidores y servicios donde todo se ejecuta.</dd></div>
+      <div class="term" data-step="6"><dt class="rv">Servicios externos</dt><dd class="rv">Correo, pagos, identidad: piezas de terceros.</dd></div>
+    </dl>
+    <p class="sm rv mt" data-step="7" style="max-width:720px">Una arquitectura real puede <b>combinar</b>, <b>dividir</b> o <b>desplegar</b> estas capas de maneras distintas.</p>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 3 (15 min).</p>
+    <p><b>Explicación pedagógica.</b> Mostramos el sistema digital como un edificio de capas, de abajo hacia arriba. Cada capa tiene una responsabilidad y solo habla con sus vecinas a través de interfaces claras. Construirlo desde abajo refuerza la idea de que la interfaz, lo que todos ven, es la punta de algo mucho más grande.</p>
+    <p><b>[Clic] Infraestructura.</b> “Todo se apoya en máquinas: servidores propios o en la nube. Sin infraestructura no hay dónde ejecutar nada.”</p>
+    <p><b>[Clic] Datos.</b> “Encima, la base de datos: ahí viven Laura, sus cursos y cada hora verificada.”</p>
+    <p><b>[Clic] Lógica.</b> “El backend: aquí vive la regla de las 40 horas, se validan datos y se revisan permisos.”</p>
+    <p><b>[Clic] APIs.</b> “La capa de comunicación es delgada a propósito: son los contratos con los que el frontend le pide cosas al backend.”</p>
+    <p><b>[Clic] Frontend.</b> “Arriba, en naranja, lo que la persona ve: la pantalla de progreso.”</p>
+    <p><b>[Clic] Servicios externos.</b> “Y al lado, piezas que no construimos: un servicio de correo que envía el certificado o un proveedor de inicio de sesión.”</p>
+    <p><b>[Clic]</b> — “Esto es un modelo, no una ley. Una app pequeña puede tener frontend y backend en el mismo proyecto. Una grande puede dividir el backend en muchas partes. Lo importante es saber qué responsabilidad cumple cada pieza.”</p>
+    <p><b>Analogía.</b> Un edificio: cimientos (infraestructura), bodega (datos), oficinas donde se toman decisiones (backend), recepción y ascensores (APIs) y la fachada con la puerta de entrada (frontend). El servicio de mensajería que llega de afuera es un servicio externo.</p>
+    <p><b>Pregunta al público.</b> “En el sistema de certificaciones, ¿qué servicio externo usarías y por qué no lo construirías tú?”</p>
+    <p><b>Conexión.</b> Viene de la descomposición en módulos: ahora vemos en qué capa vive cada módulo. Las diapositivas 11, 12 y 13 abren una a una las capas clave.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     11 — FRONTEND VS. BACKEND
+     ====================================================== -->
+<section class="slide dark" id="d11" data-title="11 · Frontend vs. backend">
+  <div class="sl">
+    <p class="k lbl rv"><b>11</b> Capítulo 3 · Anatomy of a digital system</p>
+    <h2 class="t rv" style="--d:.15">Frontend <em>vs.</em> backend</h2>
+    <div class="bd c2" style="margin-top:40px">
+      <div class="col fb">
+        <p class="lbl or rv" style="--d:.3">Frontend · lo que ves</p>
+        <ul class="ul rv" style="--d:.4">
+          <li><b>Presenta</b> información.</li>
+          <li><b>Recibe</b> interacciones: clics, formularios.</li>
+          <li>Maneja <b>estados visuales</b>: cargando, error, listo.</li>
+          <li><b>Envía</b> solicitudes y <b>presenta</b> respuestas.</li>
+        </ul>
+      </div>
+      <div class="col fb">
+        <p class="lbl or rv" style="--d:.5">Backend · lo que decide</p>
+        <ul class="ul rv" style="--d:.6">
+          <li><b>Procesa</b> solicitudes y <b>ejecuta reglas</b> de negocio.</li>
+          <li><b>Valida</b> la información y <b>controla permisos</b>.</li>
+          <li><b>Coordina</b> operaciones.</li>
+          <li><b>Interactúa</b> con los datos.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt" data-step="1">
+      <p class="case rv" style="margin-bottom:22px">Caso · Laura consulta su progreso</p>
+      <div class="flow">
+        <div class="node rv"><span class="n">FRONTEND</span>Solicita el progreso</div><i class="ar rv" style="--d:.1"></i>
+        <div class="node or rv" style="--d:.15"><span class="n">BACKEND</span>Verifica identidad y permisos</div><i class="ar rv" style="--d:.25"></i>
+        <div class="node or rv" style="--d:.3"><span class="n">BACKEND</span>Recupera y calcula lo autorizado</div><i class="ar rv" style="--d:.4"></i>
+        <div class="node rv" style="--d:.45"><span class="n">FRONTEND</span>Muestra “38 de 40 horas”</div>
+      </div>
+    </div>
+    <div class="note rv" data-step="2" style="margin-top:30px"><p>El frontend puede validar para <b>mejorar la experiencia</b> (avisar que falta un dato). Pero las <b>reglas y operaciones sensibles</b> las protege el backend: lo que pasa en el navegador se puede manipular.</p></div>
+  </div>
+  <aside class="notes" data-time="2:30">
+    <p><b>Duración:</b> 2 min 30 s · Capítulo 3.</p>
+    <p><b>Explicación pedagógica.</b> La división más famosa de un sistema digital. El frontend corre en el dispositivo de la persona y se ocupa de la experiencia. El backend corre en servidores que controlamos y se ocupa de las decisiones. El caso de Laura muestra que una acción sencilla cruza los dos lados.</p>
+    <p><b>Qué decir.</b> “El frontend es la vitrina y el mostrador. El backend es la bodega, la caja y el gerente.” Recorre las dos listas.</p>
+    <p><b>[Clic]</b> — el caso. “Laura toca ‘ver mi progreso’. El frontend no sabe cuántas horas tiene: lo pregunta. El backend primero comprueba que quien pregunta es Laura y que puede ver ese dato. Luego busca sus registros, suma las horas y devuelve solo lo que ella está autorizada a ver. El frontend lo pinta: 38 de 40.”</p>
+    <p><b>[Clic]</b> — la nota. “¿Por qué no dejar la regla de las 40 horas en el frontend, si sería más rápido? Porque el frontend está en manos del usuario. Alguien con conocimientos podría modificarlo y decir ‘ya tengo 40’. El backend es la fuente de autoridad.”</p>
+    <p><b>Analogía.</b> En un banco, el cajero que te atiende puede revisar que llenaste bien el formulario (validación de experiencia). Pero la decisión de aprobar un crédito la toma el área de riesgo, adentro (backend).</p>
+    <p><b>Pregunta al público.</b> “Si el frontend muestra un botón ‘Emitir certificado’ deshabilitado, ¿eso basta para impedir que alguien emita un certificado sin cumplir requisitos?” (No: el backend también tiene que verificarlo.)</p>
+    <p><b>Conexión.</b> Viene de las capas. ¿Y cómo se hablan frontend y backend? Mediante una API: es la diapositiva 12.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     12 — ¿QUÉ ES UNA API?
+     ====================================================== -->
+<section class="slide light" id="d12" data-title="12 · ¿Qué es una API?">
+  <div class="sl">
+    <p class="k lbl rv"><b>12</b> Capítulo 3 · Anatomy of a digital system</p>
+    <h2 class="t rv" style="--d:.15">¿Qué es una <em>API</em>?</h2>
+    <p class="lede rv" style="--d:.3"><b>Application Programming Interface:</b> un <b>contrato</b> que define cómo un sistema le pide algo a otro y qué recibirá de vuelta.</p>
+    <div class="bd" style="grid-template-columns:1fr 1fr;margin-top:36px;gap:56px">
+      <dl class="terms g2" data-step="1">
+        <div class="term"><dt class="rv">HTTP</dt><dd class="rv">El idioma común con el que viajan las solicitudes en la web.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.05">Endpoint</dt><dd class="rv" style="--d:.05">Una dirección específica para una operación específica.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.1">Request · Response</dt><dd class="rv" style="--d:.1">La solicitud que se envía y la respuesta que regresa.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.15">GET · POST</dt><dd class="rv" style="--d:.15">Métodos: <b>GET consulta</b> sin cambiar nada; <b>POST crea</b> o envía algo nuevo.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.2">JSON</dt><dd class="rv" style="--d:.2">Un formato estándar de texto para enviar fichas de datos.</dd></div>
+        <div class="term"><dt class="rv" style="--d:.25">Código de estado</dt><dd class="rv" style="--d:.25">Un número que resume cómo salió la solicitud.</dd></div>
+      </dl>
+      <div class="col" data-step="2">
+        <div class="msg rv">
+          <p class="lbl">Solicitud · Request</p>
+          <p class="msg-l"><span class="chip or">GET</span> Consultar el <b>progreso</b> del estudiante <b>101</b></p>
+        </div>
+        <i class="ar dn rv" style="--d:.15"></i>
+        <div class="fich rv" style="--d:.25">
+          <header>Respuesta · Response <span>Código 200</span></header>
+          <div class="fr"><span class="a">Estudiante</span><span class="v">101 · Laura Gómez</span><span class="ty">Número · texto</span></div>
+          <div class="fr hot"><span class="a">Horas completadas</span><span class="v">38 de 40</span><span class="ty">Número</span></div>
+          <div class="fr"><span class="a">Estado</span><span class="v">En progreso</span><span class="ty">Texto</span></div>
+          <div class="fr"><span class="a">Elegible</span><span class="v">No</span><span class="ty">Booleano</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="codes mt" data-step="3">
+      <div class="rv"><b>200</b>Todo salió bien</div>
+      <div class="rv" style="--d:.06"><b>400</b>La solicitud está mal hecha</div>
+      <div class="rv" style="--d:.12"><b>401</b>No sé quién eres</div>
+      <div class="rv" style="--d:.18"><b>403</b>Sé quién eres, pero no puedes</div>
+      <div class="rv" style="--d:.24"><b>404</b>Eso no existe</div>
+      <div class="rv" style="--d:.3"><b>500</b>Falló algo de nuestro lado</div>
+    </div>
+  </div>
+  <aside class="notes" data-time="4:00">
+    <p><b>Duración:</b> 4 min · Capítulo 3. Es la diapositiva más larga del capítulo: tómate el tiempo.</p>
+    <p><b>Explicación pedagógica.</b> La API es probablemente el concepto más mencionado y peor entendido. La clave es la palabra contrato: define qué puedo pedir, cómo pedirlo y qué voy a recibir, sin que yo necesite saber cómo está hecho el otro lado. Mostramos una solicitud y una respuesta reales del caso, en lenguaje natural, sin sintaxis.</p>
+    <p><b>Qué decir.</b> “API son las siglas de interfaz de programación de aplicaciones. Olviden el nombre largo y quédense con esto: es un contrato entre sistemas. Como la carta de un restaurante: te dice qué puedes pedir y qué te van a traer. No te dice cómo se cocina.”</p>
+    <p><b>[Clic]</b> — el vocabulario. HTTP: “el idioma en que viajan los mensajes en la web.” Endpoint: “una ventanilla específica: hay una para consultar progreso, otra para registrar horas, otra para validar certificados.” Request y response: “pregunta y respuesta.” GET y POST: “GET es preguntar sin cambiar nada; POST es entregar algo nuevo para que el sistema lo guarde o lo procese.” JSON: “la forma estándar de escribir fichas de datos para que otro sistema las entienda.”</p>
+    <p><b>[Clic]</b> — el ejemplo. “El frontend pide: consultar el progreso del estudiante 101. Es un GET, porque solo consulta. La respuesta llega con código 200, todo bien, y una ficha: 38 de 40 horas, en progreso, no elegible todavía.”</p>
+    <p><b>[Clic]</b> — los códigos. Explica cada uno con el caso. 400: “mandé horas negativas.” 401: “no inicié sesión.” 403: “inicié sesión como estudiante e intenté emitir un certificado.” 404: “pedí el estudiante 999 y no existe.” 500: “se cayó algo en el servidor; no es culpa del usuario.”</p>
+    <p><b>Aclaración clave:</b> “Una API no es lo mismo que el backend. El backend es donde se ejecuta la lógica. La API es la puerta y sus reglas de uso. Un sistema también puede usar APIs de otros, como la de un servicio de correo.”</p>
+    <p><b>Pregunta al público.</b> “Registrar dos horas nuevas para Laura, ¿es un GET o un POST?” (POST: crea un registro nuevo.)</p>
+    <p><b>Conexión.</b> Viene de frontend y backend: la API es el puente entre ambos. A continuación vemos quién puede usar cada puerta: autenticación y autorización.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     13 — AUTENTICACIÓN, AUTORIZACIÓN E INFRAESTRUCTURA
+     ====================================================== -->
+<section class="slide dark" id="d13" data-title="13 · Autenticación, autorización e infraestructura">
+  <div class="sl">
+    <p class="k lbl rv"><b>13</b> Capítulo 3 · Anatomy of a digital system</p>
+    <h2 class="t rv" style="--d:.15">Autenticación, autorización e infraestructura</h2>
+    <div class="bd nf c3" style="margin-top:40px">
+      <div class="term"><p class="dt rv" style="--d:.3">Autenticación</p><p class="dd rv" style="--d:.35"><b>¿Quién eres?</b> Comprobar la identidad de una persona o de un sistema. Usuarios, contraseñas, sesiones.</p></div>
+      <div class="term" data-step="1"><p class="dt rv">Autorización</p><p class="dd rv"><b>¿Qué puedes hacer?</b> Determinar qué operaciones tiene permitidas según su rol.</p></div>
+      <div class="term" data-step="3"><p class="dt rv">Infraestructura</p><p class="dd rv">Los recursos donde se ejecuta el software: servidores y servicios en la nube.</p></div>
+    </div>
+    <div class="bd c73" style="margin-top:36px">
+      <table class="tbl roles" data-step="2">
+        <tr class="rv"><th>Operación</th><th>Estudiante</th><th>Instructor</th><th>Administrador</th></tr>
+        <tr class="rv" style="--d:.1"><td>Consultar su propio avance</td><td class="yes">Sí</td><td class="no">—</td><td class="yes">Sí</td></tr>
+        <tr class="rv" style="--d:.2"><td>Registrar asistencia</td><td class="no">No</td><td class="yes">Sí</td><td class="yes">Sí</td></tr>
+        <tr class="rv" style="--d:.3"><td>Emitir un certificado</td><td class="no">No</td><td class="no">No</td><td class="yes">Sí</td></tr>
+      </table>
+      <div class="col" data-step="3">
+        <p class="lbl rv">Ambientes y despliegue</p>
+        <div class="vflow rv" style="--d:.1">
+          <div class="node ghost">Desarrollo · donde se construye</div>
+          <i class="ar dn"></i>
+          <div class="node or">Despliegue</div>
+          <i class="ar dn"></i>
+          <div class="node">Producción · donde lo usan las personas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="2:30">
+    <p><b>Duración:</b> 2 min 30 s · Capítulo 3.</p>
+    <p><b>Explicación pedagógica.</b> Dos palabras que suenan igual y significan cosas distintas, y una tercera que explica dónde vive todo. Autenticación responde “¿quién eres?”. Autorización responde “¿qué puedes hacer?”. La tabla de roles hace visible que no todos deben acceder a las mismas operaciones. La infraestructura y el despliegue cierran la anatomía: el software tiene que correr en algún lugar.</p>
+    <p><b>Qué decir.</b> “Autenticación es mostrar la cédula en la entrada del edificio. Autorización es que tu tarjeta solo abra los pisos donde trabajas.”</p>
+    <p><b>[Clic]</b> — autorización. <b>[Clic]</b> — la tabla. Recorre fila por fila. “Laura puede consultar su avance, pero no el de sus compañeros. Un instructor autorizado registra asistencia. Solo un administrador autorizado emite certificados.” Menciona usuarios y sesiones: “cuando inicias sesión, el sistema te da una especie de pase temporal; así no te pide la clave en cada clic.”</p>
+    <p><b>[Clic]</b> — infraestructura y ambientes. “El software se construye en un ambiente de desarrollo, donde equivocarse no le hace daño a nadie. Desplegar es publicar una versión en producción, donde la usan personas reales. Muchas organizaciones tienen un ambiente intermedio de pruebas.”</p>
+    <p><b>Analogía.</b> Un teatro: la taquilla verifica tu entrada (autenticación), tu boleta dice platea o palco (autorización), el edificio es la infraestructura y el ensayo general es el ambiente de pruebas antes del estreno (producción).</p>
+    <p><b>Pregunta al público.</b> “¿Debería un instructor poder corregir horas que ya registró? ¿Con qué control?” Es una buena discusión sobre permisos y auditoría.</p>
+    <p><b>Conexión.</b> Conecta con los códigos 401 y 403 de la diapositiva anterior. En la siguiente juntamos todo en un solo recorrido: qué pasa cuando presionas un botón.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     14 — ¿QUÉ SUCEDE CUANDO PRESIONAS UN BOTÓN?
+     ====================================================== -->
+<section class="slide light" id="d14" data-title="14 · ¿Qué sucede cuando presionas un botón?">
+  <div class="sl">
+    <p class="k lbl rv"><b>14</b> Capítulo 3 · Anatomy of a digital system</p>
+    <h2 class="t rv" style="--d:.15">¿Qué sucede cuando presionas un botón?</h2>
+    <div class="seq rv" style="--d:.3">
+      <div class="seq-h"><span>Estudiante</span><span>Frontend</span><span>Backend</span><span>Base de datos</span><span>Registros</span></div>
+      <div class="seq-body">
+        <div class="sq self" style="--c:1" data-step="1"><b>01</b>Inicia sesión</div>
+        <div class="sq arr" style="--a:1;--b:2" data-step="1"><b>02</b>Selecciona “Consultar progreso”</div>
+        <div class="sq arr" style="--a:2;--b:3" data-step="2"><b>03</b>Envía la solicitud</div>
+        <div class="sq self or" style="--c:3" data-step="2"><b>04</b>Autentica y autoriza</div>
+        <div class="sq arr" style="--a:3;--b:4" data-step="3"><b>05</b>Consulta la información</div>
+        <div class="sq self or" style="--c:3" data-step="3"><b>06</b>Calcula o recupera el progreso</div>
+        <div class="sq self" style="--c:3" data-step="3"><b>07</b>Construye la respuesta</div>
+        <div class="sq arr back" style="--a:2;--b:3" data-step="4"><b>08</b>El frontend recibe los datos</div>
+        <div class="sq self" style="--c:2" data-step="4"><b>09</b>La interfaz presenta el resultado</div>
+        <div class="sq arr" style="--a:3;--b:5" data-step="5"><b>10</b>Registra información operativa</div>
+      </div>
+    </div>
+    <p class="ph-sm rv mt" data-step="5">Un clic puede activar <em>múltiples operaciones coordinadas</em>.</p>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 3 (cierra el capítulo en 15 min).</p>
+    <p><b>Explicación pedagógica.</b> Volvemos a la pregunta de la diapositiva 01, ahora con vocabulario. El diagrama de secuencia muestra de izquierda a derecha quién participa y de arriba hacia abajo en qué orden. Cada paso tiene un responsable claro. Es la síntesis de todo el capítulo.</p>
+    <p><b>Qué decir.</b> “¿Se acuerdan del botón del principio? Vamos a seguirlo de verdad.”</p>
+    <p><b>[Clic] 01–02.</b> “Laura inicia sesión: queda autenticada. Toca ‘Consultar progreso’ en la interfaz.”</p>
+    <p><b>[Clic] 03–04.</b> “El frontend envía la solicitud a la API. El backend lo primero que hace es verificar: ¿es Laura? ¿puede ver esto?”</p>
+    <p><b>[Clic] 05–07.</b> “Consulta en la base de datos sus registros de horas. Calcula: suma 38. Arma la respuesta con solo lo necesario.”</p>
+    <p><b>[Clic] 08–09.</b> “La respuesta vuelve al frontend, que la presenta: 38 de 40 horas, te faltan 2.”</p>
+    <p><b>[Clic] 10.</b> “Y en paralelo, el backend deja constancia: quién consultó, cuándo, cuánto tardó. No es para Laura: es para quien opera el sistema y necesita entender qué pasa.”</p>
+    <p><b>Recalca:</b> “Diez pasos, cinco participantes, menos de un segundo. Eso es lo que hay detrás de un clic.”</p>
+    <p><b>Pregunta al público.</b> “¿En qué paso fallaría si Laura intentara ver el progreso de otra persona?” (Paso 04: autorización. Respondería 403.)</p>
+    <p><b>Conexión.</b> Cierra la anatomía. En el capítulo 4 abrimos la caja de la base de datos: cómo se representa y se guarda la información que viajó en este recorrido.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     CAPÍTULO 4
+     ====================================================== -->
+<section class="slide dark tpl-band band-pk" id="ch4" data-title="Capítulo 4: Data is the language of systems">
+  <div class="band fade" style="--d:0"><span class="band-word rv" style="--d:.2">Data</span></div>
+  <div class="band-body">
+    <p class="lbl rv" style="--d:.6">Capítulo 04 · 10 min</p>
+    <p class="band-line rv" style="--d:.9">Data is the language of systems</p>
+    <p class="band-sub rv" style="--d:1.2">Cómo se representa, se relaciona y se conserva la información.</p>
+    <i class="band-rule" style="--d:1.4"></i>
+  </div>
+  <aside class="notes" data-time="0:00">
+    <p>Puerta del capítulo 4. “Los sistemas se hablan con datos. Si los datos están mal pensados, todo lo demás falla.”</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     15 — CÓMO REPRESENTAMOS LA INFORMACIÓN
+     ====================================================== -->
+<section class="slide dark" id="d15" data-title="15 · Cómo representamos la información">
+  <div class="sl">
+    <p class="k lbl rv"><b>15</b> Capítulo 4 · Data is the language of systems</p>
+    <h2 class="t rv" style="--d:.15">Cómo representamos la información</h2>
+    <div class="bd" style="grid-template-columns:860px 1fr;margin-top:40px;gap:60px">
+      <div class="fich rv" style="--d:.35">
+        <header>Inscripción 5501 <span>Objeto</span></header>
+        <div class="fr"><span class="a">Identificador</span><span class="v">5501</span><span class="ty">ID</span></div>
+        <div class="fr"><span class="a">Estado</span><span class="v">En progreso</span><span class="ty">Texto</span></div>
+        <div class="fich rv" data-step="1">
+          <header>Estudiante <span>Objeto anidado</span></header>
+          <div class="fr"><span class="a">Identificador</span><span class="v">101</span><span class="ty">ID</span></div>
+          <div class="fr"><span class="a">Nombre</span><span class="v">Laura Gómez</span><span class="ty">Texto</span></div>
+        </div>
+        <div class="fich rv" data-step="2">
+          <header>Registros de horas <span>Lista · 3 elementos</span></header>
+          <div class="fr"><span class="a">3 nov</span><span class="v">16 h verificadas</span><span class="ty">Objeto</span></div>
+          <div class="fr"><span class="a">10 nov</span><span class="v">14 h verificadas</span><span class="ty">Objeto</span></div>
+          <div class="fr"><span class="a">17 nov</span><span class="v">8 h verificadas</span><span class="ty">Objeto</span></div>
+        </div>
+        <div class="fr hot rv" data-step="3"><span class="a">Certificado</span><span class="v">vacío · todavía no existe</span><span class="ty">Nulo</span></div>
+      </div>
+      <dl class="terms">
+        <div class="term"><dt class="rv" style="--d:.4">Objeto y atributos</dt><dd class="rv" style="--d:.45">Una ficha que describe una cosa; cada fila es un atributo con su valor.</dd></div>
+        <div class="term" data-step="1"><dt class="rv">Identificador</dt><dd class="rv">Un valor único que distingue a cada elemento, aunque dos personas se llamen igual.</dd></div>
+        <div class="term" data-step="2"><dt class="rv">Lista · array</dt><dd class="rv">Varios elementos del mismo tipo, en orden.</dd></div>
+        <div class="term" data-step="3"><dt class="rv">Valor nulo</dt><dd class="rv">“No hay valor todavía”. No es cero ni texto vacío.</dd></div>
+        <div class="term" data-step="4"><dt class="rv">Validación · JSON</dt><dd class="rv">Comprobar que cada dato tenga el tipo y el formato esperados. JSON es el <b>formato de texto</b> con que estas fichas viajan entre sistemas, <b>no una base de datos</b>.</dd></div>
+      </dl>
+    </div>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 4 (10 min).</p>
+    <p><b>Explicación pedagógica.</b> Los datos estructurados son información organizada de forma predecible, de modo que un programa sepa dónde buscar cada cosa. Mostramos una ficha con fichas adentro (estructura anidada): así es como se ve, conceptualmente, lo que viaja en formato JSON. No mostramos la sintaxis: mostramos la forma.</p>
+    <p><b>Qué decir.</b> “Esto es lo que el sistema sabe de la inscripción de Laura. Es un objeto: una ficha con atributos. Identificador 5501, estado en progreso.”</p>
+    <p><b>[Clic] Estudiante.</b> “Adentro hay otra ficha: el estudiante. Eso es anidar: una ficha dentro de otra. El identificador 101 es lo que garantiza que hablamos de esta Laura y no de otra Laura Gómez.”</p>
+    <p><b>[Clic] Lista.</b> “Los registros de horas son una lista: tres elementos, cada uno con fecha y horas. 16 + 14 + 8 = 38. La lista puede crecer: mañana habrá un cuarto registro.”</p>
+    <p><b>[Clic] Nulo.</b> “¿Y el certificado? Todavía no existe. Eso se representa como nulo: no es cero, no es ‘no’. Es ausencia de valor. Confundir nulo con cero es un error clásico.”</p>
+    <p><b>[Clic] Validación y JSON.</b> “Antes de aceptar una ficha, el sistema valida: ¿las horas son un número? ¿Positivo? ¿La fecha es una fecha? JSON es el formato estándar en que esta ficha se escribe para viajar por una API. Pero JSON no guarda nada a largo plazo: eso lo hace la base de datos, que veremos ahora.”</p>
+    <p><b>Analogía.</b> Una carpeta de expediente: la carátula con número de expediente (identificador), hojas con datos (atributos), un sobre con varios recibos (lista) y un espacio que dice “pendiente” (nulo).</p>
+    <p><b>Pregunta al público.</b> “Si alguien envía las horas como ‘dos’, escrito en letras, ¿qué debería hacer el sistema?” (Rechazarlo en la validación con un 400.)</p>
+    <p><b>Conexión.</b> Viene de los tipos de datos (06) y de la respuesta de la API (12). A continuación vemos cómo se guardan estos datos de forma permanente y relacionada.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     16 — BASES DE DATOS Y RELACIONES
+     ====================================================== -->
+<section class="slide light" id="d16" data-title="16 · Bases de datos y relaciones">
+  <div class="sl">
+    <p class="k lbl rv"><b>16</b> Capítulo 4 · Data is the language of systems</p>
+    <h2 class="t rv" style="--d:.15">Bases de datos y relaciones</h2>
+    <div class="er rv" style="--d:.3">
+      <svg class="er-lines" viewBox="0 0 1680 560" aria-hidden="true">
+        <path class="ln w2 draw" data-step="1" pathLength="1" d="M380 100 H650"/>
+        <path class="ln w2 draw" data-step="1" pathLength="1" d="M1030 100 H1300"/>
+        <path class="ln w2 draw" data-step="2" pathLength="1" d="M760 214 V290 H510 V350"/>
+        <path class="ln w2 or draw" data-step="3" pathLength="1" d="M920 214 V290 H1170 V350"/>
+      </svg>
+      <span class="erl rv" data-step="1" style="left:452px;top:58px">1 : N</span>
+      <span class="erl rv" data-step="1" style="left:1102px;top:58px">N : 1</span>
+      <span class="erl rv" data-step="2" style="left:560px;top:248px">1 : N</span>
+      <span class="erl or rv" data-step="3" style="left:960px;top:248px">1 : máx. 1 activo</span>
+      <div class="et" style="left:0;top:0"><header>Estudiantes</header><p><i class="pk">PK</i>id</p><p>nombre</p><p>correo</p></div>
+      <div class="et et-c" style="left:650px;top:0"><header>Inscripciones</header><p><i class="pk">PK</i>id</p><p><i class="fk">FK</i>estudiante</p><p><i class="fk">FK</i>curso</p><p>estado</p></div>
+      <div class="et" style="left:1300px;top:0"><header>Cursos</header><p><i class="pk">PK</i>id</p><p>nombre</p><p>horas requeridas</p><p>estado</p></div>
+      <div class="et rv" data-step="2" style="left:300px;top:350px"><header>Registros de horas</header><p><i class="pk">PK</i>id</p><p><i class="fk">FK</i>inscripción</p><p>horas verificadas</p><p>fecha de verificación</p></div>
+      <div class="et rv" data-step="3" style="left:960px;top:350px"><header>Certificados</header><p><i class="pk">PK</i>id</p><p><i class="fk">FK</i>inscripción</p><p>código de verificación</p><p>fecha de emisión · estado</p></div>
+    </div>
+    <p class="sm rv mt" data-step="4" style="font-size:23px">Las horas completadas <b>no se guardan dos veces</b>: se calculan sumando los registros válidos. Una sola <b>fuente de verdad</b> evita datos que se contradicen.</p>
+  </div>
+  <aside class="notes" data-time="4:00">
+    <p><b>Duración:</b> 4 min · Capítulo 4. Es la diapositiva más densa del capítulo.</p>
+    <p><b>Explicación pedagógica.</b> Una base de datos guarda información de forma organizada y permanente. En el modelo relacional, cada tipo de cosa es una tabla; cada fila es un elemento y cada columna, un atributo. Las tablas se conectan con llaves. Usamos las cinco entidades del caso para mostrar relaciones uno a muchos, muchos a muchos e integridad referencial.</p>
+    <p><b>Qué decir.</b> “Piensen en una hoja de cálculo con varias pestañas que se conocen entre sí. Cada pestaña es una tabla: Estudiantes, Cursos, Inscripciones, Registros de horas, Certificados. Cada fila es un elemento; cada columna, un atributo.”</p>
+    <p><b>Llaves.</b> “PK, llave primaria: el identificador único de cada fila. FK, llave foránea: una columna que apunta a la llave primaria de otra tabla. Así una inscripción sabe de qué estudiante y de qué curso es.”</p>
+    <p><b>[Clic] Muchos a muchos.</b> “Un estudiante puede inscribirse en varios cursos, y un curso tiene varios estudiantes. Esa relación muchos a muchos no cabe en una sola columna: se resuelve con una tabla intermedia, Inscripciones. Cada inscripción es una pareja estudiante–curso con su propio estado.”</p>
+    <p><b>[Clic] Registros de horas.</b> “Una inscripción tiene muchos registros de horas: uno a muchos. Cada registro documenta horas verificadas y cuándo se verificaron.”</p>
+    <p><b>[Clic] Certificados.</b> “Cada inscripción puede tener como máximo un certificado activo, según nuestras reglas. Esa regla se puede proteger en la propia base de datos.”</p>
+    <p><b>Integridad referencial.</b> “La base de datos no deja crear un registro de horas para una inscripción que no existe, ni borrar un estudiante que tiene inscripciones sin decidir qué pasa con ellas.”</p>
+    <p><b>[Clic] Fuente de verdad.</b> “¿Guardamos ‘horas completadas = 38’ en la inscripción? Si lo hacemos y alguien corrige un registro, tendríamos dos números distintos. Mejor calcularlo sumando registros válidos. Solo se duplica información cuando hay una razón clara, por ejemplo rendimiento, y entonces se define quién manda.”</p>
+    <p><b>Analogía.</b> Una biblioteca: fichero de socios, catálogo de libros y la libreta de préstamos que une socio y libro (tabla intermedia).</p>
+    <p><b>Pregunta al público.</b> “¿Dónde guardarías la nota final de un curso: en Estudiantes, en Cursos o en Inscripciones?” (En Inscripciones: pertenece a la pareja estudiante–curso.)</p>
+    <p><b>Conexión.</b> Viene de los objetos (15): cada ficha se vuelve una fila. A continuación: qué operaciones se hacen sobre estas tablas y cómo se mantiene todo consistente.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     17 — CRUD, PERSISTENCIA Y CONSISTENCIA
+     ====================================================== -->
+<section class="slide dark" id="d17" data-title="17 · CRUD, persistencia y consistencia">
+  <div class="sl">
+    <p class="k lbl rv"><b>17</b> Capítulo 4 · Data is the language of systems</p>
+    <h2 class="t rv" style="--d:.15">CRUD, persistencia y consistencia</h2>
+    <div class="bd nf c4 crud" style="margin-top:40px;gap:24px">
+      <div class="node rv" style="--d:.3"><span class="n">C · CREATE</span>Crear una inscripción</div>
+      <div class="node rv" style="--d:.4"><span class="n">R · READ</span>Consultar el progreso</div>
+      <div class="node rv" style="--d:.5"><span class="n">U · UPDATE</span>Actualizar el estado de una inscripción</div>
+      <div class="node rv" style="--d:.6"><span class="n">D · DELETE</span>Eliminar o desactivar, según las reglas</div>
+    </div>
+    <p class="tx rv" data-step="1" style="margin-top:30px"><b>Persistencia:</b> los datos se mantienen aunque cierres la aplicación o se reinicie el servidor. Por eso viven en una base de datos y no solo en la pantalla.</p>
+    <div class="bd nf" data-step="2" style="grid-template-columns:1fr 46px 1fr 46px 1fr;align-items:center;gap:0;margin-top:30px">
+      <div class="vflow rv"><div class="node soft">Admin A: emitir certificado · 5501</div><div class="node soft" style="margin-top:10px">Admin B: emitir certificado · 5501</div></div>
+      <i class="ar rv" style="--d:.15"></i>
+      <div class="node or rv" style="--d:.25"><span class="n">BACKEND + BASE DE DATOS</span>Regla única: una inscripción, máximo un certificado activo. Operación transaccional.</div>
+      <i class="ar rv" style="--d:.35"></i>
+      <div class="vflow rv" style="--d:.45"><div class="node">A: emitido ✓ CERT-7Q4M-2K9X</div><div class="node ghost" style="margin-top:10px">B: rechazado · ya existe</div></div>
+    </div>
+    <div class="flow mt" data-step="3" style="gap:16px;justify-content:flex-start">
+      <span class="chip rv">Borrar</span><span class="sm rv">≠</span><span class="chip rv" style="--d:.1">Desactivar</span><span class="sm rv" style="--d:.1">≠</span><span class="chip or rv" style="--d:.2">Conservar para auditoría</span>
+      <span class="sm rv" style="--d:.3;margin-left:18px">Tres decisiones distintas, con consecuencias distintas.</span>
+    </div>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 4 (cierra el capítulo en 10 min).</p>
+    <p><b>Explicación pedagógica.</b> CRUD son las cuatro operaciones básicas sobre datos. Casi cualquier funcionalidad es una combinación de ellas. Persistencia explica por qué existe la base de datos. Consistencia es el problema real que aparece cuando varias personas usan el sistema al mismo tiempo, y lo mostramos con un caso concreto y verosímil.</p>
+    <p><b>Qué decir.</b> Recorre las cuatro con el caso: “Crear: el administrador inscribe a Laura. Leer: Laura consulta su progreso. Actualizar: la inscripción pasa a elegible. Eliminar: ¿borramos una inscripción? Depende de las reglas del negocio.”</p>
+    <p><b>[Clic] Persistencia.</b> “Si Laura cierra el navegador y vuelve mañana, sus 38 horas siguen ahí. Eso es persistencia. Lo que solo vive en la pantalla desaparece al recargar.”</p>
+    <p><b>[Clic] Consistencia.</b> “Ahora un caso real: dos administradores ven que Laura es elegible y presionan ‘emitir’ al mismo tiempo. Sin protección, Laura tendría dos certificados con códigos distintos. ¿Cuál es el válido?”</p>
+    <p>“La solución no es pedirles que se coordinen por WhatsApp. Son tres capas de protección: identificadores únicos, la validación en el backend (¿ya existe un certificado activo?) y una regla en la base de datos que impide dos certificados activos para la misma inscripción. Además, la emisión se hace como operación transaccional: o se completa entera, o no se hace nada. El primero gana; el segundo recibe ‘ya existe’.”</p>
+    <p><b>[Clic] Borrar, desactivar, conservar.</b> “Borrar elimina para siempre. Desactivar oculta pero conserva. Conservar para auditoría guarda incluso lo anulado, para poder explicar después qué pasó. Un certificado revocado, por ejemplo, no se borra: se marca como revocado, para que la validación pública diga ‘este certificado fue anulado’.”</p>
+    <p><b>Analogía.</b> Dos personas reservando el último asiento de un vuelo al mismo tiempo: la aerolínea se lo da a una sola. Eso es consistencia.</p>
+    <p><b>Pregunta al público.</b> “Si un estudiante pide que borren sus datos, ¿qué hacemos con su certificado ya emitido?” Abre la discusión entre privacidad y auditoría, sin cerrar una única respuesta.</p>
+    <p><b>Conexión.</b> Cierra el capítulo de datos. El capítulo 5 pone todo en movimiento: cómo fluyen los datos, las decisiones, los estados, la comunicación y los errores.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     CAPÍTULO 5
+     ====================================================== -->
+<section class="slide dark tpl-band band-or" id="ch5" data-title="Capítulo 5: How systems actually flow">
+  <div class="band fade" style="--d:0"><span class="band-word rv" style="--d:.2">Flow</span></div>
+  <div class="band-body">
+    <p class="lbl rv" style="--d:.6">Capítulo 05 · 15 min</p>
+    <p class="band-line rv" style="--d:.9">How systems actually flow</p>
+    <p class="band-sub rv" style="--d:1.2">Cinco flujos internos: datos, control, estados, comunicación y errores.</p>
+    <i class="band-rule" style="--d:1.4"></i>
+  </div>
+  <aside class="notes" data-time="0:00">
+    <p>Puerta del capítulo 5, el más importante. Aclara de entrada: “No vamos a hablar del recorrido del usuario por las pantallas ni de automatizaciones. Vamos a mirar por dentro cómo se mueve un sistema.”</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     18 — DATA FLOW
+     ====================================================== -->
+<section class="slide light" id="d18" data-title="18 · Data flow">
+  <div class="sl">
+    <p class="k lbl rv"><b>18</b> Capítulo 5 · How systems actually flow</p>
+    <h2 class="t rv" style="--d:.15">Data flow: <em>cómo viajan y se transforman los datos</em></h2>
+    <p class="case rv" style="--d:.3;margin-top:26px">Caso · un instructor registra 2 horas verificadas para la inscripción 5501</p>
+    <div class="df">
+      <div class="dfc" data-step="1"><div class="node rv"><span class="n">01</span>Fuente</div><p class="dfr rv" style="--d:.1">El instructor escribe <b>“2”</b> en un campo del formulario.</p><p class="dfw rv" style="--d:.15">Frontend</p></div>
+      <div class="dfc" data-step="1"><div class="node rv" style="--d:.15"><span class="n">02</span>Recepción</div><p class="dfr rv" style="--d:.25">Llega un mensaje: horas 2, inscripción 5501, instructor 12.</p><p class="dfw rv" style="--d:.3">Backend</p></div>
+      <div class="dfc" data-step="1"><div class="node rv" style="--d:.3"><span class="n">03</span>Validación</div><p class="dfr rv" style="--d:.4">¿El instructor está autorizado? ¿La inscripción existe? ¿2 es un número válido?</p><p class="dfw rv" style="--d:.45">Backend</p></div>
+      <div class="dfc" data-step="2"><div class="node rv"><span class="n">04</span>Transformación</div><p class="dfr rv" style="--d:.1">Se convierte en un registro: 2 h, fecha, quién verificó.</p><p class="dfw rv" style="--d:.15">Backend</p></div>
+      <div class="dfc" data-step="2"><div class="node or rv" style="--d:.15"><span class="n">05</span>Almacenamiento</div><p class="dfr rv" style="--d:.25">Nueva fila en <b>Registros de horas</b>.</p><p class="dfw rv" style="--d:.3">Base de datos</p></div>
+      <div class="dfc" data-step="3"><div class="node rv"><span class="n">06</span>Consulta</div><p class="dfr rv" style="--d:.1">Se recalcula: 38 + 2 = <b>40 horas</b> válidas.</p><p class="dfw rv" style="--d:.15">Backend + base de datos</p></div>
+      <div class="dfc" data-step="3"><div class="node rv" style="--d:.15"><span class="n">07</span>Resultado</div><p class="dfr rv" style="--d:.25">La pantalla muestra <b>“40 de 40 horas”</b>.</p><p class="dfw rv" style="--d:.3">Frontend</p></div>
+    </div>
+    <p class="sm rv mt" data-step="4" style="font-size:23px">El mismo dato cambia de <b>representación</b>: texto en un campo → mensaje → número validado → fila guardada → total calculado → texto en pantalla.</p>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 5 (15 min).</p>
+    <p><b>Explicación pedagógica.</b> El data flow sigue al dato: de dónde viene, por dónde pasa, cómo cambia de forma y dónde termina guardado. Es distinto del recorrido del usuario: aquí el protagonista es la información. La fila inferior de cada etapa dice qué componente es responsable, conectando con las capas del capítulo 3.</p>
+    <p><b>Qué decir.</b> “Vamos a seguir un dato muy pequeño: el número 2. Un instructor quiere registrar que Laura asistió dos horas más.”</p>
+    <p><b>[Clic] 01–03.</b> “Nace como texto en un formulario. Viaja al backend como mensaje. Y antes de confiar en él, el backend valida tres cosas: que el instructor tenga permiso, que la inscripción 5501 exista y que 2 sea un número razonable, no negativo ni 300.”</p>
+    <p><b>[Clic] 04–05.</b> “Se transforma en un registro completo: no solo ‘2’, sino 2 horas, en tal fecha, verificadas por el instructor 12. Y se guarda como una nueva fila. Fíjense: no modificamos un total, agregamos un registro. Eso deja historia.”</p>
+    <p><b>[Clic] 06–07.</b> “El sistema recalcula sumando los registros válidos: 38 más 2, 40. Y devuelve el progreso actualizado: 40 de 40.”</p>
+    <p><b>[Clic]</b> — la representación. “El mismo 2 fue texto, mensaje, número validado, fila y parte de una suma. Diseñar el data flow es decidir dónde cambia de forma y dónde queda guardado.”</p>
+    <p><b>Analogía.</b> Una carta certificada: la escribes (fuente), la recibe la oficina (recepción), verifican dirección y franqueo (validación), le ponen sello y número de guía (transformación), queda registrada (almacenamiento), puedes rastrearla (consulta) y llega el aviso de entrega (resultado).</p>
+    <p><b>Pregunta al público.</b> “¿Qué pasa si el instructor registra las mismas 2 horas dos veces por error?” Siembra el flujo de errores de la diapositiva 22.</p>
+    <p><b>Conexión.</b> Usa los datos del capítulo 4 en movimiento. A continuación, el control flow: no qué dato se mueve, sino en qué orden se toman las decisiones.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     19 — CONTROL FLOW
+     ====================================================== -->
+<section class="slide dark" id="d19" data-title="19 · Control flow">
+  <div class="sl">
+    <p class="k lbl rv"><b>19</b> Capítulo 5 · How systems actually flow</p>
+    <h2 class="t rv" style="--d:.15">Control flow: <em>cómo se ejecutan las decisiones</em></h2>
+    <div class="bd" style="grid-template-columns:1060px 1fr;margin-top:34px;gap:60px">
+      <div class="cf">
+        <div class="cfr" data-step="1"><div class="node rv"><span class="n">01</span>Identificar la inscripción</div></div>
+        <div class="cfr" data-step="1"><div class="node dec rv" style="--d:.1"><span class="n">02</span>¿El curso está cerrado?</div><span class="cfb rv" style="--d:.2">No</span><div class="node ghost rv" style="--d:.25">Rechazar: el curso sigue abierto</div></div>
+        <div class="cfr" data-step="2"><div class="node rv"><span class="n">03</span>Obtener horas válidas <small>Repetición: recorre cada registro y suma.</small></div></div>
+        <div class="cfr" data-step="2"><div class="node dec rv" style="--d:.1"><span class="n">04</span>¿Suma 40 horas o más?</div><span class="cfb rv" style="--d:.2">No</span><div class="node ghost rv" style="--d:.25">Rechazar: faltan horas</div></div>
+        <div class="cfr" data-step="3"><div class="node dec rv"><span class="n">05</span>¿Registros requeridos validados?</div><span class="cfb rv" style="--d:.1">No</span><div class="node ghost rv" style="--d:.15">Rechazar: hay registros sin validar</div></div>
+        <div class="cfr" data-step="3"><div class="node rv" style="--d:.2"><span class="n">06</span>Determinar: elegible</div></div>
+        <div class="cfr" data-step="4"><div class="node dec rv"><span class="n">07</span>¿Ya existe un certificado?</div><span class="cfb rv" style="--d:.1">Sí</span><div class="node ghost rv" style="--d:.15">Rechazar: ya fue emitido</div></div>
+        <div class="cfr" data-step="4"><div class="node or rv" style="--d:.2"><span class="n">08</span>Autorizar la emisión</div></div>
+      </div>
+      <div class="col">
+        <dl class="terms" style="gap:14px">
+          <div class="term"><dt class="rv" style="--d:.3">Secuencia</dt><dd class="rv" style="--d:.32">Un paso tras otro, en orden.</dd></div>
+          <div class="term"><dt class="rv" style="--d:.4">Condiciones y ramas</dt><dd class="rv" style="--d:.42">Cada pregunta abre dos caminos.</dd></div>
+          <div class="term"><dt class="rv" style="--d:.5">Retorno anticipado</dt><dd class="rv" style="--d:.52">Si una regla falla, se detiene ahí. No sigue revisando.</dd></div>
+          <div class="term"><dt class="rv" style="--d:.6">Reglas de negocio</dt><dd class="rv" style="--d:.62">Las condiciones que decide la organización, no la tecnología.</dd></div>
+        </dl>
+        <div class="note rv mt" data-step="5"><p><b>Data flow:</b> qué información se mueve y cómo cambia. <b>Control flow:</b> en qué orden se ejecutan las instrucciones y qué camino se toma.</p></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 5.</p>
+    <p><b>Explicación pedagógica.</b> El control flow es el camino de la ejecución: qué se revisa primero, qué se revisa después y dónde se detiene. Aquí volvemos a la regla de la diapositiva 07, pero completa y ordenada. Las ramas a la derecha son retornos anticipados: si algo falla, el proceso termina con un motivo claro.</p>
+    <p><b>Qué decir.</b> “Un administrador quiere emitir el certificado de Laura. El sistema no responde sí o no de un golpe: recorre una lista de preguntas en orden.”</p>
+    <p><b>[Clic] 01–02.</b> “Primero identifica la inscripción. Luego pregunta: ¿el curso está cerrado? Si no, se detiene ahí. No tiene sentido sumar horas de un curso que no ha terminado.”</p>
+    <p><b>[Clic] 03–04.</b> “Obtener horas válidas es una repetición: recorre cada registro y suma solo los válidos. ¿Llega a 40? Si no, se detiene con un motivo: faltan horas.”</p>
+    <p><b>[Clic] 05–06.</b> “¿Todos los registros que exige la regla están validados? Si sí, el estudiante es elegible.”</p>
+    <p><b>[Clic] 07–08.</b> “Una última verificación que mucha gente olvida: ¿ya existe un certificado? Si existe, no se emite otro. Solo después de pasar todo se autoriza la emisión.”</p>
+    <p><b>Por qué importa el orden.</b> “Las verificaciones baratas y que más descartan van primero. Y cada rechazo devuelve un motivo distinto, lo que después hace posible explicarle al usuario qué falta.”</p>
+    <p><b>[Clic]</b> — la diferencia. “Data flow sigue al dato; control flow sigue a la decisión. En la diapositiva anterior el protagonista era el número 2. Aquí es la pregunta ‘¿puedo emitir?’.”</p>
+    <p><b>Analogía.</b> El control de seguridad de un aeropuerto: documento, pasabordo, escáner. Si falla el primero, no pasas al segundo.</p>
+    <p><b>Pregunta al público.</b> “¿Qué pasa si cambiamos el orden y verificamos ‘ya existe certificado’ al final o al principio?” (El resultado es el mismo, pero al principio ahorra trabajo cuando ya fue emitido. El orden es una decisión de diseño.)</p>
+    <p><b>Conexión.</b> Usa condiciones y bucles del capítulo 2. La decisión ‘elegible’ provoca un cambio de estado: eso es el state flow, a continuación.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     20 — STATE FLOW
+     ====================================================== -->
+<section class="slide light" id="d20" data-title="20 · State flow">
+  <div class="sl">
+    <p class="k lbl rv"><b>20</b> Capítulo 5 · How systems actually flow</p>
+    <h2 class="t rv" style="--d:.15">State flow: <em>cómo cambian los estados</em></h2>
+    <p class="case rv" style="--d:.3;margin-top:26px">Caso · el ciclo de vida de una inscripción</p>
+    <div class="sm-wrap">
+      <svg class="sm-arc" viewBox="0 0 1620 120" aria-hidden="true" data-step="4"><path class="ln or w2 sketch draw" pathLength="1" d="M120 110 C 420 -20, 1200 -20, 1500 110"/></svg>
+      <p class="sm-bad rv" data-step="4">Inscrito → Certificado <b>sin cumplir condiciones</b>: transición rechazada</p>
+      <div class="smg">
+        <span class="pill rv" style="--d:.4">Inscrito</span>
+        <div class="sma" data-step="1"><i class="ar rv"></i><p class="rv" style="--d:.1"><b>Evento:</b> primeras horas registradas</p></div>
+        <span class="pill rv" data-step="1" style="--d:.2">En progreso</span>
+        <div class="sma" data-step="2"><i class="ar rv"></i><p class="rv" style="--d:.1"><b>Condición:</b> requisitos completos</p></div>
+        <span class="pill or rv" data-step="2" style="--d:.2">Elegible</span>
+        <div class="sma" data-step="3"><i class="ar rv"></i><p class="rv" style="--d:.1"><b>Evento:</b> certificado emitido correctamente</p></div>
+        <span class="pill rv" data-step="3" style="--d:.2">Certificado</span>
+      </div>
+      <div class="sm-side" data-step="5"><span class="pill ghost rv">Bloqueado</span><span class="pill ghost rv" style="--d:.1">Cancelado</span><span class="sm rv" style="--d:.2">Otros estados posibles, según el negocio.</span></div>
+    </div>
+    <div class="terms c3 mt" style="display:grid;gap:22px 40px" data-step="6">
+      <div class="term"><p class="dt rv">Estado inicial · actual · final</p><p class="dd rv">Dónde empieza, dónde está hoy, dónde termina.</p></div>
+      <div class="term"><p class="dt rv" style="--d:.1">Evento + condición</p><p class="dd rv" style="--d:.1">Lo que ocurre y la regla que debe cumplirse.</p></div>
+      <div class="term"><p class="dt rv" style="--d:.2">Transición</p><p class="dd rv" style="--d:.2">El paso permitido de un estado a otro.</p></div>
+    </div>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 5.</p>
+    <p><b>Explicación pedagógica.</b> El state flow describe el ciclo de vida de una entidad: los estados posibles y las transiciones permitidas entre ellos. Es una de las herramientas más poderosas para evitar errores, porque deja explícito lo que no puede pasar. Lo construimos transición por transición y luego mostramos un intento ilegal.</p>
+    <p><b>Qué decir.</b> “Toda inscripción nace en un estado inicial: inscrito.”</p>
+    <p><b>[Clic]</b> — “Cuando se registran las primeras horas, ese evento cambia el estado a en progreso.”</p>
+    <p><b>[Clic]</b> — “Cuando se completan los requisitos (los que revisamos en el control flow), pasa a elegible.”</p>
+    <p><b>[Clic]</b> — “Y solo cuando el certificado se emite correctamente, llega al estado final: certificado.”</p>
+    <p><b>[Clic]</b> — el arco. “¿Qué pasa si alguien intenta saltar de inscrito a certificado? El sistema lo rechaza. No porque alguien lo revise a mano, sino porque esa transición no existe en el diseño. Un estado no se escribe libremente: se alcanza cumpliendo reglas.”</p>
+    <p><b>[Clic]</b> — estados alternativos. “En la vida real pueden existir más: bloqueado, si hay un problema de pago; cancelado, si el estudiante se retira. Cuáles existen lo decide el negocio, no la tecnología.”</p>
+    <p><b>[Clic]</b> — el vocabulario: estado inicial, actual y final; evento; condición; transición.</p>
+    <p><b>Analogía.</b> Un pedido de domicilio: recibido, en preparación, en camino, entregado. Un pedido no puede pasar de recibido a entregado sin haber salido.</p>
+    <p><b>Pregunta al público.</b> “¿Desde qué estados debería poder cancelarse una inscripción? ¿Se puede cancelar una ya certificada?”</p>
+    <p><b>Conexión.</b> Usa eventos y estados de la diapositiva 08 y la decisión de la 19. A continuación: cómo se comunican los componentes que provocan estos cambios.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     21 — COMMUNICATION FLOW
+     ====================================================== -->
+<section class="slide dark" id="d21" data-title="21 · Communication flow">
+  <div class="sl">
+    <p class="k lbl rv"><b>21</b> Capítulo 5 · How systems actually flow</p>
+    <h2 class="t rv" style="--d:.15">Communication flow: <em>cómo se hablan los componentes</em></h2>
+    <div class="bd" style="grid-template-columns:1fr 600px;margin-top:34px;gap:56px">
+      <div class="col">
+        <p class="lbl rv" style="--d:.3">Síncrono · pido y espero la respuesta</p>
+        <div class="flow rv" style="--d:.4">
+          <div class="node"><span class="n">CLIENTE</span>Verificar el código CERT-7Q4M-2K9X</div><i class="ar"></i>
+          <div class="node"><span class="n">API</span>Recibe la solicitud</div><i class="ar"></i>
+          <div class="node or"><span class="n">SERVIDOR</span>Busca el registro y revisa su estado</div>
+        </div>
+        <div class="col" data-step="2" style="margin-top:34px;gap:16px">
+          <p class="lbl rv">Asíncrono · aviso y sigo; alguien lo procesa después</p>
+          <div class="flow rv" style="--d:.1">
+            <div class="node soft">Certificado emitido</div><i class="ar"></i>
+            <div class="node soft"><span class="n">MENSAJE</span>“certificado emitido”</div><i class="ar"></i>
+            <div class="node soft"><span class="n">COLA</span>Espera su turno</div><i class="ar"></i>
+            <div class="node soft">Servicio de correo envía el PDF</div>
+          </div>
+        </div>
+        <div class="flow mt" data-step="3" style="gap:12px;flex-wrap:wrap;justify-content:flex-start">
+          <span class="chip rv">Timeout: cuánto espero antes de rendirme</span>
+          <span class="chip rv" style="--d:.1">Dependencias: si el correo falla, la emisión no debería fallar</span>
+        </div>
+      </div>
+      <div class="col" data-step="1">
+        <div class="fich rv">
+          <header>Respuesta de validación <span>Pública</span></header>
+          <div class="fr hot"><span class="a">Resultado</span><span class="v">Válido</span><span class="ty">Booleano</span></div>
+          <div class="fr"><span class="a">Titular</span><span class="v">Laura G.</span><span class="ty">Texto</span></div>
+          <div class="fr"><span class="a">Curso</span><span class="v">Analítica de datos · 40 h</span><span class="ty">Texto</span></div>
+          <div class="fr"><span class="a">Emitido</span><span class="v">20 nov 2026 · vigente</span><span class="ty">Fecha</span></div>
+        </div>
+        <p class="sm rv" style="--d:.2">Sin correo, documento ni historial: <b>solo lo necesario</b> para validar.</p>
+        <div class="note rv" data-step="4" style="margin-top:auto"><p><b>Comunicación</b> es cómo viaja el mensaje. <b>Procesamiento</b> es lo que se hace con él. No todo tiene que pasar al instante ni en el mismo componente.</p></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 5.</p>
+    <p><b>Explicación pedagógica.</b> El communication flow describe quién le habla a quién, cómo y si espera la respuesta. Cliente y servidor, solicitud y respuesta ya los conocemos. Lo nuevo es la diferencia entre síncrono y asíncrono, y la idea de que los componentes dependen unos de otros, lo que obliga a pensar en tiempos de espera.</p>
+    <p><b>Qué decir.</b> “Una empresa recibe un certificado de Laura y quiere saber si es real. Entra a la página de validación y escribe el código.”</p>
+    <p><b>Síncrono.</b> “El cliente envía la solicitud y espera. La API la recibe; el servidor busca el certificado y revisa su estado: ¿existe? ¿está vigente o revocado?”</p>
+    <p><b>[Clic]</b> — la respuesta. “Devuelve: válido, Laura G., Analítica de datos, emitido el 20 de noviembre, vigente. Fíjense en lo que no devuelve: ni su correo, ni su documento, ni su historial. La validación pública expone solo lo necesario. Eso también es diseño.”</p>
+    <p><b>[Clic] Asíncrono.</b> “Cuando se emite un certificado queremos enviarlo por correo. ¿El administrador tiene que esperar a que el correo salga? No. El sistema publica un mensaje (‘certificado emitido’), lo deja en una cola y responde de inmediato. Un servicio de correo lo procesa segundos o minutos después.”</p>
+    <p><b>[Clic]</b> — timeouts y dependencias. “Si el servicio de correo está caído, ¿debe fallar la emisión? No: el certificado ya existe; el correo se reintenta. Y toda espera necesita un límite: un timeout. No podemos esperar para siempre a un servicio que no responde.”</p>
+    <p><b>[Clic]</b> — comunicación frente a procesamiento. “Una cosa es cómo llega el mensaje y otra qué se hace con él.”</p>
+    <p><b>Analogía.</b> Una llamada telefónica es síncrona: hablas y esperas respuesta. Un mensaje de voz es asíncrono: lo dejas y la otra persona lo escucha cuando puede.</p>
+    <p><b>Pregunta al público.</b> “¿Qué partes del sistema de certificaciones pueden ser asíncronas?” (Correos, reportes, recordatorios de horas faltantes.)</p>
+    <p><b>Conexión.</b> Usa APIs (12) y servicios externos (10). Los timeouts y las dependencias que fallan nos llevan al último flujo: errores y retroalimentación.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     22 — ERROR & FEEDBACK FLOW
+     ====================================================== -->
+<section class="slide light" id="d22" data-title="22 · Error & feedback flow">
+  <div class="sl">
+    <p class="k lbl rv"><b>22</b> Capítulo 5 · How systems actually flow</p>
+    <h2 class="t rv" style="--d:.15">Error &amp; feedback flow</h2>
+    <div class="flow chips-row rv" style="--d:.3;gap:10px;flex-wrap:wrap;justify-content:flex-start;margin-top:26px">
+      <span class="chip">Validación</span><span class="chip">Permisos</span><span class="chip">Conexión</span><span class="chip">Datos inexistentes</span><span class="chip">Duplicados</span><span class="chip">Excepciones</span><span class="chip">Logs</span><span class="chip">Observabilidad</span><span class="chip">Feedback al usuario</span><span class="chip">Reintentos seguros</span>
+    </div>
+    <div class="bd c2" style="margin-top:36px;gap:56px">
+      <div class="col" data-step="1">
+        <p class="lbl or rv">Escenario 1 · emitir con 38 horas</p>
+        <div class="vflow rv" style="--d:.1">
+          <div class="node soft">Admin pide emitir el certificado de la inscripción 5501</div>
+          <i class="ar dn"></i>
+          <div class="node dec">La regla falla: 38 de 40 horas</div>
+          <i class="ar dn"></i>
+          <div class="err3">
+            <div class="node"><span class="n">USUARIO</span>“No se puede emitir: faltan 2 horas verificadas.”</div>
+            <div class="node"><span class="n">DATOS</span>Sin cambios: nada a medias</div>
+            <div class="node"><span class="n">LOG</span>Intento rechazado · 5501 · admin 3 · motivo</div>
+          </div>
+        </div>
+      </div>
+      <div class="col" data-step="2">
+        <p class="lbl or rv">Escenario 2 · la solicitud se repite</p>
+        <div class="vflow rv" style="--d:.1">
+          <div class="node soft">Emitir · con una clave única de operación</div>
+          <i class="ar dn"></i>
+          <div class="node ghost">Se corta la conexión: no llega la respuesta</div>
+          <i class="ar dn"></i>
+          <div class="node soft">Reintento con <b>la misma clave</b></div>
+          <i class="ar dn"></i>
+          <div class="node or">El sistema la reconoce: devuelve el mismo certificado y no crea otro</div>
+        </div>
+        <p class="sm rv" style="--d:.3"><b>Idempotencia:</b> repetir la operación produce el mismo resultado. La <b>restricción única</b> en la base de datos es la última barrera.</p>
+      </div>
+    </div>
+    <p class="ph rv mt" data-step="3" style="font-size:44px">A good system is not just designed for success. It is designed to <em>handle failure</em>.</p>
+  </div>
+  <aside class="notes" data-time="3:00">
+    <p><b>Duración:</b> 3 min · Capítulo 5 (cierra el capítulo en 15 min).</p>
+    <p><b>Explicación pedagógica.</b> Los sistemas reales pasan buena parte de su vida manejando lo que sale mal. Este flujo diseña qué pasa ante cada tipo de error: qué se le dice al usuario, cómo quedan los datos y qué registro queda para quien opera. Dos escenarios del caso: una regla que no se cumple y una solicitud que se repite.</p>
+    <p><b>Qué decir.</b> Recorre los chips rápido: “Errores de validación, permisos, conexión, datos que no existen, operaciones duplicadas, excepciones inesperadas. Y las herramientas para manejarlos: logs, observabilidad (poder ver qué está pasando dentro), mensajes claros para el usuario y reintentos seguros.”</p>
+    <p><b>[Clic] Escenario 1.</b> “Un administrador intenta emitir el certificado de Laura con 38 horas. El sistema no lo emite. Pero no basta con decir ‘error’. Hace tres cosas: le explica al usuario qué falta (‘faltan 2 horas’), deja los datos consistentes (no queda un certificado a medio crear) y registra el intento con el motivo, para que alguien pueda entender después qué pasó.”</p>
+    <p><b>[Clic] Escenario 2.</b> “El administrador presiona emitir, se le cae el internet y no ve la respuesta. Vuelve a presionar. ¿El sistema emitió uno o dos certificados? Si la operación es idempotente, no importa cuántas veces se repita: el resultado es el mismo. Cada solicitud de emisión lleva una clave única. Si el sistema ve la misma clave, devuelve el certificado que ya creó. Y por si acaso, la base de datos tiene una restricción: nunca dos certificados activos para la misma inscripción.”</p>
+    <p><b>[Clic]</b> — la frase.</p>
+    <p><b>Analogía.</b> Presionar varias veces el botón del ascensor no llama varios ascensores: es una operación idempotente. Un cajero automático que se queda sin billetes no te descuenta el dinero.</p>
+    <p><b>Pregunta al público.</b> “¿Qué mensaje le mostrarías a Laura si consulta su progreso y la base de datos no responde?” (Algo honesto y útil: ‘No pudimos cargar tu progreso. Intenta en unos minutos’, nunca un error técnico crudo.)</p>
+    <p><b>Conexión.</b> Retoma la retroalimentación de la diapositiva 02 y la consistencia de la 17. Cierra los flujos: ya tenemos todas las piezas para diseñar un sistema desde cero, que es el capítulo 6.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     CAPÍTULO 6
+     ====================================================== -->
+<section class="slide dark tpl-band band-pk" id="ch6" data-title="Capítulo 6: From problem to architecture">
+  <div class="band fade" style="--d:0"><span class="band-word rv" style="--d:.2;font-size:190px">Blueprint</span></div>
+  <div class="band-body">
+    <p class="lbl rv" style="--d:.6">Capítulo 06 · 5 min</p>
+    <p class="band-line rv" style="--d:.9">From problem to architecture</p>
+    <p class="band-sub rv" style="--d:1.2">El método para pasar de una idea a un diseño que se puede construir.</p>
+    <i class="band-rule" style="--d:1.4"></i>
+  </div>
+  <aside class="notes" data-time="0:00">
+    <p>Puerta del capítulo 6. “Juntemos todo en un método. Es lo que van a usar en el laboratorio en unos minutos.”</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     23 — CÓMO DESCOMPONER UN SISTEMA DESDE CERO
+     ====================================================== -->
+<section class="slide dark" id="d23" data-title="23 · Cómo descomponer un sistema desde cero">
+  <div class="sl">
+    <p class="k lbl rv"><b>23</b> Capítulo 6 · From problem to architecture</p>
+    <h2 class="t rv" style="--d:.15">Cómo descomponer un sistema <em>desde cero</em></h2>
+    <div class="steps12">
+      <div class="node rv" data-step="1"><span class="n">01</span>Comprender el problema</div>
+      <div class="node rv" data-step="1" style="--d:.06"><span class="n">02</span>Definir el objetivo</div>
+      <div class="node rv" data-step="1" style="--d:.12"><span class="n">03</span>Establecer los límites</div>
+      <div class="node rv" data-step="1" style="--d:.18"><span class="n">04</span>Identificar entradas y salidas</div>
+      <div class="node rv" data-step="2"><span class="n">05</span>Descomponer responsabilidades</div>
+      <div class="node rv" data-step="2" style="--d:.06"><span class="n">06</span>Identificar entidades y datos</div>
+      <div class="node rv" data-step="2" style="--d:.12"><span class="n">07</span>Definir reglas de negocio</div>
+      <div class="node rv" data-step="2" style="--d:.18"><span class="n">08</span>Diseñar estados y transiciones</div>
+      <div class="node rv" data-step="3"><span class="n">09</span>Establecer comunicaciones</div>
+      <div class="node rv" data-step="3" style="--d:.06"><span class="n">10</span>Diseñar el manejo de errores</div>
+      <div class="node or rv" data-step="3" style="--d:.12"><span class="n">11</span>Elegir una arquitectura mínima</div>
+      <div class="node rv" data-step="3" style="--d:.18"><span class="n">12</span>Definir pruebas del comportamiento</div>
+    </div>
+    <div class="note rv mt" data-step="4"><p><b>El error más común:</b> empezar eligiendo la herramienta (“¿lo hago en tal plataforma?”). La herramienta es el paso 11, no el 1: sin entender el sistema, solo eliges a ciegas.</p></div>
+  </div>
+  <aside class="notes" data-time="2:30">
+    <p><b>Duración:</b> 2 min 30 s · Capítulo 6 (5 min).</p>
+    <p><b>Explicación pedagógica.</b> Convertimos los cinco capítulos anteriores en un método de doce pasos. Cada paso corresponde a algo que ya vimos, así que esta diapositiva funciona también como repaso. El mensaje central: el diseño va antes que la tecnología.</p>
+    <p><b>[Clic] 01–04: entender.</b> “Comprender el problema, definir para qué existe el sistema, qué queda dentro y fuera, qué entra y qué sale. Es el capítulo 1.”</p>
+    <p><b>[Clic] 05–08: diseñar la lógica.</b> “Descomponer en módulos (09), identificar entidades y datos (15–16), definir reglas (07, 19) y diseñar estados (20).”</p>
+    <p><b>[Clic] 09–12: conectar y validar.</b> “Definir cómo se comunican (21), qué pasa cuando fallan (22), elegir la arquitectura más simple que funcione y definir cómo vamos a probar que se comporta como esperamos.” Subraya “mínima”: “No agregues piezas que el problema no pide.”</p>
+    <p><b>[Clic]</b> — el error. “¿Cuántas veces han oído ‘hagámoslo en tal herramienta’ antes de saber qué hay que hacer? Elegir la herramienta primero es como comprar materiales antes de tener planos.”</p>
+    <p><b>Analogía.</b> Un arquitecto no empieza eligiendo la marca del cemento. Empieza entendiendo quién va a vivir en la casa.</p>
+    <p><b>Pregunta al público.</b> “¿En qué paso suelen empezar ustedes cuando tienen una idea?” Honestidad: casi todos empiezan en el 11.</p>
+    <p><b>Conexión.</b> Es el resumen operativo de la charla y el guion del laboratorio. A continuación: dónde se escribe todo esto (el System Blueprint) y cómo nos ayuda la IA.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     24 — SYSTEM BLUEPRINT & AI AS A COPILOT
+     ====================================================== -->
+<section class="slide light" id="d24" data-title="24 · System Blueprint & AI as a copilot">
+  <div class="sl">
+    <p class="k lbl rv"><b>24</b> Capítulo 6 · From problem to architecture</p>
+    <h2 class="t rv" style="--d:.15">System Blueprint &amp; <span class="bl">AI as a copilot</span></h2>
+    <div class="bd" style="grid-template-columns:560px 1fr;margin-top:36px;gap:64px">
+      <div class="bp rv" style="--d:.3">
+        <p class="bp-h">System Blueprint</p>
+        <ol class="ol">
+          <li>Definición del problema</li><li>Propósito y límites</li><li>Componentes</li><li>Responsabilidades</li><li>Datos</li>
+          <li>Reglas</li><li>Estados</li><li>Flujos internos</li><li>Arquitectura</li><li>Escenarios de prueba</li>
+        </ol>
+      </div>
+      <div class="col">
+        <div data-step="1">
+          <p class="lbl bl rv">La IA puede ayudarte a</p>
+          <div class="flow rv" style="--d:.1;gap:10px;flex-wrap:wrap;justify-content:flex-start;margin-top:14px">
+            <span class="chip bl">Explorar el problema</span><span class="chip bl">Descomponerlo</span><span class="chip bl">Identificar componentes</span><span class="chip bl">Diseñar modelos de datos</span><span class="chip bl">Evaluar decisiones</span><span class="chip bl">Detectar errores</span><span class="chip bl">Redactar especificaciones</span><span class="chip bl">Implementar código después</span>
+          </div>
+          <p class="tx rv" style="--d:.2;margin-top:18px">Pero <b>tú eres responsable</b> de comprender y validar cada decisión.</p>
+        </div>
+        <div class="c2 cmp2 mt" data-step="2" style="display:grid;gap:24px">
+          <div class="q-bad rv"><p class="lbl">Pedir</p><p>“Créame una plataforma de certificaciones.”</p></div>
+          <div class="q-good rv" style="--d:.15"><p class="lbl bl">Diseñar con la IA</p><p>“Diseñemos primero los componentes, las entidades, las reglas, las transiciones y las conexiones necesarias para construir una plataforma de certificaciones.”</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="2:30">
+    <p><b>Duración:</b> 2 min 30 s · Capítulo 6 (cierra la parte conceptual en 70 min).</p>
+    <p><b>Explicación pedagógica.</b> El System Blueprint es el documento donde queda escrito el diseño: el plano del sistema. Reúne en diez secciones todo lo que aprendimos. Aquí entra la IA, en azul, como copiloto del pensamiento y de la construcción, después de los fundamentos y no antes. Cerramos con dos formas de pedirle ayuda a la IA, que muestran la diferencia entre usar tecnología y entender lo que se construye.</p>
+    <p><b>Qué decir.</b> “Un blueprint es un plano. Antes de construir un edificio, alguien dibuja dónde va cada cosa. Este es el plano de un sistema.” Lee las diez secciones y relaciónalas con los capítulos.</p>
+    <p><b>[Clic]</b> — la IA. “La IA es extraordinaria para explorar, descomponer, proponer modelos de datos, encontrar huecos y, más adelante, escribir el código. Pero si no entiendes lo que propone, no puedes saber si está bien. La responsabilidad del sistema sigue siendo tuya.”</p>
+    <p><b>[Clic]</b> — la comparación. Lee las dos frases. “La primera le entrega todas las decisiones a la IA: va a inventar requisitos, estados y reglas que nadie validó. La segunda la usa para pensar contigo, pieza por pieza. La primera te da una app que no entiendes. La segunda te da un sistema que puedes explicar, corregir y hacer crecer.”</p>
+    <p><b>Transición al laboratorio:</b> “Y eso es exactamente lo que vamos a hacer ahora. Durante 40 minutos van a diseñar un sistema propio con la IA como copiloto. Sin interfaces. Desde su lógica interna.”</p>
+    <p><b>Pregunta al público.</b> “¿Qué parte del blueprint te costaría más definir sin ayuda?”</p>
+    <p><b>Conexión.</b> Cierra los 70 minutos conceptuales y abre la Parte II: el Systems Lab, cuyo entregable es precisamente un System Blueprint V1.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     PARTE II — SYSTEMS LAB
+     ====================================================== -->
+<section class="slide dark tpl-band band-bl" id="lab" data-title="Parte II: Systems Lab">
+  <div class="band fade" style="--d:0"><span class="band-word rv" style="--d:.2">Lab</span></div>
+  <div class="band-body">
+    <p class="lbl rv" style="--d:.6">Parte II · 40 min · cinco etapas</p>
+    <p class="band-line rv" style="--d:.9">Systems Lab</p>
+    <p class="band-sub rv" style="--d:1.2">Diseñar un sistema desde su lógica interna, con la IA como copiloto. Sin interfaces.</p>
+    <i class="band-rule" style="--d:1.4"></i>
+  </div>
+  <aside class="notes" data-time="0:00">
+    <p><b>Parte II · Systems Lab: 40 min.</b> Etapas: 5 + 8 + 10 + 10 + 7 minutos. Cada etapa tiene su temporizador en pantalla (botón o tecla T; R para reiniciar). Desde el modo presentadora lo controlas sin tocar la pantalla principal.</p>
+    <p><b>Logística.</b> Pide que abran una herramienta de IA conversacional y una hoja (papel o documento) para el blueprint. Pueden trabajar en parejas. En la siguiente diapositiva está el prompt maestro para copiar; también lo tienen en buque.com.co/charlamajo2rosario/prompt.html.</p>
+    <p><b>Regla del laboratorio:</b> nada de interfaces ni pantallas. Si alguien empieza a dibujar botones, recuérdale: “primero el sistema, después la interfaz”.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     PROMPT MAESTRO
+     ====================================================== -->
+<section class="slide light" id="prompt" data-title="Material: prompt maestro AI Systems Architect">
+  <div class="sl">
+    <p class="k lbl rv"><b>Lab</b> Material del workshop</p>
+    <div class="pr-head">
+      <h2 class="t rv" style="--d:.15">Prompt maestro · <span class="bl">AI Systems Architect</span></h2>
+      <div class="pr-act rv" style="--d:.3" data-interactive><button type="button" class="btn" data-copy="#prompt-text">Copiar prompt</button><span class="sm">También en <b>buque.com.co/charlamajo2rosario/prompt.html</b></span></div>
+    </div>
+    <div class="prompt rv" id="prompt-text" style="--d:.4;margin-top:30px" data-interactive>Actúa como un Principal Software Architect, Computer Science Educator y Systems Thinking Coach.
+
+Estoy aprendiendo a pensar como un constructor de sistemas tecnológicos.
+No quiero que crees una aplicación automáticamente.
+Quiero aprender a diseñar cómo funciona un sistema desde sus fundamentos.
+
+Trabajaremos en cinco etapas:
+1. Define the System.
+2. Break It Down.
+3. Design the Logic &amp; Data.
+4. Connect the Pieces.
+5. Simulate &amp; Challenge.
+
+Comienza preguntándome qué problema quiero resolver. Si no tengo una idea, ayúdame a elegir un problema realista.
+
+En cada etapa:
+- Hazme hasta tres preguntas importantes.
+- Explícame los conceptos que necesito entender.
+- Ayúdame a tomar las decisiones.
+- Cuestiona las suposiciones.
+- No inventes requisitos como si estuvieran confirmados.
+- Diferencia decisiones, suposiciones y recomendaciones.
+- Produce un entregable concreto.
+- No avances hasta mi confirmación.
+
+Durante el ejercicio enséñame:
+- Entradas y salidas.
+- Componentes y responsabilidades.
+- Variables y tipos de datos.
+- Entidades y relaciones.
+- Reglas de negocio.
+- Condicionales.
+- Eventos.
+- Estados.
+- Data Flow.
+- Control Flow.
+- State Flow.
+- Communication Flow.
+- Error Handling.
+- Arquitectura conceptual.
+
+Utiliza diagramas Mermaid cuando ayuden a explicar el sistema.
+Mantén la arquitectura sencilla. No agregues tecnologías innecesarias ni complejidad artificial.
+
+Después de las cinco etapas, produce un documento llamado SYSTEM BLUEPRINT que incluya toda la especificación conceptual y técnica.
+Finaliza con una revisión crítica de posibles errores y un plan de cómo comenzar a construir el sistema utilizando IA.
+No escribas todavía el código del producto.
+Empieza por la primera etapa.</div>
+  </div>
+  <aside class="notes" data-time="incluido en la etapa 1">
+    <p><b>Uso.</b> Muéstrala al iniciar el laboratorio. El botón copia el texto completo (también se puede seleccionar a mano). Invita a que lo peguen tal cual en su herramienta de IA.</p>
+    <p><b>Qué decir.</b> “Este prompt no le pide a la IA que construya nada. Le pide que sea su profesora de arquitectura: que les haga preguntas, les explique conceptos, cuestione sus suposiciones y no avance sin su confirmación. Fíjense en la regla ‘no inventes requisitos como si estuvieran confirmados’: es la diferencia entre diseñar y adivinar.”</p>
+    <p><b>Aclaración.</b> Pide diagramas Mermaid: es una forma de que la IA dibuje diagramas con texto. No necesitan saber escribirlos; si su herramienta no los muestra, que pidan el diagrama descrito con palabras.</p>
+    <p><b>Tiempo.</b> Este minuto se descuenta de la etapa 1.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     25 — ETAPA 1: DEFINE THE SYSTEM
+     ====================================================== -->
+<section class="slide dark" id="d25" data-title="25 · Etapa 1: Define the system">
+  <div class="sl">
+    <p class="k lbl rv"><b>25</b> Systems Lab · Etapa 1 de 5</p>
+    <h2 class="t rv" style="--d:.15">Define the system</h2>
+    <div class="bd" style="grid-template-columns:1fr 1fr 360px;margin-top:40px;gap:52px">
+      <div class="col">
+        <p class="lbl rv" style="--d:.3">Elige un problema</p>
+        <ul class="opts rv" style="--d:.35">
+          <li><b>A</b>Inventarios con alertas de reposición</li>
+          <li><b>B</b>Gestión de estudiantes y certificados</li>
+          <li><b>C</b>Asignación de solicitudes y seguimiento de estados</li>
+          <li><b>D</b>Gestión de citas y disponibilidad</li>
+          <li><b>E</b>Un sistema propio</li>
+        </ul>
+      </div>
+      <div class="col">
+        <p class="lbl rv" style="--d:.4">Responde</p>
+        <ol class="ol rv" style="--d:.45">
+          <li>¿Qué problema existe?</li>
+          <li>¿Quién interactúa con el sistema?</li>
+          <li>¿Qué necesita recibir?</li>
+          <li>¿Qué debe procesar?</li>
+          <li>¿Qué debe entregar?</li>
+          <li>¿Qué está <b>fuera</b> de su alcance?</li>
+        </ol>
+      </div>
+      <div class="col">
+        <div class="tmr rv" style="--d:.5" data-timer-id="lab1" data-seconds="300" data-interactive>
+          <p class="tmr-lbl">5 minutos</p>
+          <div class="tmr-dial"><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="tm-ring tm-track" cx="100" cy="100" r="92"/><circle class="tm-ring tm-prog" data-timer-ring cx="100" cy="100" r="92" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><p class="tmr-count" data-timer-count>05:00</p></div>
+          <div class="tmr-ctrl"><button type="button" data-timer="toggle">Iniciar</button><button type="button" data-timer="reset" class="ghost">Reiniciar</button></div>
+        </div>
+        <div class="deliv rv mt" style="--d:.6"><p class="lbl">Entregable</p><p>Un párrafo que defina el sistema, más sus entradas, procesos y salidas.</p></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="5:00">
+    <p><b>Duración:</b> 5 min · Etapa 1 de 5. Inicia el temporizador (T).</p>
+    <p><b>Explicación pedagógica.</b> Es la diapositiva 02 aplicada a su propio problema. Las opciones A a D son sistemas con reglas, estados y datos claros, ideales para practicar. La opción B es nuestro caso conductor: sirve para quien prefiera ir a lo seguro. La E es para quien ya tiene una idea; que la acote mucho.</p>
+    <p><b>Qué decir.</b> “Elijan un problema. No tiene que ser original: tiene que ser concreto. Peguen el prompt maestro y respondan las preguntas que les haga la IA, usando estas seis como guía.”</p>
+    <p><b>Mientras trabajan.</b> Camina por el salón. Errores típicos: describir funcionalidades de pantalla (“tiene un botón para…”) en lugar del problema; no definir qué queda fuera; querer resolverlo todo. Pregunta: “¿Qué NO hace tu sistema?”</p>
+    <p><b>Ejemplo de buen entregable (opción A):</b> “Un sistema que registra las existencias de productos en dos bodegas, recibe movimientos de entrada y salida, y avisa cuando un producto cae por debajo de su mínimo. No gestiona compras ni proveedores.”</p>
+    <p><b>Conexión.</b> Aplica el capítulo 1 (entrada, proceso, salida y límites). Lo que definan aquí delimita todas las etapas siguientes.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     26 — ETAPA 2: BREAK IT DOWN
+     ====================================================== -->
+<section class="slide light" id="d26" data-title="26 · Etapa 2: Break it down">
+  <div class="sl">
+    <p class="k lbl rv"><b>26</b> Systems Lab · Etapa 2 de 5</p>
+    <h2 class="t rv" style="--d:.15">Break it down</h2>
+    <div class="bd" style="grid-template-columns:1fr 1fr 360px;margin-top:40px;gap:52px">
+      <div class="col">
+        <p class="lbl rv" style="--d:.3">Identifica</p>
+        <ul class="ul rv" style="--d:.35">
+          <li><b>Componentes</b> necesarios y su <b>responsabilidad</b>.</li>
+          <li><b>Dependencias</b> entre ellos.</li>
+          <li>Elementos <b>internos</b> y <b>servicios externos</b>, si existen.</li>
+        </ul>
+        <p class="lbl rv" style="--d:.45;margin-top:14px">Ejemplo · inventarios</p>
+        <div class="mods mods2 rv" style="--d:.5">
+          <div class="node">Catálogo de productos</div><div class="node">Registro de existencias</div><div class="node">Movimientos de inventario</div>
+          <div class="node or">Reglas de reposición</div><div class="node">Gestión de alertas</div><div class="node">Persistencia</div>
+        </div>
+      </div>
+      <div class="col">
+        <p class="lbl rv" style="--d:.4">Cuestiona cada componente</p>
+        <ol class="ol rv" style="--d:.45">
+          <li>¿Qué función cumple?</li>
+          <li>¿Qué información necesita?</li>
+          <li>¿Qué resultado produce?</li>
+          <li>¿Depende de otro componente?</li>
+          <li>¿Se está <b>duplicando</b> alguna responsabilidad?</li>
+        </ol>
+      </div>
+      <div class="col">
+        <div class="tmr rv" style="--d:.5" data-timer-id="lab2" data-seconds="480" data-interactive>
+          <p class="tmr-lbl">8 minutos</p>
+          <div class="tmr-dial"><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="tm-ring tm-track" cx="100" cy="100" r="92"/><circle class="tm-ring tm-prog" data-timer-ring cx="100" cy="100" r="92" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><p class="tmr-count" data-timer-count>08:00</p></div>
+          <div class="tmr-ctrl"><button type="button" data-timer="toggle">Iniciar</button><button type="button" data-timer="reset" class="ghost">Reiniciar</button></div>
+        </div>
+        <div class="deliv rv mt" style="--d:.6"><p class="lbl">Entregable</p><p>Mapa de componentes.</p></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="8:00">
+    <p><b>Duración:</b> 8 min · Etapa 2 de 5.</p>
+    <p><b>Explicación pedagógica.</b> Es la descomposición de la diapositiva 09 aplicada. El ejemplo de inventarios muestra el nivel de detalle esperado: seis componentes con nombres de responsabilidad, no de tecnología. “Reglas de reposición” va en naranja porque es donde vive la lógica central, como “Elegibilidad” en nuestro caso.</p>
+    <p><b>Qué decir.</b> “Pídanle a la IA que proponga componentes, pero no los acepten sin pasarlos por las cinco preguntas. Si un componente no tiene una responsabilidad clara, sobra. Si dos hacen lo mismo, júntenlos.”</p>
+    <p><b>Mientras trabajan.</b> Señales de alerta: componentes con nombre de tecnología (“base de datos”, “servidor”) en vez de responsabilidad; un componente “Gestión” que lo hace todo; IA que propone diez microservicios para un problema pequeño. Recuérdales: módulos no son servidores.</p>
+    <p><b>Pregunta para provocar.</b> “Si mañana cambia la regla principal de tu sistema, ¿cuántos componentes tendrías que tocar?” Si son más de uno o dos, hay acoplamiento alto.</p>
+    <p><b>Conexión.</b> Aplica el capítulo 2 (descomposición, cohesión y acoplamiento) y prepara la etapa 3, donde cada componente recibe sus datos y reglas.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     27 — ETAPA 3: DESIGN THE LOGIC & DATA
+     ====================================================== -->
+<section class="slide dark" id="d27" data-title="27 · Etapa 3: Design the logic & data">
+  <div class="sl">
+    <p class="k lbl rv"><b>27</b> Systems Lab · Etapa 3 de 5</p>
+    <h2 class="t rv" style="--d:.15">Design the logic &amp; data</h2>
+    <div class="bd" style="grid-template-columns:1fr 1fr 360px;margin-top:40px;gap:52px">
+      <div class="col">
+        <p class="lbl rv" style="--d:.3">Diseña</p>
+        <div class="flow rv" style="--d:.35;gap:10px;flex-wrap:wrap;justify-content:flex-start">
+          <span class="chip">Entidades</span><span class="chip">Atributos</span><span class="chip">Tipos de datos</span><span class="chip">Identificadores</span><span class="chip">Relaciones</span><span class="chip or">Reglas de negocio</span><span class="chip">Condicionales</span><span class="chip">Estados</span><span class="chip">Eventos</span>
+        </div>
+        <p class="lbl rv" style="--d:.45;margin-top:16px">Ejemplo · entidades de inventario</p>
+        <div class="flow rv" style="--d:.5;gap:10px;flex-wrap:wrap;justify-content:flex-start">
+          <span class="pill">Producto</span><span class="pill">Ubicación</span><span class="pill">Movimiento</span><span class="pill or">Regla de reposición</span><span class="pill">Alerta</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="node or rv" style="--d:.4"><span class="n">REGLA</span>Si el inventario disponible cae por debajo del mínimo configurado, el producto se marca para reposición.</div>
+        <p class="lbl rv" style="--d:.5;margin-top:10px">Y también decide qué pasa si…</p>
+        <ul class="ul rv" style="--d:.55">
+          <li>se registra un <b>movimiento duplicado</b>,</li>
+          <li>se pide <b>más stock del disponible</b>,</li>
+          <li><b>falta información</b> en la operación.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="tmr rv" style="--d:.5" data-timer-id="lab3" data-seconds="600" data-interactive>
+          <p class="tmr-lbl">10 minutos</p>
+          <div class="tmr-dial"><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="tm-ring tm-track" cx="100" cy="100" r="92"/><circle class="tm-ring tm-prog" data-timer-ring cx="100" cy="100" r="92" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><p class="tmr-count" data-timer-count>10:00</p></div>
+          <div class="tmr-ctrl"><button type="button" data-timer="toggle">Iniciar</button><button type="button" data-timer="reset" class="ghost">Reiniciar</button></div>
+        </div>
+        <div class="deliv rv mt" style="--d:.6"><p class="lbl">Entregable</p><p>Modelo conceptual de datos y lógica.</p></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="10:00">
+    <p><b>Duración:</b> 10 min · Etapa 3 de 5. La etapa más técnica del laboratorio.</p>
+    <p><b>Explicación pedagógica.</b> Aquí aplican los capítulos 2 y 4: tipos de datos, entidades, relaciones, reglas, estados y eventos. El ejemplo de inventarios tiene cinco entidades y una regla principal. Lo más importante son los tres casos borde: obligan a pasar de “el caso feliz” a un sistema real.</p>
+    <p><b>Qué decir.</b> “Para cada entidad definan sus atributos, de qué tipo es cada uno y cuál es su identificador. Luego, cómo se relacionan: ¿uno a muchos? ¿muchos a muchos? Escriban la regla principal en una frase con ‘si… entonces… si no…’.”</p>
+    <p><b>Los tres casos borde.</b> “¿Qué pasa si el mismo movimiento se registra dos veces? ¿Si alguien saca 10 unidades y solo hay 6? ¿Si falta la ubicación? Decidan una respuesta para cada uno. ‘Depende’ no es una respuesta de diseño.”</p>
+    <p><b>Mientras trabajan.</b> Revisa que distingan estado de evento: “Bajo stock” es un estado; “movimiento registrado” es un evento. Y que no guarden el mismo dato en dos entidades sin razón (fuente de verdad).</p>
+    <p><b>Pregunta para provocar.</b> “¿El inventario disponible lo guardas o lo calculas a partir de los movimientos?” Es la misma discusión de las horas de Laura.</p>
+    <p><b>Conexión.</b> Prepara la etapa 4: con datos y reglas definidos, ahora se conectan las piezas en flujos.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     28 — ETAPA 4: CONNECT THE PIECES
+     ====================================================== -->
+<section class="slide light" id="d28" data-title="28 · Etapa 4: Connect the pieces">
+  <div class="sl">
+    <p class="k lbl rv"><b>28</b> Systems Lab · Etapa 4 de 5</p>
+    <h2 class="t rv" style="--d:.15">Connect the pieces</h2>
+    <div class="bd" style="grid-template-columns:1fr 1fr 360px;margin-top:40px;gap:52px">
+      <div class="col">
+        <p class="lbl rv" style="--d:.3">Responde</p>
+        <ol class="ol rv" style="--d:.35">
+          <li>¿Qué componente <b>recibe</b> la información?</li>
+          <li>¿Cuál <b>valida</b> la operación?</li>
+          <li>¿Dónde se ejecuta la <b>lógica</b>?</li>
+          <li>¿Cuál <b>consulta o modifica</b> datos?</li>
+          <li>¿Qué información se <b>devuelve</b>?</li>
+          <li>¿Qué pasa cuando interviene un <b>servicio externo</b>?</li>
+          <li>¿Qué sucede cuando hay un <b>error</b>?</li>
+        </ol>
+      </div>
+      <div class="col">
+        <p class="lbl rv" style="--d:.4">Entregables</p>
+        <ul class="ul rv" style="--d:.45">
+          <li><b>Diagrama de componentes</b>.</li>
+          <li><b>Data flow</b> de una operación.</li>
+          <li><b>Control flow</b> de la decisión principal.</li>
+          <li><b>State flow</b> de la entidad más importante.</li>
+          <li>Descripción de la <b>comunicación</b> entre componentes.</li>
+        </ul>
+        <div class="note bl rv" style="--d:.55;margin-top:10px"><p>Pídele a la IA que detecte <b>conexiones faltantes</b> y <b>contradicciones</b> entre tus flujos.</p></div>
+      </div>
+      <div class="col">
+        <div class="tmr rv" style="--d:.5" data-timer-id="lab4" data-seconds="600" data-interactive>
+          <p class="tmr-lbl">10 minutos</p>
+          <div class="tmr-dial"><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="tm-ring tm-track" cx="100" cy="100" r="92"/><circle class="tm-ring tm-prog" data-timer-ring cx="100" cy="100" r="92" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><p class="tmr-count" data-timer-count>10:00</p></div>
+          <div class="tmr-ctrl"><button type="button" data-timer="toggle">Iniciar</button><button type="button" data-timer="reset" class="ghost">Reiniciar</button></div>
+        </div>
+        <div class="deliv rv mt" style="--d:.6"><p class="lbl">Entregable</p><p>Componentes conectados y sus cuatro flujos.</p></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="10:00">
+    <p><b>Duración:</b> 10 min · Etapa 4 de 5.</p>
+    <p><b>Explicación pedagógica.</b> Es el capítulo 5 aplicado: los flujos internos de su propio sistema. Las siete preguntas recorren una operación de punta a punta, igual que hicimos con el botón en la diapositiva 14. Los entregables son cuatro diagramas sencillos, que la IA puede ayudar a dibujar.</p>
+    <p><b>Qué decir.</b> “Elijan la operación más importante de su sistema (en inventarios: registrar una salida) y síganla con las siete preguntas. Luego pidan los cuatro flujos. No tienen que ser bonitos: tienen que ser correctos.”</p>
+    <p><b>Recordatorio clave.</b> “Data flow sigue al dato. Control flow sigue la decisión. State flow sigue a una entidad en el tiempo. Si los tres dicen cosas distintas sobre lo mismo, encontraron una contradicción: esa es la parte valiosa.”</p>
+    <p><b>Mientras trabajan.</b> Revisa que la validación y la lógica estén en el backend y no “en la pantalla”, que haya al menos un camino de error y que los servicios externos (correo, mensajes) tengan plan B si fallan.</p>
+    <p><b>Pregunta para provocar.</b> “¿Qué parte de tu sistema podría ser asíncrona?”</p>
+    <p><b>Conexión.</b> Con los flujos listos, la etapa 5 los pone a prueba con escenarios.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     29 — ETAPA 5: SIMULATE & CHALLENGE
+     ====================================================== -->
+<section class="slide dark" id="d29" data-title="29 · Etapa 5: Simulate & challenge">
+  <div class="sl">
+    <p class="k lbl rv"><b>29</b> Systems Lab · Etapa 5 de 5</p>
+    <h2 class="t rv" style="--d:.15">Simulate &amp; challenge</h2>
+    <div class="bd" style="grid-template-columns:1fr 1fr 360px;margin-top:40px;gap:52px">
+      <div class="col">
+        <p class="lbl rv" style="--d:.3">Simula tres escenarios</p>
+        <div class="vflow rv" style="--d:.35;gap:24px">
+          <div class="node"><span class="n">01</span>Operación exitosa</div>
+          <div class="node"><span class="n">02</span>Operación rechazada por una regla</div>
+          <div class="node ghost"><span class="n">03</span>Fallo o condición inesperada</div>
+        </div>
+        <div class="note bl rv" style="--d:.5;margin-top:12px"><p>Pídele a la IA que actúe como <b>arquitecto revisor</b> y encuentre <b>tres problemas reales</b> en tu arquitectura.</p></div>
+      </div>
+      <div class="col">
+        <p class="lbl rv" style="--d:.4">En cada uno, explica</p>
+        <ol class="ol rv" style="--d:.45">
+          <li>Qué información ingresa.</li>
+          <li>Qué componentes participan.</li>
+          <li>Qué reglas se evalúan.</li>
+          <li>Qué datos cambian.</li>
+          <li>Qué salida se produce.</li>
+          <li>Cómo se maneja el error.</li>
+        </ol>
+      </div>
+      <div class="col">
+        <div class="tmr rv" style="--d:.5" data-timer-id="lab5" data-seconds="420" data-interactive>
+          <p class="tmr-lbl">7 minutos</p>
+          <div class="tmr-dial"><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="tm-ring tm-track" cx="100" cy="100" r="92"/><circle class="tm-ring tm-prog" data-timer-ring cx="100" cy="100" r="92" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><p class="tmr-count" data-timer-count>07:00</p></div>
+          <div class="tmr-ctrl"><button type="button" data-timer="toggle">Iniciar</button><button type="button" data-timer="reset" class="ghost">Reiniciar</button></div>
+        </div>
+        <div class="deliv rv mt" style="--d:.6"><p class="lbl">Resultado</p><p>SYSTEM BLUEPRINT V1</p></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="7:00">
+    <p><b>Duración:</b> 7 min · Etapa 5 de 5 (cierra el laboratorio en 40 min).</p>
+    <p><b>Explicación pedagógica.</b> Simular es recorrer el sistema con un caso concreto sin construirlo: la forma más barata de encontrar errores de diseño. Los tres escenarios cubren el caso feliz, una regla que dice no y algo inesperado, igual que en las diapositivas 19 y 22. Pedirle a la IA que actúe como revisor invierte su papel: ya no propone, critica.</p>
+    <p><b>Qué decir.</b> “Tomen un caso real con datos inventados: ‘el producto X tiene 6 unidades, mínimo 5, alguien saca 3’. Recórranlo componente por componente. Luego uno que la regla rechace. Luego uno que falle: se cae la conexión o falta un dato.”</p>
+    <p><b>El revisor.</b> “Pídanle a la IA: ‘actúa como arquitecto revisor y encuentra tres problemas reales en esta arquitectura’. Ojo: reales, no cosméticos. Y ustedes deciden si están de acuerdo.”</p>
+    <p><b>Cierre de etapa.</b> “Pidan el documento SYSTEM BLUEPRINT completo. Esa es su versión 1. No es definitiva: es la primera que se puede discutir.”</p>
+    <p><b>Mientras trabajan.</b> Identifica dos o tres personas con sistemas distintos y buenas decisiones para invitarlas a presentar.</p>
+    <p><b>Conexión.</b> Cierra la Parte II. En la Parte III explican su sistema en voz alta.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     PARTE III — PRESENTACIONES Y CIERRE
+     ====================================================== -->
+<section class="slide dark tpl-band band-or" id="close" data-title="Parte III: Presentaciones y cierre">
+  <div class="band fade" style="--d:0"><span class="band-word rv" style="--d:.2">Builder</span></div>
+  <div class="band-body">
+    <p class="lbl rv" style="--d:.6">Parte III · 10 min</p>
+    <p class="band-line rv" style="--d:.9">Explain your system</p>
+    <p class="band-sub rv" style="--d:1.2">Si puedes explicarlo, lo entiendes.</p>
+    <i class="band-rule" style="--d:1.4"></i>
+  </div>
+  <aside class="notes" data-time="0:00">
+    <p>Puerta de la Parte III: 5 minutos de presentaciones y 5 de cierre.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     30 — EXPLAIN YOUR SYSTEM
+     ====================================================== -->
+<section class="slide light" id="d30" data-title="30 · Explain your system">
+  <div class="sl">
+    <p class="k lbl rv"><b>30</b> Parte III · Presentaciones</p>
+    <h2 class="t rv" style="--d:.15">Explain your system</h2>
+    <div class="bd" style="grid-template-columns:1fr 1fr 360px;margin-top:40px;gap:52px">
+      <div class="col">
+        <p class="lbl rv" style="--d:.3">En dos minutos, cuéntanos</p>
+        <ol class="ol rv" style="--d:.35">
+          <li>Qué problema resuelve tu sistema.</li>
+          <li>Qué componentes diseñaste.</li>
+          <li>Cómo se conectan.</li>
+          <li>Qué información utiliza.</li>
+          <li>Qué pasa cuando se ejecuta su operación principal.</li>
+          <li>Qué falla encontraste en la simulación.</li>
+        </ol>
+      </div>
+      <div class="col" data-step="1">
+        <p class="lbl or rv">Preguntas para defender decisiones</p>
+        <ul class="ul rv" style="--d:.1">
+          <li>¿Por qué ese componente y no otro?</li>
+          <li>¿Dónde vive tu regla principal y por qué ahí?</li>
+          <li>¿Qué pasa si esa operación se repite dos veces?</li>
+          <li>¿Qué decidiste tú y qué propuso la IA?</li>
+          <li>¿Qué propuesta de la IA rechazaste?</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="tmr rv" style="--d:.5" data-timer-id="talks" data-seconds="300" data-interactive>
+          <p class="tmr-lbl">5 minutos</p>
+          <div class="tmr-dial"><svg viewBox="0 0 200 200" aria-hidden="true"><circle class="tm-ring tm-track" cx="100" cy="100" r="92"/><circle class="tm-ring tm-prog" data-timer-ring cx="100" cy="100" r="92" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><p class="tmr-count" data-timer-count>05:00</p></div>
+          <div class="tmr-ctrl"><button type="button" data-timer="toggle">Iniciar</button><button type="button" data-timer="reset" class="ghost">Reiniciar</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="5:00">
+    <p><b>Duración:</b> 5 min · Parte III.</p>
+    <p><b>Explicación pedagógica.</b> Explicar en voz alta obliga a ordenar el pensamiento y deja ver si una persona entiende su sistema o solo copió lo que generó la IA. Por eso las preguntas de la derecha piden decisiones y razones, no resultados.</p>
+    <p><b>Cómo conducirlo.</b> Invita a dos o tres personas, idealmente con sistemas diferentes (un inventario, una agenda, uno propio). Máximo dos minutos cada una, siguiendo las seis preguntas de la izquierda.</p>
+    <p><b>[Clic]</b> — las preguntas para defender decisiones. Elige una o dos por persona. La más reveladora: “¿Qué propuesta de la IA rechazaste?” Quien rechazó algo es porque lo entendió.</p>
+    <p><b>Tono.</b> Celebra las fallas encontradas en la simulación: “encontrar ese error ahora costó cero; encontrarlo con el sistema en producción habría costado mucho más”.</p>
+    <p><b>Conexión.</b> Lleva al cierre: lo que acaban de hacer es pensar como builders.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     31 — YOU ARE NOW THINKING LIKE A BUILDER
+     ====================================================== -->
+<section class="slide dark" id="d31" data-title="31 · You are now thinking like a builder">
+  <div class="sl">
+    <p class="k lbl rv"><b>31</b> Parte III · Cierre</p>
+    <h2 class="t rv" style="--d:.15">You are now thinking like a <em>builder</em></h2>
+    <div class="bd" style="grid-template-columns:1fr 1fr;margin-top:44px;gap:70px">
+      <div class="col">
+        <p class="tx rv" style="--d:.3">Antes veías <b>una aplicación</b>. Ahora puedes identificar:</p>
+        <div class="flow rv" data-step="1" style="gap:12px;flex-wrap:wrap;justify-content:flex-start">
+          <span class="pill">Componentes</span><span class="pill">Datos</span><span class="pill">Lógica</span><span class="pill">Estados</span><span class="pill">Comunicaciones</span><span class="pill">Reglas</span><span class="pill">Errores</span><span class="pill or">Arquitectura</span>
+        </div>
+        <p class="tx rv" data-step="2">El siguiente paso: usar tu <b>blueprint</b> para construir software. La IA ya puede <span class="bl"><b>generar código, implementar funcionalidades y acelerar el desarrollo</b></span>, pero no sustituye la comprensión técnica ni las pruebas.</p>
+      </div>
+      <div class="col closing-ph" data-step="3">
+        <p class="ph rv">Don't start with the tool. <em>Start with the system.</em></p>
+        <p class="ph rv" style="--d:.5">AI can write code. <em>You need to understand what you're building.</em></p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes" data-time="3:30">
+    <p><b>Duración:</b> 3 min 30 s · Parte III (junto con la diapositiva final suma 5 min de cierre).</p>
+    <p><b>Explicación pedagógica.</b> Recapitulamos el cambio de mirada: de ver una pantalla a ver un sistema. Las ocho palabras son los ocho temas de la charla. Conectamos con lo que sigue (construir) y dejamos claro el papel de la IA: acelera la construcción, no reemplaza la comprensión.</p>
+    <p><b>Qué decir.</b> “Hace dos horas, si les mostraba una app, veían pantallas y botones.”</p>
+    <p><b>[Clic]</b> — “Ahora pueden ver componentes, datos, lógica, estados, comunicaciones, reglas, errores y arquitectura. Eso no se desaprende.”</p>
+    <p><b>[Clic]</b> — “¿Qué sigue? Tienen un blueprint. Hoy las herramientas de IA pueden tomar un documento así y ayudar a generar código, implementar funcionalidades y avanzar mucho más rápido. Pero si no entienden lo que están construyendo, no van a saber si el código es correcto, ni cómo probarlo, ni qué hacer cuando falle.”</p>
+    <p><b>[Clic]</b> — lee las dos frases despacio. Pausa entre una y otra.</p>
+    <p><b>Conexión.</b> Cierra el arco que abrió la diapositiva 01 (“what you see is the interface”) y da paso a la invitación final.</p>
+  </aside>
+</section>
+
+<!-- ======================================================
+     FINAL
+     ====================================================== -->
+<section class="slide light tpl-wave" id="end" data-title="Cierre: Stop just using technology">
+  <img class="wave-bg fade" src="img/portada-ondas.jpg" alt="" style="--d:0">
+  <img class="logo-ur rv" style="--d:.2" src="img/logo-urosario.png" alt="Universidad del Rosario — Escuela de Economía y Negocios">
+  <div class="end-txt">
+    <p class="end-a rv" style="--d:.6">Stop just using technology.</p>
+    <p class="end-c rv" style="--d:1.2">Start understanding<br>how to build it.</p>
+    <p class="end-q rv" style="--d:2.2">Sigue entrenando tu pensamiento computacional: tu System Blueprint es el plano de tu primera solución real.</p>
+  </div>
+  <div class="wave-brand rv" style="--d:2.8"><img src="img/buque-crema.svg" alt="buque"><span>ideas en movimiento</span></div>
+  <aside class="notes" data-time="1:30">
+    <p><b>Duración:</b> 1 min 30 s · cierre (total de la masterclass: 120 min).</p>
+    <p><b>Qué decir.</b> “Stop just using technology. Start understanding how to build it.” Pausa.</p>
+    <p>“Llévense su blueprint. No lo dejen en una conversación con la IA: es el plano de su primera solución real. El siguiente paso es construir una pieza pequeña, probarla y aprender de lo que pase.”</p>
+    <p>“Sigan entrenando esta forma de mirar. La próxima vez que toquen un botón, pregúntense qué pasó detrás.”</p>
+    <p><b>[Pausa]</b> “Gracias.”</p>
+  </aside>
+</section>
+
+</div>
+
+<!-- chrome -->
+<div id="progress" aria-hidden="true"><span></span></div>
+<p id="counter" aria-hidden="true"></p>
+<nav id="controls" aria-label="Controles de la presentación">
+  <button type="button" data-cmd="prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button type="button" data-cmd="next" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <button type="button" data-cmd="notes" aria-label="Notas (N)"><svg viewBox="0 0 24 24"><path d="M5 6h14M5 12h14M5 18h9"/></svg></button>
+  <button type="button" data-cmd="presenter" aria-label="Modo presentadora (P)"><svg viewBox="0 0 24 24"><path d="M3 5h12v9H3zM17 8h4v6h-4M8 18h3"/></svg></button>
+  <button type="button" data-cmd="fullscreen" aria-label="Pantalla completa (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</nav>
+<div id="notes-panel" hidden></div>
+
+<script src="deck.js"></script>
+</body>
+</html>
