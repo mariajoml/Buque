@@ -132,27 +132,6 @@ function person(x, y, { cls = 'dot', delay } = {}) {
    ========================================================= */
 const SCENES = {};
 
-/* 01 — detrás del botón: la interfaz y la cadena que la sostiene */
-SCENES.button = () => {
-  const names = ['Interfaz', 'Frontend', 'API', 'Backend', 'Datos'];
-  const S = 150, GAP = 270;
-  let s = '', links = '', lbl = '';
-  names.forEach((n, i) => {
-    const x = GAP * i, y = -GAP * i;
-    if (i === 0) {
-      s += box({ x, y, z: 0, w: S, d: S, h: 34, faces: true, cls: 'orf', delay: 0.3 });
-    } else {
-      s += box({ x, y, z: 0, w: S, d: S, h: S, faces: true, cls: 'chain-box', delay: 0.2, step: 1, fdelay: 0.25 * i });
-      const [ax, ay] = P(x - GAP + S, y + GAP + S / 2, i === 1 ? 17 : S / 2);
-      const [bx, by] = P(x, y + S / 2, S / 2);
-      links += `<path class="ln or w2 draw" data-step="1" style="--d:${sec(0.2 + 0.25 * i)}" pathLength="1" d="M${ax} ${ay} L${bx} ${by}"/>`;
-    }
-    const [lx, ly] = P(x + S / 2, y + S / 2, 0);
-    lbl += g(txt(lx, ly + 120, n, 'svgt', { anchor: 'middle', size: 44 }), { cls: i ? 'fade' : 'rv', step: i ? 1 : undefined, style: `--d:${sec(i ? 0.25 * i + 0.3 : 0.5)}` });
-  });
-  return g(links + s + lbl, { tr: T(960, 420, 0.46) });
-};
-
 /* 04 — caja negra / caja blanca */
 SCENES.boxes = () => {
   const W = 260;
