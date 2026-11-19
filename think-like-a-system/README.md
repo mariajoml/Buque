@@ -23,8 +23,8 @@ python3 -m http.server 4175 --directory think-like-a-system
 | | Cap. 4 Data is the language of systems (15–17) | 10 min |
 | | Cap. 5 How systems actually flow (18–22) | 15 min |
 | | Cap. 6 From problem to architecture (23–24) | 5 min |
-| II · Systems Lab | Etapas 1–5 (25–29), con temporizador | 5 + 8 + 10 + 10 + 7 = 40 min |
-| III · Cierre | Explain your system (30) y cierre (31) | 10 min |
+| II · Systems Lab | Etapas 1–5 (25–29), con temporizador | 5 + 10 + 12 + 10 + 8 = 45 min |
+| III · Cierre | Explain your system (30) y cierre (31) | 5 min |
 
 Cada diapositiva lleva en sus notas: duración, explicación pedagógica, qué
 decir en cada clic, analogía, pregunta al público y conexión con el resto.
@@ -37,3 +37,7 @@ En las etapas del laboratorio y en la 30, `T` inicia o pausa el
 temporizador y `R` lo reinicia (también desde el modo presentadora).
 
 El azul aparece solo cuando entra la IA (diapositiva 05, 24 y laboratorio).
+
+## Playbook para participantes
+
+`playbook.html` (publicado en `buque.com.co/charlamajo2rosario/playbook`) trae las instrucciones de la actividad de 45 minutos, el prompt maestro y los prompts de cada etapa con su entregable y lista de chequeo. La diapositiva "Cómo funciona la actividad" (justo después de la puerta del laboratorio) muestra esa dirección.

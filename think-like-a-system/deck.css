@@ -626,3 +626,17 @@ body.presenter{overflow:auto;background:#0A0908}
 .k .an{margin-left:auto;display:inline-flex;align-items:center;gap:12px;padding:8px 18px 8px 14px;border-radius:999px;background:var(--f1);font-family:var(--texto);font-size:19px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--fg)}
 .k .an i{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--naranja)}
 .k .an.foot{position:absolute;right:var(--m);bottom:40px}
+
+/* ---------- lab · instrucciones ---------- */
+.ltl{border-top:1.5px solid var(--ink2)}
+.ltl-r{display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:18px;padding:16px 0;border-bottom:1.5px solid var(--ink2)}
+.ltl-r b{font-family:var(--display);font-weight:800;font-size:34px;color:var(--naranja)}
+.ltl-r p{font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:-.01em;line-height:1.1}
+.ltl-r p small{display:block;font-family:var(--texto);font-weight:400;font-size:19px;letter-spacing:0;color:var(--mute);margin-top:4px}
+.ltl-r span{font-weight:600;font-size:22px;color:var(--fg);white-space:nowrap}
+.ltl-r.tot p{font-size:22px;letter-spacing:.16em;text-transform:uppercase;font-family:var(--texto);font-weight:600;color:var(--mute)}
+.ltl-r.tot span{padding:6px 16px;border-radius:999px;background:var(--naranja);color:var(--carbon)}
+.pbk{margin-top:40px;padding:22px 28px;border-radius:14px;background:var(--azul);color:var(--crema)}
+.pbk .lbl{color:rgba(255,240,218,.8);margin-bottom:8px}
+.pbk-url{font-family:var(--display);font-weight:700;font-size:38px;letter-spacing:-.02em;line-height:1.1}
+.pbk-url b{color:var(--crema);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}

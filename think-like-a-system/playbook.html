@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Systems Lab Playbook</title>
+<meta name="description" content="Playbook completo del Systems Lab de la masterclass Think Like a System: instrucciones, etapas y prompts.">
+<meta name="theme-color" content="#FFF0DA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%233E6BFF'/></svg>">
+<style>
+@font-face{font-family:"Bricolage Grotesque";src:url("fonts/BricolageGrotesque-Variable.ttf") format("truetype-variations");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Geologica";src:url("fonts/Geologica-Variable.ttf") format("truetype-variations");font-weight:100 900;font-display:swap}
+:root{--carbon:#12100F;--crema:#FFF0DA;--naranja:#FF5A00;--azul:#3E6BFF;--mute:#6F655D;--line:rgba(18,16,15,.12)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--crema);color:var(--carbon);font-family:"Geologica",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+main{max-width:880px;margin:0 auto;padding:56px 16px 96px}
+.k{font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin:0 0 14px}
+h1{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(38px,8vw,64px);line-height:.95;letter-spacing:-.035em;margin:0}
+h1 span{color:var(--azul)}
+.lede{font-size:19px;color:#3E3732;margin:18px 0 26px;max-width:700px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px;padding:0;list-style:none}
+.meta li{padding:8px 16px;border-radius:999px;background:rgba(18,16,15,.06);font-size:15px}
+.meta li b{color:var(--naranja)}
+h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:28px;letter-spacing:-.02em;margin:46px 0 12px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:12px 0 12px 48px;border-top:1px solid var(--line);font-size:17px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:32px;height:32px;border-radius:50%;background:var(--carbon);color:var(--crema);display:grid;place-items:center;font-weight:600;font-size:15px}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.rules li{padding:16px 18px;border-radius:12px;border:1.5px solid var(--line);font-size:15.5px}
+.rules li b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:19px;margin-bottom:4px}
+nav.map{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0 0}
+nav.map a{display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:12px;background:var(--carbon);color:var(--crema);text-decoration:none;font-size:14px;line-height:1.25}
+nav.map a b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:24px;color:var(--naranja)}
+nav.map a i{font-style:normal;color:#B8AA9C;font-size:13px;margin-top:auto}
+nav.map a:hover,nav.map a:focus-visible{background:var(--azul)}
+@media (max-width:640px){nav.map{grid-template-columns:1fr 1fr}}
+.stage{margin-top:56px;padding-top:36px;border-top:3px solid var(--carbon)}
+.stage header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.num{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--naranja)}
+.time{padding:6px 14px;border-radius:999px;background:var(--naranja);color:var(--carbon);font-weight:600;font-size:14px}
+.stage h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:clamp(32px,6vw,46px);line-height:1;letter-spacing:-.03em;margin:12px 0 0}
+.stage h2 small{display:block;font-family:"Geologica",system-ui,sans-serif;font-weight:400;font-size:18px;letter-spacing:0;color:var(--mute);margin-top:8px}
+.obj{font-size:18px;margin:16px 0 0}
+.sh{font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin:28px 0 10px}
+.q{margin:0;padding-left:22px;font-size:16.5px}
+.q li{padding:3px 0}
+.q li::marker{color:var(--naranja);font-weight:600}
+.opts ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.opts li{font-size:16px}
+.opts li b{display:inline-grid;place-items:center;width:26px;height:26px;margin-right:10px;border-radius:6px;background:var(--carbon);color:var(--crema);font-size:13px}
+.pbox{margin:0 0 14px}
+.pbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px 10px 18px;background:var(--azul);color:var(--crema);border-radius:10px 10px 0 0}
+.plbl{font-weight:600;font-size:14.5px}
+button{cursor:pointer;border:0;border-radius:999px;padding:8px 18px;font:500 14px "Geologica",system-ui,sans-serif;background:var(--crema);color:var(--carbon);min-width:96px}
+button.big{padding:13px 26px;font-size:16px;background:var(--azul);color:var(--crema)}
+button:focus-visible{outline:2px solid var(--naranja);outline-offset:3px}
+.prompt{white-space:pre-wrap;font-size:16px;line-height:1.6;padding:18px 20px;border:2px solid var(--azul);border-top:0;border-radius:0 0 10px 10px;background:rgba(62,107,255,.06)}
+.master .prompt{border-top:2px solid var(--azul);border-radius:10px;max-height:420px;overflow:auto}
+.deliv{margin-top:22px;padding:4px 20px 16px;border-radius:12px;background:var(--carbon);color:var(--crema)}
+.deliv .sh{color:var(--naranja);margin-top:16px}
+.deliv p:last-child{margin:0;font-size:17px}
+.ex{margin:16px 0 0;padding:14px 18px;border-left:3px solid var(--naranja);background:rgba(255,90,0,.07);font-size:16px}
+.ex span{display:block;font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--naranja);margin-bottom:4px}
+.chk{list-style:none;padding:0;margin:0}
+.chk li{position:relative;padding:6px 0 6px 30px;font-size:16px}
+.chk li::before{content:"";position:absolute;left:0;top:9px;width:16px;height:16px;border:2px solid var(--carbon);border-radius:4px}
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 14px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);padding:10px 18px;border-radius:999px;background:var(--carbon);color:var(--crema);font-size:15px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+</style>
+</head>
+<body>
+<main>
+  <p class="k">Think Like a System · Systems Lab</p>
+  <h1>Systems Lab <span>Playbook</span></h1>
+  <p class="lede">Durante <b>45 minutos</b> vas a diseñar un sistema propio desde su lógica interna, con la IA como copiloto. No vas a programar ni a dibujar pantallas: vas a pensar como quien diseña sistemas.</p>
+  <ul class="meta"><li><b>45 min</b> en total</li><li>5 etapas</li><li>Individual o en parejas</li><li>Resultado: tu SYSTEM BLUEPRINT V1</li></ul>
+
+  <h3>Qué necesitas</h3>
+  <ol class="steps">
+    <li>Una herramienta de IA conversacional abierta (la que uses normalmente).</li>
+    <li>Una hoja o un documento para ir guardando tus entregables.</li>
+    <li>Este playbook abierto al lado, para copiar los prompts de cada etapa.</li>
+  </ol>
+
+  <h3>Cómo funciona</h3>
+  <ol class="steps">
+    <li>Copia el <b>prompt maestro</b> y pégalo tal cual en una conversación nueva.</li>
+    <li>Responde las preguntas que te haga la IA. Usa las preguntas guía de cada etapa como apoyo.</li>
+    <li>Cuando necesites empujar la conversación, usa los <b>prompts de la etapa</b>. Cambia lo que está entre [corchetes].</li>
+    <li>No pases a la siguiente etapa sin tener su <b>entregable</b> y revisar la lista de chequeo.</li>
+    <li>Al final, pide tu <b>SYSTEM BLUEPRINT V1</b> y prepárate para explicarlo en un minuto.</li>
+  </ol>
+
+  <h3>Reglas del laboratorio</h3>
+  <ul class="rules">
+    <li><b>Sin código</b>Hoy se diseña. El código viene después.</li>
+    <li><b>Sin pantallas</b>Primero el sistema, después la interfaz.</li>
+    <li><b>Tú decides</b>La IA propone y explica. Las decisiones son tuyas.</li>
+    <li><b>Entiende antes de aceptar</b>Si no puedes explicarlo, pregunta otra vez.</li>
+  </ul>
+
+  <h3>Mapa de las 5 etapas</h3>
+  <nav class="map" aria-label="Etapas"><a href="#e1"><b>1</b>Define el sistema<i>5 min</i></a><a href="#e2"><b>2</b>Descompón el sistema<i>10 min</i></a><a href="#e3"><b>3</b>Diseña la lógica y los datos<i>12 min</i></a><a href="#e4"><b>4</b>Conecta las piezas<i>10 min</i></a><a href="#e5"><b>5</b>Simula y desafía<i>8 min</i></a></nav>
+
+  <h3 id="maestro">Prompt maestro</h3>
+  <p class="lede" style="margin:0 0 16px;font-size:17px">Pégalo al inicio de una conversación nueva. Le pide a la IA que sea tu profesora de arquitectura: que pregunte, explique, cuestione y no avance sin tu confirmación.</p>
+  <div class="master">
+    <div class="bar"><button type="button" class="big" data-copy="master">Copiar prompt maestro</button></div>
+    <div class="prompt" id="master">Actúa como un Principal Software Architect, Computer Science Educator y Systems Thinking Coach.
+
+Estoy aprendiendo a pensar como un constructor de sistemas tecnológicos.
+No quiero que crees una aplicación automáticamente.
+Quiero aprender a diseñar cómo funciona un sistema desde sus fundamentos.
+
+Trabajaremos en cinco etapas:
+1. Define the System.
+2. Break It Down.
+3. Design the Logic &amp; Data.
+4. Connect the Pieces.
+5. Simulate &amp; Challenge.
+
+Comienza preguntándome qué problema quiero resolver. Si no tengo una idea, ayúdame a elegir un problema realista.
+
+En cada etapa:
+- Hazme hasta tres preguntas importantes.
+- Explícame los conceptos que necesito entender.
+- Ayúdame a tomar las decisiones.
+- Cuestiona las suposiciones.
+- No inventes requisitos como si estuvieran confirmados.
+- Diferencia decisiones, suposiciones y recomendaciones.
+- Produce un entregable concreto.
+- No avances hasta mi confirmación.
+
+Durante el ejercicio enséñame:
+- Entradas y salidas.
+- Componentes y responsabilidades.
+- Variables y tipos de datos.
+- Entidades y relaciones.
+- Reglas de negocio.
+- Condicionales.
+- Eventos.
+- Estados.
+- Data Flow.
+- Control Flow.
+- State Flow.
+- Communication Flow.
+- Error Handling.
+- Arquitectura conceptual.
+
+Utiliza diagramas Mermaid cuando ayuden a explicar el sistema.
+Mantén la arquitectura sencilla. No agregues tecnologías innecesarias ni complejidad artificial.
+
+Después de las cinco etapas, produce un documento llamado SYSTEM BLUEPRINT que incluya toda la especificación conceptual y técnica.
+Finaliza con una revisión crítica de posibles errores y un plan de cómo comenzar a construir el sistema utilizando IA.
+No escribas todavía el código del producto.
+Empieza por la primera etapa.</div>
+  </div>
+
+<section class="stage" id="e1">
+  <header><span class="num">Etapa 1 de 5</span><span class="time">5 min</span></header>
+  <h2>Define the system<small>Define el sistema</small></h2>
+  <p class="obj">Decidir qué problema resuelve tu sistema, quién lo usa, qué recibe, qué hace y qué entrega. Y, sobre todo, qué queda fuera.</p>
+  <div class="opts"><p class="sh">Si no sabes qué elegir</p><ul><li><b>A</b>Inventarios con alertas de reposición</li><li><b>B</b>Gestión de estudiantes y certificados</li><li><b>C</b>Asignación de solicitudes y seguimiento de estados</li><li><b>D</b>Gestión de citas y disponibilidad</li><li><b>E</b>Un sistema propio (acótalo mucho)</li></ul></div>
+  <p class="sh">Preguntas guía</p>
+  <ol class="q"><li>¿Qué problema existe?</li><li>¿Quién interactúa con el sistema?</li><li>¿Qué necesita recibir?</li><li>¿Qué debe procesar?</li><li>¿Qué debe entregar?</li><li>¿Qué está <b>fuera</b> de su alcance?</li></ol>
+  <p class="sh">Prompts de la etapa</p>
+  <div class="pbox"><div class="pbar"><span class="plbl">Para empezar</span><button type="button" data-copy="p1">Copiar</button></div><div class="prompt" id="p1">Quiero diseñar un sistema para [describe tu problema en una frase]. Hazme hasta tres preguntas para entender el problema, quién lo usa y qué queda fuera de su alcance. Después ayúdame a escribir un párrafo que defina el sistema, con sus entradas, su proceso y sus salidas.</div></div><div class="pbox"><div class="pbar"><span class="plbl">Si no tienes una idea</span><button type="button" data-copy="p2">Copiar</button></div><div class="prompt" id="p2">No tengo un problema definido. Trabajo o estudio en [tu área]. Propónme tres problemas realistas y pequeños que se puedan resolver con un sistema, y explícame por qué cada uno es bueno para practicar. Luego ayúdame a elegir uno.</div></div>
+  <div class="deliv"><p class="sh">Entregable</p><p>Un párrafo que define el sistema, más una lista de entradas, procesos y salidas, y una línea que diga qué NO hace.</p></div>
+  <p class="ex"><span>Ejemplo</span>“Un sistema que registra las existencias de productos en dos bodegas, recibe movimientos de entrada y salida, y avisa cuando un producto cae por debajo de su mínimo. No gestiona compras ni proveedores.”</p>
+  <p class="sh">Antes de pasar a la siguiente etapa</p>
+  <ul class="chk"><li>Describiste un problema, no pantallas ni botones.</li><li>Dijiste quién lo usa.</li><li>Escribiste qué queda fuera.</li></ul>
+</section>
+<section class="stage" id="e2">
+  <header><span class="num">Etapa 2 de 5</span><span class="time">10 min</span></header>
+  <h2>Break it down<small>Descompón el sistema</small></h2>
+  <p class="obj">Partir el sistema en piezas con una sola responsabilidad cada una y ver de quién depende cada pieza.</p>
+  
+  <p class="sh">Preguntas guía</p>
+  <ol class="q"><li>¿Qué función cumple cada componente?</li><li>¿Qué información necesita?</li><li>¿Qué resultado produce?</li><li>¿Depende de otro componente?</li><li>¿Se está <b>duplicando</b> alguna responsabilidad?</li></ol>
+  <p class="sh">Prompts de la etapa</p>
+  <div class="pbox"><div class="pbar"><span class="plbl">Proponer componentes</span><button type="button" data-copy="p3">Copiar</button></div><div class="prompt" id="p3">Con la definición que acordamos, propón los componentes del sistema. Para cada uno dime su responsabilidad, qué información necesita, qué resultado produce y de qué otro componente depende. Usa nombres de responsabilidad, no de tecnología. Mantenlo simple y avísame si dos componentes se están duplicando.</div></div><div class="pbox"><div class="pbar"><span class="plbl">Ponerlos a prueba</span><button type="button" data-copy="p4">Copiar</button></div><div class="prompt" id="p4">Si mañana cambia la regla principal de mi sistema, ¿cuántos componentes tendría que modificar? Si son más de dos, propón cómo reorganizarlos para que el cambio quede en un solo lugar.</div></div>
+  <div class="deliv"><p class="sh">Entregable</p><p>Un mapa de componentes: cada pieza con su responsabilidad y flechas de dependencia.</p></div>
+  <p class="ex"><span>Ejemplo</span>Inventarios: Catálogo de productos · Registro de existencias · Movimientos de inventario · <b>Reglas de reposición</b> · Gestión de alertas · Persistencia.</p>
+  <p class="sh">Antes de pasar a la siguiente etapa</p>
+  <ul class="chk"><li>Ningún componente se llama “base de datos” o “servidor”: todos tienen nombre de responsabilidad.</li><li>No hay un componente “Gestión” que lo haga todo.</li><li>Son pocos: entre cuatro y ocho piezas.</li></ul>
+</section>
+<section class="stage" id="e3">
+  <header><span class="num">Etapa 3 de 5</span><span class="time">12 min</span></header>
+  <h2>Design the logic &amp; data<small>Diseña la lógica y los datos</small></h2>
+  <p class="obj">Definir qué información guarda el sistema, cómo se relaciona, qué reglas decide y en qué estados puede estar cada cosa.</p>
+  
+  <p class="sh">Preguntas guía</p>
+  <ol class="q"><li>¿Qué entidades existen y qué atributos tiene cada una?</li><li>¿De qué tipo es cada dato: texto, número, fecha, sí/no, lista?</li><li>¿Cuál es el identificador de cada entidad?</li><li>¿Cómo se relacionan: uno a muchos o muchos a muchos?</li><li>¿Cuál es la regla principal?</li><li>¿Qué estados tiene la entidad más importante y qué eventos la cambian?</li></ol>
+  <p class="sh">Prompts de la etapa</p>
+  <div class="pbox"><div class="pbar"><span class="plbl">Modelo de datos</span><button type="button" data-copy="p5">Copiar</button></div><div class="prompt" id="p5">Ayúdame a diseñar el modelo conceptual de datos de mi sistema: entidades, atributos, el tipo de dato de cada atributo (texto, número, fecha, sí/no o lista), su identificador y las relaciones entre entidades (uno a muchos, muchos a muchos). Preséntalo con una tabla por entidad, sin código.</div></div><div class="pbox"><div class="pbar"><span class="plbl">Reglas y casos borde</span><button type="button" data-copy="p6">Copiar</button></div><div class="prompt" id="p6">Escribe la regla principal de mi sistema con la forma “si… entonces… si no…”. Luego dime qué debería pasar si: una operación se registra dos veces, alguien pide más de lo disponible o falta información. Por último, lista los estados de la entidad principal y qué evento provoca cada cambio de estado.</div></div>
+  <div class="deliv"><p class="sh">Entregable</p><p>Un modelo conceptual: tabla de entidades con atributos y tipos, sus relaciones, la regla principal y los estados.</p></div>
+  <p class="ex"><span>Ejemplo</span>Regla: “Si el inventario disponible cae por debajo del mínimo configurado, el producto se marca para reposición.” Entidades: Producto, Ubicación, Movimiento, Regla de reposición, Alerta.</p>
+  <p class="sh">Antes de pasar a la siguiente etapa</p>
+  <ul class="chk"><li>Cada entidad tiene un identificador.</li><li>Decidiste una respuesta para los tres casos borde (“depende” no cuenta).</li><li>Distingues estado (“bajo stock”) de evento (“movimiento registrado”).</li><li>El mismo dato no está guardado en dos lugares sin razón.</li></ul>
+</section>
+<section class="stage" id="e4">
+  <header><span class="num">Etapa 4 de 5</span><span class="time">10 min</span></header>
+  <h2>Connect the pieces<small>Conecta las piezas</small></h2>
+  <p class="obj">Seguir la operación más importante de tu sistema de punta a punta y dibujar cómo viajan los datos, las decisiones y los estados.</p>
+  
+  <p class="sh">Preguntas guía</p>
+  <ol class="q"><li>¿Qué componente <b>recibe</b> la información?</li><li>¿Cuál <b>valida</b> la operación?</li><li>¿Dónde se ejecuta la <b>lógica</b>?</li><li>¿Cuál <b>consulta o modifica</b> datos?</li><li>¿Qué información se <b>devuelve</b>?</li><li>¿Qué pasa cuando interviene un <b>servicio externo</b>?</li><li>¿Qué sucede cuando hay un <b>error</b>?</li></ol>
+  <p class="sh">Prompts de la etapa</p>
+  <div class="pbox"><div class="pbar"><span class="plbl">Recorrer la operación</span><button type="button" data-copy="p7">Copiar</button></div><div class="prompt" id="p7">Elijamos la operación más importante de mi sistema y recorrámosla de punta a punta: qué componente recibe la información, cuál la valida, dónde se ejecuta la lógica, cuál consulta o modifica datos, qué información se devuelve, qué pasa si interviene un servicio externo y qué pasa si hay un error.</div></div><div class="pbox"><div class="pbar"><span class="plbl">Los cuatro flujos</span><button type="button" data-copy="p8">Copiar</button></div><div class="prompt" id="p8">Dibuja cuatro diagramas sencillos: los componentes conectados, el data flow de esa operación, el control flow de la decisión principal y el state flow de la entidad principal. Si los diagramas no se ven en esta herramienta, descríbelos con flechas y palabras.</div></div><div class="pbox"><div class="pbar"><span class="plbl">Buscar huecos</span><button type="button" data-copy="p9">Copiar</button></div><div class="prompt" id="p9">Revisa los cuatro flujos juntos. Dime qué conexiones faltan y en qué puntos se contradicen entre sí.</div></div>
+  <div class="deliv"><p class="sh">Entregable</p><p>Diagrama de componentes conectados, más data flow, control flow y state flow de una operación, y cómo se comunican las piezas.</p></div>
+  <p class="ex"><span>Ejemplo</span>Inventarios, operación “registrar una salida”: se recibe la salida → se valida que el producto y la cantidad existan → la regla compara con el mínimo → se guarda el movimiento → si cae bajo el mínimo, se genera una alerta.</p>
+  <p class="sh">Antes de pasar a la siguiente etapa</p>
+  <ul class="chk"><li>La validación y la decisión no viven solo “en la pantalla”.</li><li>Hay al menos un camino de error.</li><li>Si usas un servicio externo (correo, mensajes), tiene plan B si falla.</li></ul>
+</section>
+<section class="stage" id="e5">
+  <header><span class="num">Etapa 5 de 5</span><span class="time">8 min</span></header>
+  <h2>Simulate &amp; challenge<small>Simula y desafía</small></h2>
+  <p class="obj">Poner tu diseño a prueba con casos concretos antes de construir nada, y pedirle a la IA que lo critique.</p>
+  
+  <p class="sh">Preguntas guía</p>
+  <ol class="q"><li>¿Qué información ingresa?</li><li>¿Qué componentes participan?</li><li>¿Qué reglas se evalúan?</li><li>¿Qué datos cambian?</li><li>¿Qué salida se produce?</li><li>¿Cómo se maneja el error?</li></ol>
+  <p class="sh">Prompts de la etapa</p>
+  <div class="pbox"><div class="pbar"><span class="plbl">Simular</span><button type="button" data-copy="p10">Copiar</button></div><div class="prompt" id="p10">Simulemos tres escenarios con datos inventados: uno exitoso, uno que una regla rechaza y uno con un fallo inesperado. En cada uno explica qué información entra, qué componentes participan, qué reglas se evalúan, qué datos cambian, qué salida se produce y cómo se maneja el error.</div></div><div class="pbox"><div class="pbar"><span class="plbl">Revisor</span><button type="button" data-copy="p11">Copiar</button></div><div class="prompt" id="p11">Ahora actúa como arquitecto revisor. Encuentra tres problemas reales (no cosméticos) en esta arquitectura y explica por qué importan. Yo decidiré si estoy de acuerdo con cada uno.</div></div><div class="pbox"><div class="pbar"><span class="plbl">System Blueprint</span><button type="button" data-copy="p12">Copiar</button></div><div class="prompt" id="p12">Genera el documento SYSTEM BLUEPRINT V1 con todo lo que decidimos: definición y alcance, componentes y responsabilidades, modelo de datos, reglas de negocio, estados y eventos, los cuatro flujos, manejo de errores, decisiones frente a suposiciones, riesgos y los primeros pasos para construirlo con ayuda de la IA. No escribas código.</div></div>
+  <div class="deliv"><p class="sh">Entregable</p><p>Tu SYSTEM BLUEPRINT V1: la primera versión del plano de tu sistema, lista para discutirse.</p></div>
+  <p class="ex"><span>Ejemplo</span>Escenario 1: “El producto X tiene 6 unidades, mínimo 5, alguien saca 3” → queda en 3, se marca para reposición y se genera la alerta.</p>
+  <p class="sh">Antes de pasar a la siguiente etapa</p>
+  <ul class="chk"><li>Probaste los tres escenarios, no solo el exitoso.</li><li>Aceptaste o rechazaste cada problema del revisor con una razón.</li><li>Tienes el blueprint guardado fuera del chat.</li></ul>
+</section>
+
+<section class="stage" id="presentar">
+  <header><span class="num">Después del laboratorio</span><span class="time">1 min por persona</span></header>
+  <h2>Explain your system<small>Explica tu sistema</small></h2>
+  <p class="obj">Si puedes explicarlo, lo entiendes. Prepara tu explicación de un minuto con estas seis preguntas.</p>
+  <ol class="q"><li>Qué problema resuelve tu sistema.</li><li>Qué componentes diseñaste.</li><li>Cómo se conectan.</li><li>Qué información utiliza.</li><li>Qué pasa cuando se ejecuta su operación principal.</li><li>Qué falla encontraste en la simulación.</li></ol>
+  <p class="sh">Prompt</p>
+  <div class="pbox"><div class="pbar"><span class="plbl">Prepararte para presentar</span><button type="button" data-copy="p13">Copiar</button></div><div class="prompt" id="p13">Ayúdame a explicar mi sistema en un minuto, en lenguaje sencillo, respondiendo: qué problema resuelve, qué componentes diseñé, cómo se conectan, qué información utiliza, qué pasa cuando se ejecuta su operación principal y qué falla encontré en la simulación.</div></div>
+</section>
+
+<section class="stage" id="atascado">
+  <header><span class="num">Cuando lo necesites</span></header>
+  <h2>Si te atascas<small>Prompts de rescate</small></h2>
+  <div class="pbox"><div class="pbar"><span class="plbl">Explícame un concepto</span><button type="button" data-copy="p14">Copiar</button></div><div class="prompt" id="p14">Explícame [el concepto] con una analogía de la vida cotidiana y luego aplícalo a mi sistema.</div></div><div class="pbox"><div class="pbar"><span class="plbl">Ordenar lo que llevas</span><button type="button" data-copy="p15">Copiar</button></div><div class="prompt" id="p15">Resume en cinco líneas lo que hemos decidido hasta ahora, qué es una suposición y qué nos falta para terminar la etapa.</div></div><div class="pbox"><div class="pbar"><span class="plbl">Simplificar</span><button type="button" data-copy="p16">Copiar</button></div><div class="prompt" id="p16">Lo estás complicando. Propón la versión más simple de este sistema que todavía resuelva el problema.</div></div><div class="pbox"><div class="pbar"><span class="plbl">Volver al plan</span><button type="button" data-copy="p17">Copiar</button></div><div class="prompt" id="p17">Volvamos a las cinco etapas. ¿En qué etapa estamos y cuál es el entregable que nos falta?</div></div>
+</section>
+
+  <footer>Masterclass Think Like a System · María José Muñoz León · buque · ideas en movimiento</footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const toast = document.getElementById('toast');
+function say(t) { toast.textContent = t; toast.classList.add('on'); clearTimeout(say.t); say.t = setTimeout(() => toast.classList.remove('on'), 2200); }
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  const el = document.getElementById(b.dataset.copy), t = el.innerText.trim(), old = b.textContent;
+  let ok = false;
+  try { const ta = document.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); ta.remove(); } catch (_) {}
+  if (!ok && navigator.clipboard) { try { await Promise.race([navigator.clipboard.writeText(t), new Promise((_, r) => setTimeout(r, 1500))]); ok = true; } catch (_) {} }
+  if (ok) { b.textContent = 'Copiado ✓'; say('Prompt copiado'); setTimeout(() => { b.textContent = old; }, 1800); }
+  else { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); say('Seleccionado: cópialo con Ctrl/Cmd + C'); }
+});
+</script>
+</body>
+</html>
